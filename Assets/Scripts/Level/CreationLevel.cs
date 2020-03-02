@@ -35,7 +35,7 @@ public class CreationLevel : MonoBehaviour
         CreateTempleLevel();
 
         _availablePlaces.Shuffle();
-        Debug.Log(_availablePlaces.Count);
+
         _graveyardGenerationPoint = _availablePlaces[0];
         foreach (Vector2 current in _availablePlaces)
         {
@@ -49,9 +49,6 @@ public class CreationLevel : MonoBehaviour
             if (current.x > _cavernGenerationPoint.x)
                 _cavernGenerationPoint = current;
         }
-
-        Debug.Log(_graveyardGenerationPoint);
-        Debug.Log(_cavernGenerationPoint);
 
         CreateGraveyardLevel();
         CreateCavernLevel();
