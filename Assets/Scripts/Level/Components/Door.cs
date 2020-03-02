@@ -30,6 +30,8 @@ public class Door : MonoBehaviour
     private bool _canBeClosed = true;
     private bool _canBeOpened = true;
 
+
+
     private void Start()
     {
         _up = transform.position.y > _parentRoom.transform.position.y;

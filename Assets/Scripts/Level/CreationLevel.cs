@@ -7,9 +7,18 @@ public class CreationLevel : MonoBehaviour
     [SerializeField]
     private LevelGrid _grid;
     [SerializeField]
-    private RoomController _roomController;
+    private Rooms _forestRooms;
+    [SerializeField]
+    private Rooms _templeRooms;
+    [SerializeField]
+    private Rooms _cavernRooms;
+    [SerializeField]
+    private Rooms _graveyardRooms;
 
-    
+
+    private Rooms _roomsUsed;
+
+
     private List<Room> _levelCreated = new List<Room>();
     private List<Vector2> _availablePlaces = new List<Vector2>();
 
@@ -19,24 +28,89 @@ public class CreationLevel : MonoBehaviour
     {
         _grid.CreateGrid();
 
-        int roomCount = _roomController.GetRoomCount() + Mathf.RoundToInt(Random.Range(0, _roomController.GetRoomCount() * 0.25f));
-        
-        InstantiateBaseRoom();
-        
+        CreateForestLevel();
+        CreateTempleLevel();
+        CreateGraveyardLevel();
+        CreateCavernLevel();
+
+        foreach (Room current in _levelCreated)
+            current.InitializeRoom();
+    }
+
+
+    private void CreateForestLevel()
+    {
+        _roomsUsed = _forestRooms;
+        GenerateLevel(new Vector2(_grid.GetXSize() / 2, 1));
+    }
+
+
+    private void CreateTempleLevel()
+    {
+        _roomsUsed = _templeRooms;
+
+        _levelCreated.Shuffle();
+        Vector2 position = new Vector2(_levelCreated[_levelCreated.Count -1].GetX(), _levelCreated[_levelCreated.Count - 1].GetX());
+
+        foreach(Vector2 current in _availablePlaces)
+            if (current.y > position.y)
+                position = current;
+
+        GenerateLevel(position);
+    }
+
+
+    private void CreateGraveyardLevel()
+    {
+        _roomsUsed = _graveyardRooms;
+
+        _levelCreated.Shuffle();
+        Vector2 position = new Vector2(_levelCreated[_levelCreated.Count - 1].GetX(), _levelCreated[_levelCreated.Count - 1].GetX());
+
+        foreach (Vector2 current in _availablePlaces)
+            if (current.x > position.x && _templeRooms.FindRoomContains(_grid.GetRoomAtPoint(Mathf.FloorToInt(current.x), Mathf.FloorToInt(current.y))))
+                position = current;
+
+        GenerateLevel(position);
+    }
+
+
+    private void CreateCavernLevel()
+    {
+        _roomsUsed = _cavernRooms;
+
+        _levelCreated.Shuffle();
+        Vector2 position = new Vector2(_levelCreated[_levelCreated.Count - 1].GetX(), _levelCreated[_levelCreated.Count - 1].GetX());
+
+        foreach (Vector2 current in _availablePlaces)
+            if (current.x < position.x && _templeRooms.FindRoomContains(_grid.GetRoomAtPoint(Mathf.FloorToInt(current.x), Mathf.FloorToInt(current.y))))
+                position = current;
+
+        GenerateLevel(position);
+    }
+
+
+    private void GenerateLevel(Vector2 generationStartPosition)
+    {
+        //_availablePlaces.Clear();
+        int roomCount = _roomsUsed.GetRoomCount() + Mathf.RoundToInt(Random.Range(0, _roomsUsed.GetRoomCount() * 0.25f));
+
+        InstantiateBaseRoom(generationStartPosition);
+
         for (int i = 0; i < roomCount; i++)
             InstantiateBodyRoom();
-            
+
         PostProcessingRooms();
     }
 
     
-    private void InstantiateBaseRoom()
+    private void InstantiateBaseRoom(Vector2 generationStartPosition)
     {
-        Room buffer = Instantiate(_roomController.GetBaseRoom());
+        Room buffer = Instantiate(_roomsUsed.GetBaseRoom());
 
-        //We put it at 7;7 (the origin)
-        buffer.SetX(_grid.GetXSize() / 2);
-        buffer.SetY(_grid.GetYSize() / 2);
+        //We put it at 7;0 (the down center)
+        buffer.SetX(Mathf.FloorToInt(generationStartPosition.x));
+        buffer.SetY(Mathf.FloorToInt(generationStartPosition.y));
 
         //We add this room to the grid, to available room and level created
         _grid.AddRoomToLevel(buffer);
@@ -77,7 +151,7 @@ public class CreationLevel : MonoBehaviour
         //While the layout of the room is not correct
         do
         {
-            buffer = _roomController.GetBodyRoom();
+            buffer = _roomsUsed.GetBodyRoom();
             Vector2 bufferedPlace = FindOneAvailablePlace();
 
             //We set x and y positions
@@ -134,11 +208,8 @@ public class CreationLevel : MonoBehaviour
 
         AddItemRoom();
 
-        for (int i = 0; i < _roomController.GetSecretRoomCount(); i++)
+        for (int i = 0; i < _roomsUsed.GetSecretRoomCount(); i++)
             AddSecretRoom();
-
-        foreach (Room current in _levelCreated)
-            current.InitializeRoom();
     }
 
 
@@ -164,7 +235,7 @@ public class CreationLevel : MonoBehaviour
             }
         }
         
-        Room bufferRoom = Instantiate(_roomController.GetBossRoom());
+        Room bufferRoom = Instantiate(_roomsUsed.GetBossRoom());
 
         bufferRoom.SetX(Mathf.FloorToInt(placeToUse.x));
         bufferRoom.SetY(Mathf.FloorToInt(placeToUse.y));
@@ -182,7 +253,7 @@ public class CreationLevel : MonoBehaviour
             roomToDestroy = _levelCreated[Random.Range(0, _levelCreated.Count)];
         while (!roomToDestroy.GetCanBeChanged());
 
-        Room roomToCreate = _roomController.GetItemRoom();
+        Room roomToCreate = _roomsUsed.GetItemRoom();
 
         _levelCreated.Add(_grid.ReplaceOldRoom(roomToDestroy, roomToCreate));
         _levelCreated.Remove(roomToDestroy);
@@ -204,7 +275,7 @@ public class CreationLevel : MonoBehaviour
 
         _availablePlaces.Remove(placeToUse);
 
-        Room bufferRoom = Instantiate(_roomController.GetSecretRoom());
+        Room bufferRoom = Instantiate(_roomsUsed.GetSecretRoom());
 
         bufferRoom.SetX(Mathf.FloorToInt(placeToUse.x));
         bufferRoom.SetY(Mathf.FloorToInt(placeToUse.y));

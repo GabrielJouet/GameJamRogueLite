@@ -4,13 +4,12 @@ public class LevelGrid : MonoBehaviour
 {
     [Header("Level Parameters")]
     [SerializeField]
-    private int _xSizeMax = 15;
+    private int _xSizeMax = 25;
     [SerializeField]
-    private int _ySizeMax = 15;
+    private int _ySizeMax = 25;
     
 
     private Room[,] _grid;
-
 
 
     //-------------------------------Grid Creation Methods
@@ -26,7 +25,7 @@ public class LevelGrid : MonoBehaviour
     {
         _grid[room.GetX(), room.GetY()] = room;
 
-        room.transform.position = new Vector3(4f * (room.GetX() - 7), 2.24f * (room.GetY() - 7), 0f);
+        room.transform.position = new Vector3(4f * (room.GetX() - 12), 2.24f * (room.GetY()-12), 0f);
     }
 
     
@@ -188,4 +187,6 @@ public class LevelGrid : MonoBehaviour
     public int GetXSize() { return _xSizeMax; }
 
     public int GetYSize() { return _ySizeMax; }
+
+    public Room GetRoomAtPoint(int x, int y) { return _grid[x, y]; }
 }

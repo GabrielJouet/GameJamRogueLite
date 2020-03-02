@@ -1,7 +1,8 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-public class RoomController : MonoBehaviour
+[CreateAssetMenu(menuName = "CreateRooms")]
+public class Rooms : ScriptableObject
 {
     [Header("Room Counts")]
     [SerializeField]
@@ -41,4 +42,13 @@ public class RoomController : MonoBehaviour
     public int GetRoomCount() { return _roomCount; }
 
     public int GetSecretRoomCount() { return _secretRoomCount; }
+
+    public bool FindRoomContains(Room other)
+    {
+        return  _baseRooms.Contains(other) ||
+                _bodyRooms.Contains(other) ||
+                _bossRooms.Contains(other) ||
+                _itemRooms.Contains(other) ||
+                _secretRooms.Contains(other);
+    }
 }
