@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4a25df56073a0940ab423a7f9007ece, type: 3}
+  m_Name: ForestRooms
+  m_EditorClassIdentifier: 
+  _roomCount: 55
+  _secretRoomCount: 0
+  _baseRooms:
+  - {fileID: 2654299726172551349, guid: f07a413adaad5ec4c8be3b64022ec64d, type: 3}
+  _bodyRooms:
+  - {fileID: 2654299726172551349, guid: 6409c8d7afdc24c49a19f013ed3051df, type: 3}
+  _bossRooms:
+  - {fileID: 1362829474639128346, guid: 3201a8e552be94841b36c1a16a5dacbd, type: 3}
+  _itemRooms:
+  - {fileID: 2654299726172551349, guid: 6409c8d7afdc24c49a19f013ed3051df, type: 3}
+  _secretRooms:
+  - {fileID: 2654299726172551349, guid: 6409c8d7afdc24c49a19f013ed3051df, type: 3}
