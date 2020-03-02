@@ -6,11 +6,11 @@ public class Rooms : ScriptableObject
 {
     [Header("Room Counts")]
     [SerializeField]
-    [Range(2,55)]
+    [Range(4,100)]
     private int _roomCount;
     
     [SerializeField]
-    [Range(0, 5)]
+    [Range(0, 10)]
     private int _secretRoomCount;
 
 

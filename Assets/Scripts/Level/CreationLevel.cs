@@ -98,6 +98,7 @@ public class CreationLevel : MonoBehaviour
 
     private void GenerateLevel(Vector2 generationStartPosition)
     {
+        _levelCreatedUsed.Clear();
         _availablePlaces.Clear();
         int roomCount = _roomsUsed.GetRoomCount() + Mathf.RoundToInt(Random.Range(0, _roomsUsed.GetRoomCount() * 0.25f));
 
@@ -122,6 +123,7 @@ public class CreationLevel : MonoBehaviour
         _grid.AddRoomToLevel(buffer);
 
         _levelCreated.Add(buffer);
+        _levelCreatedUsed.Add(buffer);
         _availablePlaces.AddRange(buffer.GetAllNeighbourPlaces());
     }
 
@@ -139,8 +141,9 @@ public class CreationLevel : MonoBehaviour
 
         //We add it to level created and available rooms lists
         _levelCreated.Add(bufferRoom);
+        _levelCreatedUsed.Add(bufferRoom);
 
-        foreach(Vector2 current in bufferRoom.GetAllNeighbourPlaces())
+        foreach (Vector2 current in bufferRoom.GetAllNeighbourPlaces())
         {
             if (!_availablePlaces.Contains(current))
                 _availablePlaces.Add(current);
@@ -256,12 +259,14 @@ public class CreationLevel : MonoBehaviour
     {
         Room roomToDestroy;
         do
-            roomToDestroy = _levelCreated[Random.Range(0, _levelCreated.Count)];
+            roomToDestroy = _levelCreatedUsed[Random.Range(0, _levelCreatedUsed.Count)];
         while (!roomToDestroy.GetCanBeChanged());
 
         Room roomToCreate = _roomsUsed.GetItemRoom();
+        Room bufferRoom = _grid.ReplaceOldRoom(roomToDestroy, roomToCreate);
 
-        _levelCreated.Add(_grid.ReplaceOldRoom(roomToDestroy, roomToCreate));
+        _levelCreated.Add(bufferRoom);
+        _levelCreatedUsed.Add(bufferRoom);
         _levelCreated.Remove(roomToDestroy);
     }
 
@@ -288,6 +293,7 @@ public class CreationLevel : MonoBehaviour
 
         _grid.AddRoomToLevel(bufferRoom);
         _levelCreated.Add(bufferRoom);
+        _levelCreatedUsed.Add(bufferRoom);
     }
 
 

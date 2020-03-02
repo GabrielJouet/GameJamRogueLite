@@ -4,9 +4,11 @@ public class LevelGrid : MonoBehaviour
 {
     [Header("Level Parameters")]
     [SerializeField]
-    private int _xSizeMax = 25;
+    [Range(5, 100)]
+    private int _xSizeMax;
     [SerializeField]
-    private int _ySizeMax = 25;
+    [Range(5, 100)]
+    private int _ySizeMax;
     
 
     private Room[,] _grid;
@@ -25,7 +27,7 @@ public class LevelGrid : MonoBehaviour
     {
         _grid[room.GetX(), room.GetY()] = room;
 
-        room.transform.position = new Vector3(4f * (room.GetX() - 12), 2.24f * (room.GetY()-12), 0f);
+        room.transform.position = new Vector3(4f * room.GetX(), 2.24f * room.GetY(), 0f);
     }
 
     
