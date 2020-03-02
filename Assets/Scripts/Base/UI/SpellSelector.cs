@@ -6,20 +6,9 @@ public class SpellSelector : MonoBehaviour
 {
     [SerializeField]
     private int _spellId;
-    private int _actualSpellId = 0;
     [SerializeField]
     private SpellInterfaceController _spellInterfaceController;
-    // Start is called before the first frame update
-    void Start()
-    {
 
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
     public void OnMouseOver()
     {
         if (Input.GetMouseButtonDown(0))
