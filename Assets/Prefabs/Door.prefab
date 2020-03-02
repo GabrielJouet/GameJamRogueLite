@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5369179082181438721}
   - component: {fileID: 5369179082181438720}
   - component: {fileID: -8634922271854448925}
-  - component: {fileID: 9006064017958504857}
+  - component: {fileID: 2772593592036699538}
   m_Layer: 0
   m_Name: Door
   m_TagString: Wall
@@ -72,7 +72,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -80,7 +80,7 @@ SpriteRenderer:
   m_Size: {x: 0.16, y: 0.16}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!61 &-8634922271854448925
@@ -109,7 +109,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.16, y: 0.16}
   m_EdgeRadius: 0
---- !u!114 &9006064017958504857
+--- !u!114 &2772593592036699538
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -118,9 +118,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 5369179082181438723}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 42edad7850dc05c418d975099ea215c4, type: 3}
+  m_Script: {fileID: 11500000, guid: a8ec9fa190271f840a0d96a4204dabe4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _closedSprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
   _wallSprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  _parentRoom: {fileID: 0}
   _spriteRenderer: {fileID: 5369179082181438720}
   _collider: {fileID: -8634922271854448925}

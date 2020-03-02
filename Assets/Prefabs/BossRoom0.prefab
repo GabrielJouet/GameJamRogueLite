@@ -77,9 +77,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4229403352063203242}
-  - component: {fileID: 2654299726172551349}
+  - component: {fileID: 1362829474639128346}
   m_Layer: 0
-  m_Name: BodyRoom0
+  m_Name: BossRoom0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -103,7 +103,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2654299726172551349
+--- !u!114 &1362829474639128346
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -112,16 +112,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 7924053292403833464}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a807e9e4c26bd84b944aafded172540, type: 3}
+  m_Script: {fileID: 11500000, guid: 772b4e21f6eeb51499c5e90c6c511cf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _cameraPosition: {fileID: 7716672097746992855}
-  _canBeChanged: 1
+  _canBeChanged: 0
   _upDoor: {fileID: 1335119289021796731}
   _leftDoor: {fileID: 1904250173585931808}
   _downDoor: {fileID: 7454257157240358309}
   _rightDoor: {fileID: 815316274724589809}
   _roomEnemies: []
+  _levelTransition: {fileID: 0}
 --- !u!1 &8919753305094448249
 GameObject:
   m_ObjectHideFlags: 0
@@ -167,7 +168,7 @@ PrefabInstance:
         type: 3}
       propertyPath: _parentRoom
       value: 
-      objectReference: {fileID: 2654299726172551349}
+      objectReference: {fileID: 1362829474639128346}
     - target: {fileID: 5369179082181438721, guid: cf91adb6bfe9665499bfeba32cfc7d2c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -425,7 +426,7 @@ PrefabInstance:
         type: 3}
       propertyPath: _parentRoom
       value: 
-      objectReference: {fileID: 2654299726172551349}
+      objectReference: {fileID: 1362829474639128346}
     - target: {fileID: 5369179082181438721, guid: cf91adb6bfe9665499bfeba32cfc7d2c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -518,7 +519,7 @@ PrefabInstance:
         type: 3}
       propertyPath: _parentRoom
       value: 
-      objectReference: {fileID: 2654299726172551349}
+      objectReference: {fileID: 1362829474639128346}
     - target: {fileID: 5369179082181438721, guid: cf91adb6bfe9665499bfeba32cfc7d2c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -786,7 +787,7 @@ PrefabInstance:
         type: 3}
       propertyPath: _parentRoom
       value: 
-      objectReference: {fileID: 2654299726172551349}
+      objectReference: {fileID: 1362829474639128346}
     - target: {fileID: 5369179082181438721, guid: cf91adb6bfe9665499bfeba32cfc7d2c,
         type: 3}
       propertyPath: m_LocalPosition.x

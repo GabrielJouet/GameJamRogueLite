@@ -92,8 +92,8 @@ public class CreationLevel : MonoBehaviour
 
     private Vector2 FindOneAvailablePlace()
     {
-        Vector2 buffer;
-        bool result;
+        Vector2 buffer = Vector2.zero;
+        bool result = false;
 
         do
         {
@@ -110,12 +110,107 @@ public class CreationLevel : MonoBehaviour
     }
 
 
+    private void CheckAllAvailablePlaces()
+    {
+        List<Vector2> uselessPlaces = new List<Vector2>();
+
+        foreach (Vector2 current in _availablePlaces)
+        {
+            if (!_grid.FindPlaceAvailability(Mathf.FloorToInt(current.x), Mathf.FloorToInt(current.y)))
+                uselessPlaces.Add(current);
+        }
+
+        foreach (Vector2 current in uselessPlaces)
+            _availablePlaces.Remove(current);
+    }
+
+
 
     //-------------------------------Post Process Level Methods
     private void PostProcessingRooms()
     {
+        CheckAllAvailablePlaces();
+        AddBossRoom();
+
+        AddItemRoom();
+
+        for (int i = 0; i < _roomController.GetSecretRoomCount(); i++)
+            AddSecretRoom();
+
         foreach (Room current in _levelCreated)
             current.InitializeRoom();
+    }
+
+
+    private void AddBossRoom()
+    {
+        Vector2 placeToUse = Vector2.zero;
+        float distanceMin = 0f;
+
+        //We want to find the farest room in the level
+        foreach (Vector2 current in _availablePlaces)
+        {
+            if(_grid.FindPlaceNeighbour(Mathf.FloorToInt(current.x), Mathf.FloorToInt(current.y)) == 1)
+            {
+                //We compute its distance from origin
+                float dSqrToTarget = Mathf.Sqrt((new Vector2(7, 7) - new Vector2(current.x, current.y)).sqrMagnitude);
+
+                //And if it's more than previous we store it
+                if (dSqrToTarget > distanceMin)
+                {
+                    distanceMin = dSqrToTarget;
+                    placeToUse = current;
+                }
+            }
+        }
+        
+        Room bufferRoom = Instantiate(_roomController.GetBossRoom());
+
+        bufferRoom.SetX(Mathf.FloorToInt(placeToUse.x));
+        bufferRoom.SetY(Mathf.FloorToInt(placeToUse.y));
+
+        _grid.AddRoomToLevel(bufferRoom);
+
+        bufferRoom.GetComponent<BossRoom>().InitializeRoom();
+    }
+
+
+    private void AddItemRoom()
+    {
+        Room roomToDestroy;
+        do
+            roomToDestroy = _levelCreated[Random.Range(0, _levelCreated.Count)];
+        while (!roomToDestroy.GetCanBeChanged());
+
+        Room roomToCreate = _roomController.GetItemRoom();
+
+        _levelCreated.Add(_grid.ReplaceOldRoom(roomToDestroy, roomToCreate));
+        _levelCreated.Remove(roomToDestroy);
+    }
+
+
+    private void AddSecretRoom()
+    {
+        Vector2 placeToUse = Vector2.zero;
+        
+        //We want to find the farest room in the level
+        while(placeToUse == Vector2.zero)
+        {
+            Vector2 current = _availablePlaces[Random.Range(0, _availablePlaces.Count)];
+
+            if (_grid.FindPlaceNeighbour(Mathf.FloorToInt(current.x), Mathf.FloorToInt(current.y)) >= 2)
+                placeToUse = current;
+        }
+
+        _availablePlaces.Remove(placeToUse);
+
+        Room bufferRoom = Instantiate(_roomController.GetSecretRoom());
+
+        bufferRoom.SetX(Mathf.FloorToInt(placeToUse.x));
+        bufferRoom.SetY(Mathf.FloorToInt(placeToUse.y));
+
+        _grid.AddRoomToLevel(bufferRoom);
+        _levelCreated.Add(bufferRoom);
     }
 
 
