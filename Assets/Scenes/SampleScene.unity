@@ -133,7 +133,6 @@ GameObject:
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
   - component: {fileID: 519420034}
-  - component: {fileID: 519420033}
   - component: {fileID: 519420030}
   - component: {fileID: 519420035}
   m_Layer: 0
@@ -164,7 +163,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _grid: {fileID: 519420035}
-  _roomController: {fileID: 519420033}
+  _forestRooms: {fileID: 11400000, guid: d6387a82c49b3a64e937a251ea8697e5, type: 2}
+  _templeRooms: {fileID: 11400000, guid: befa5647a7121794d82ab704864c37fb, type: 2}
+  _cavernRooms: {fileID: 11400000, guid: 8c7091c2cc75fe74689ac5f39fba7cad, type: 2}
+  _graveyardRooms: {fileID: 11400000, guid: 1e17cee60ffb1fd41a95997f0cb89926, type: 2}
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -222,30 +224,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &519420033
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 519420028}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e4a25df56073a0940ab423a7f9007ece, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _roomCount: 25
-  _secretRoomCount: 0
-  _baseRooms:
-  - {fileID: 2654299726172551349, guid: f07a413adaad5ec4c8be3b64022ec64d, type: 3}
-  _bodyRooms:
-  - {fileID: 2654299726172551349, guid: 6409c8d7afdc24c49a19f013ed3051df, type: 3}
-  _bossRooms:
-  - {fileID: 1362829474639128346, guid: 3201a8e552be94841b36c1a16a5dacbd, type: 3}
-  _itemRooms:
-  - {fileID: 2654299726172551349, guid: 6409c8d7afdc24c49a19f013ed3051df, type: 3}
-  _secretRooms:
-  - {fileID: 2654299726172551349, guid: 6409c8d7afdc24c49a19f013ed3051df, type: 3}
 --- !u!114 &519420034
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -271,8 +249,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d3779188dd568541822a8a7e17ce4ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _xSizeMax: 15
-  _ySizeMax: 15
+  _xSizeMax: 35
+  _ySizeMax: 35
 --- !u!1 &1585781359
 GameObject:
   m_ObjectHideFlags: 0

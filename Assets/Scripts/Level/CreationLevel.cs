@@ -18,9 +18,12 @@ public class CreationLevel : MonoBehaviour
 
     private Rooms _roomsUsed;
 
-
+    private List<Room> _levelCreatedUsed = new List<Room>();
     private List<Room> _levelCreated = new List<Room>();
     private List<Vector2> _availablePlaces = new List<Vector2>();
+
+    private Vector2 _graveyardGenerationPoint;
+    private Vector2 _cavernGenerationPoint;
 
 
     //-------------------------------Creation Base Level Methods
@@ -30,6 +33,26 @@ public class CreationLevel : MonoBehaviour
 
         CreateForestLevel();
         CreateTempleLevel();
+
+        _availablePlaces.Shuffle();
+        Debug.Log(_availablePlaces.Count);
+        _graveyardGenerationPoint = _availablePlaces[0];
+        foreach (Vector2 current in _availablePlaces)
+        {
+            if (current.x < _graveyardGenerationPoint.x)
+                _graveyardGenerationPoint = current;
+        }
+
+        _cavernGenerationPoint = _availablePlaces[0];
+        foreach (Vector2 current in _availablePlaces)
+        {
+            if (current.x > _cavernGenerationPoint.x)
+                _cavernGenerationPoint = current;
+        }
+
+        Debug.Log(_graveyardGenerationPoint);
+        Debug.Log(_cavernGenerationPoint);
+
         CreateGraveyardLevel();
         CreateCavernLevel();
 
@@ -50,11 +73,13 @@ public class CreationLevel : MonoBehaviour
         _roomsUsed = _templeRooms;
 
         _levelCreated.Shuffle();
-        Vector2 position = new Vector2(_levelCreated[_levelCreated.Count -1].GetX(), _levelCreated[_levelCreated.Count - 1].GetX());
+        Vector2 position = new Vector2();
 
         foreach(Vector2 current in _availablePlaces)
+        {
             if (current.y > position.y)
                 position = current;
+        }
 
         GenerateLevel(position);
     }
@@ -63,36 +88,20 @@ public class CreationLevel : MonoBehaviour
     private void CreateGraveyardLevel()
     {
         _roomsUsed = _graveyardRooms;
-
-        _levelCreated.Shuffle();
-        Vector2 position = new Vector2(_levelCreated[_levelCreated.Count - 1].GetX(), _levelCreated[_levelCreated.Count - 1].GetX());
-
-        foreach (Vector2 current in _availablePlaces)
-            if (current.x > position.x && _templeRooms.FindRoomContains(_grid.GetRoomAtPoint(Mathf.FloorToInt(current.x), Mathf.FloorToInt(current.y))))
-                position = current;
-
-        GenerateLevel(position);
+        GenerateLevel(_graveyardGenerationPoint);
     }
 
 
     private void CreateCavernLevel()
     {
         _roomsUsed = _cavernRooms;
-
-        _levelCreated.Shuffle();
-        Vector2 position = new Vector2(_levelCreated[_levelCreated.Count - 1].GetX(), _levelCreated[_levelCreated.Count - 1].GetX());
-
-        foreach (Vector2 current in _availablePlaces)
-            if (current.x < position.x && _templeRooms.FindRoomContains(_grid.GetRoomAtPoint(Mathf.FloorToInt(current.x), Mathf.FloorToInt(current.y))))
-                position = current;
-
-        GenerateLevel(position);
+        GenerateLevel(_cavernGenerationPoint);
     }
 
 
     private void GenerateLevel(Vector2 generationStartPosition)
     {
-        //_availablePlaces.Clear();
+        _availablePlaces.Clear();
         int roomCount = _roomsUsed.GetRoomCount() + Mathf.RoundToInt(Random.Range(0, _roomsUsed.GetRoomCount() * 0.25f));
 
         InstantiateBaseRoom(generationStartPosition);
