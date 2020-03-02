@@ -78,6 +78,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4229403352063203242}
   - component: {fileID: 1362829474639128346}
+  - component: {fileID: 8828477817959315528}
   m_Layer: 0
   m_Name: BossRoom0
   m_TagString: Untagged
@@ -123,6 +124,21 @@ MonoBehaviour:
   _rightDoor: {fileID: 815316274724589809}
   _roomEnemies: []
   _levelTransition: {fileID: 0}
+--- !u!114 &8828477817959315528
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7924053292403833464}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc46c0adcb70bc24485f2b2af6c7fe61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _availableTiles: []
+  _tileMapIndexes: []
+  _tileMapStartPoint: {fileID: 0}
 --- !u!1 &8919753305094448249
 GameObject:
   m_ObjectHideFlags: 0
