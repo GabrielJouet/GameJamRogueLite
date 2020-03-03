@@ -69,8 +69,7 @@ public class Door : MonoBehaviour
     //-------------------------------Player Interaction Methods
     private void OnTriggerExit2D(Collider2D collision)
     {
-        /*
-        if(collision.CompareTag("Player"))
+        if(collision.GetComponent<PlayerMovement>())
         {
             if(_up    && collision.transform.position.y < transform.position.y || 
                _down  && collision.transform.position.y > transform.position.y || 
@@ -81,7 +80,6 @@ public class Door : MonoBehaviour
                 _parentRoom.RoomEntered();
             }
         }
-        */
     }
 
 

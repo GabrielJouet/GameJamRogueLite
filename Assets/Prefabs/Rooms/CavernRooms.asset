@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4a25df56073a0940ab423a7f9007ece, type: 3}
   m_Name: CavernRooms
   m_EditorClassIdentifier: 
-  _roomCount: 100
-  _secretRoomCount: 0
+  _roomCount: 250
+  _secretRoomCount: 25
   _baseRooms:
   - {fileID: 2654299726172551349, guid: 2d536af2e53cb854ca55859b0b92e56a, type: 3}
   _bodyRooms:
