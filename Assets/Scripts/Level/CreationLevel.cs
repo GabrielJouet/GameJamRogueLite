@@ -27,7 +27,7 @@ public class CreationLevel : MonoBehaviour
 
 
     //-------------------------------Creation Base Level Methods
-    public void CreateLevel()
+    private void Start()
     {
         _grid.CreateGrid();
 
@@ -55,6 +55,9 @@ public class CreationLevel : MonoBehaviour
 
         foreach (Room current in _levelCreated)
             current.InitializeRoom();
+
+        Instantiate(FindObjectOfType<TransitionSaver>().GetPlayer(), _levelCreated[0].transform.position, Quaternion.identity);
+        transform.position = new Vector3(_levelCreated[0].transform.position.x, _levelCreated[0].transform.position.y, -10);
     }
 
 
@@ -68,8 +71,6 @@ public class CreationLevel : MonoBehaviour
     private void CreateTempleLevel()
     {
         _roomsUsed = _templeRooms;
-
-        _levelCreated.Shuffle();
         Vector2 position = new Vector2();
 
         foreach(Vector2 current in _availablePlaces)

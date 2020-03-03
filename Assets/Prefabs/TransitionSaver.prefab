@@ -44,3 +44,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _scrapCount: 0
+  _player: {fileID: 8224979895197767880, guid: e908b4db34ad2804aaaeefd084ef070a, type: 3}

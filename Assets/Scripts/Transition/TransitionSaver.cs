@@ -1,14 +1,15 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class TransitionSaver : MonoBehaviour
 {
     [SerializeField]
     private int _scrapCount;
 
+    [SerializeField]
+    private PlayerMovement _player;
 
-    private void Start()
+
+    private void Awake()
     {
         DontDestroyOnLoad(gameObject);
     }
@@ -21,4 +22,6 @@ public class TransitionSaver : MonoBehaviour
     public void RemoveScrapCount (int other) { _scrapCount -= other; }
 
     public void SetScrapCount (int other) { _scrapCount = other; }
+
+    public PlayerMovement GetPlayer() { return _player; }
 }
