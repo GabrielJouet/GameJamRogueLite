@@ -249,5 +249,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d3779188dd568541822a8a7e17ce4ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _xSizeMax: 50
-  _ySizeMax: 50
+  _xSizeMax: 75
+  _ySizeMax: 75
