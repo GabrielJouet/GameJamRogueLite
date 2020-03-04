@@ -21,6 +21,7 @@ public class InterfaceSpawner : MonoBehaviour
                     Instantiate(_interfacePrefab, new Vector3(0f,0f,0f), Quaternion.identity);
                     break;
                 case 1: //Well
+                    Instantiate(_interfacePrefab, new Vector3(0f, 0f, 0f), Quaternion.identity);
                     break;
                 case 2: //ArmorStand
                     break;

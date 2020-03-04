@@ -3,15 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class FireCampController : MonoBehaviour
+public class WellInterfaceController : MonoBehaviour
 {
+    private int _wellLvl;
+
     private int _fireCampLvl = 0;
     private int _upgradeCost = 20;
 
     [SerializeField]
     private Text _MainText;
     [SerializeField]
-    private Text _vitalityBoostText;
+    private Text _staminaBoostText;
     [SerializeField]
     private Text _upgradeText;
 
@@ -29,19 +31,19 @@ public class FireCampController : MonoBehaviour
     {
         if (Input.GetMouseButton(0)) //still have to check if the player have enought scraps
         {
-            UpgradeFireCamp();
+            UpgradeWell();
         }
     }
 
-    private void UpgradeFireCamp()
+    private void UpgradeWell()
     {
         if (_fireCampLvl == 0)
         {
-            _fireCampLvl++;
-            _transitionSaver.SetFireCampLvl(_fireCampLvl); //still have to check if max lvl is not yet reached.
+            _wellLvl++;
+            _transitionSaver.SetWellLvl(_wellLvl); //still have to check if max lvl is not yet reached.
             _upgradeCost *= 2;
-            _MainText.text = "The fireplace finally breathe\n again, making you feel\n a bit warmer";
-            _vitalityBoostText.text = "10";
+            _MainText.text = "You installed a rustic mechanism\n to access the water, making\n you fill a bit more energic";
+            _staminaBoostText.text = "10 %";
             _upgradeText.text = "Upgrade for " + _upgradeCost;
         }
     }
