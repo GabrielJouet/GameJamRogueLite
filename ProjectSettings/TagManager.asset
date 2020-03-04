@@ -51,3 +51,12 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: UIBackGround
+    uniqueID: 3562591339
+    locked: 0
+  - name: UIMidlleGround
+    uniqueID: 2666458137
+    locked: 0
+  - name: UIForeGround
+    uniqueID: 3716408323
+    locked: 0
