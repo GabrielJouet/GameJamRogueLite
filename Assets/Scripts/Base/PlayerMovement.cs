@@ -20,7 +20,7 @@ public class PlayerMovement : MonoBehaviour
             transform.Translate(Vector2.up * verticalInput * Time.deltaTime * _speed);
         }
 
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.R))
         {
             FindObjectOfType<TransitionSaver>().SetScrapCount(50);
             FindObjectOfType<TransitionSaver>().LoadBase();
