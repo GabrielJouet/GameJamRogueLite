@@ -10,7 +10,7 @@ public class Rooms : ScriptableObject
     private int _roomCount;
     
     [SerializeField]
-    [Range(0, 25)]
+    [Range(0, 0)]
     private int _secretRoomCount;
 
 
