@@ -153,7 +153,8 @@ public class CreationLevel : MonoBehaviour
         for (int i = 0; i < roomCount; i++)
         {
             InstantiateBodyRoom();
-            yield return new WaitForFixedUpdate();
+            if(i % 10 == 0)
+                yield return new WaitForFixedUpdate();
         }
 
         PostProcessingRooms();
