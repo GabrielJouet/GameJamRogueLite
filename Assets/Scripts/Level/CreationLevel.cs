@@ -1,5 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CreationLevel : MonoBehaviour
 {
@@ -16,6 +18,11 @@ public class CreationLevel : MonoBehaviour
     private Rooms _graveyardRooms;
 
 
+    [Header("UI")]
+    [SerializeField]
+    private Text _text;
+
+
     private Rooms _roomsUsed;
 
     private List<Room> _levelCreatedUsed = new List<Room>();
@@ -25,17 +32,37 @@ public class CreationLevel : MonoBehaviour
     private Vector2 _graveyardGenerationPoint;
     private Vector2 _cavernGenerationPoint;
 
+    private bool _forestLevelGenerated = false;
+    private bool _templeLevelGenerated = false;
+    private bool _caverLevelGenerated = false;
+    private bool _graveyardLevelGenerated = false;
+    private string _levelCurrentlyGenerated;
+
 
     //-------------------------------Creation Base Level Methods
     private void Start()
     {
-        _grid.CreateGrid();
+        StartCoroutine(CreateDungeon());
+    }
 
+
+    private IEnumerator CreateDungeon()
+    {
+        _grid.CreateGrid();
+        yield return new WaitForFixedUpdate();
+        _text.text = "Magic tree creation...";
+
+        //We create every forest room
         CreateForestLevel();
+        yield return new WaitUntil(() => _forestLevelGenerated);
+        _text.text = "Building marble tiles...";
+
+        //We create every temple room
         CreateTempleLevel();
+        yield return new WaitUntil(() => _templeLevelGenerated);
+        _text.text = "Killing humans...";
 
         _availablePlaces.Shuffle();
-
         _graveyardGenerationPoint = _availablePlaces[0];
         foreach (Vector2 current in _availablePlaces)
         {
@@ -50,21 +77,32 @@ public class CreationLevel : MonoBehaviour
                 _cavernGenerationPoint = current;
         }
 
+        //We create every graveyard room
         CreateGraveyardLevel();
+        yield return new WaitUntil(() => _graveyardLevelGenerated);
+        _text.text = "Carving gems...";
+
+        //We create every cavern room
         CreateCavernLevel();
+        yield return new WaitUntil(() => _caverLevelGenerated);
+        _text.text = "Awake monsters...";
 
         foreach (Room current in _levelCreated)
             current.InitializeRoom();
+        yield return new WaitForSeconds(0.5f);
+        _text.text = "Polishing Helmet...";
 
         Instantiate(FindObjectOfType<TransitionSaver>().GetPlayer(), _levelCreated[0].transform.position, Quaternion.identity);
         transform.position = new Vector3(_levelCreated[0].transform.position.x, _levelCreated[0].transform.position.y, -10);
+        yield return new WaitForSeconds(0.5f);
     }
 
 
     private void CreateForestLevel()
     {
         _roomsUsed = _forestRooms;
-        GenerateLevel(new Vector2(_grid.GetXSize() / 2, 1));
+        _levelCurrentlyGenerated = "Forest";
+        StartCoroutine(GenerateLevel(new Vector2(_grid.GetXSize() / 2, 1)));
     }
 
 
@@ -79,36 +117,61 @@ public class CreationLevel : MonoBehaviour
                 position = current;
         }
 
-        GenerateLevel(position);
+        _levelCurrentlyGenerated = "Temple";
+        StartCoroutine(GenerateLevel(position));
     }
 
 
     private void CreateGraveyardLevel()
     {
         _roomsUsed = _graveyardRooms;
-        GenerateLevel(_graveyardGenerationPoint);
+        _levelCurrentlyGenerated = "Graveyard";
+        StartCoroutine(GenerateLevel(_graveyardGenerationPoint));
     }
 
 
     private void CreateCavernLevel()
     {
         _roomsUsed = _cavernRooms;
-        GenerateLevel(_cavernGenerationPoint);
+        _levelCurrentlyGenerated = "Cavern";
+        StartCoroutine(GenerateLevel(_cavernGenerationPoint));
     }
 
 
-    private void GenerateLevel(Vector2 generationStartPosition)
+    private IEnumerator GenerateLevel(Vector2 generationStartPosition)
     {
         _levelCreatedUsed.Clear();
         _availablePlaces.Clear();
-        int roomCount = _roomsUsed.GetRoomCount() + Mathf.RoundToInt(Random.Range(0, _roomsUsed.GetRoomCount() * 0.25f));
 
         InstantiateBaseRoom(generationStartPosition);
+        yield return new WaitForFixedUpdate();
+
+        int roomCount = _roomsUsed.GetRoomCount() + Mathf.RoundToInt(Random.Range(0, _roomsUsed.GetRoomCount() * 0.25f));
 
         for (int i = 0; i < roomCount; i++)
+        {
             InstantiateBodyRoom();
+            yield return new WaitForFixedUpdate();
+        }
 
         PostProcessingRooms();
+        yield return new WaitForFixedUpdate();
+
+        switch(_levelCurrentlyGenerated)
+        {
+            case "Forest":
+                _forestLevelGenerated = true;
+                break;
+            case "Temple":
+                _templeLevelGenerated = true;
+                break;
+            case "Cavern":
+                _caverLevelGenerated = true;
+                break;
+            case "Graveyard":
+                _graveyardLevelGenerated = true;
+                break;
+        }
     }
 
     
