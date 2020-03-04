@@ -12,12 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4a25df56073a0940ab423a7f9007ece, type: 3}
   m_Name: GraveyardRooms
   m_EditorClassIdentifier: 
-  _roomCount: 250
-  _secretRoomCount: 25
+  _roomCount: 50
+  _secretRoomCount: 0
   _baseRooms:
   - {fileID: 2654299726172551349, guid: 2e32d12c8b354814c9b1526b659cd72b, type: 3}
   _bodyRooms:
   - {fileID: 2654299726172551349, guid: 0c5b8a4ecda94ad489c58d9c00443ce6, type: 3}
+  - {fileID: 2654299726172551349, guid: 5cf76f5ef301ec74595f23b270192c93, type: 3}
+  - {fileID: 2654299726172551349, guid: 057b7e50863d3b2408a0710b2940807d, type: 3}
+  - {fileID: 2654299726172551349, guid: d933c4d8fe4fdbb42b79f770df7b62ab, type: 3}
+  - {fileID: 2654299726172551349, guid: a5dd84e964bc95244840e890098a5021, type: 3}
+  - {fileID: 2654299726172551349, guid: 75b3516a52dafc44bb21326aa4775e43, type: 3}
   _bossRooms:
   - {fileID: 980700632584583380, guid: 10151e95591cde64c82d7df99c38b3e8, type: 3}
   _itemRooms:
