@@ -37,8 +37,10 @@ public class FireCampController : MonoBehaviour
     {
         if (_fireCampLvl == 0)
         {
+            _fireCampLvl++;
             _transitionSaver.SetFireCampLvl(_fireCampLvl); //still have to check if max lvl is not yet reached.
             _upgradeCost *= 2;
+            Debug.Log(_upgradeCost);
             _MainText.text = "The fireplace finally breathe\n again, making you feel\n a bit warmer";
             _vitalityBoostText.text = "10";
             _upgradeText.text = "Upgrade for " + _upgradeCost;

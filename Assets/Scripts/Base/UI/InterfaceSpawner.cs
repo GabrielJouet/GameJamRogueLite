@@ -6,21 +6,42 @@ public class InterfaceSpawner : MonoBehaviour
 {
     [SerializeField]
     private int _interfaceId;
+    private bool _canOpenInterface = false;
 
     [SerializeField]
-    private GameObject _campFireInterface;
+    private GameObject _interfacePrefab;
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.E) && _canOpenInterface)
+        {
+            switch (_interfaceId)
+            {
+                case 0: //FireCamp
+                    Instantiate(_interfacePrefab, new Vector3(0f,0f,0f), Quaternion.identity);
+                    break;
+                case 1: //Well
+                    break;
+                case 2: //ArmorStand
+                    break;
+                case 3: //Backpack
+                    break;
+                case 4: //Spells
+                    Instantiate(_interfacePrefab, new Vector3(0f, 0f, 0f), Quaternion.identity);
+                    break;
+                case 5: // ShoesStorage
+                    break;
+            }
+        }
+    }
+
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag == "Player")
         {
-            switch (_interfaceId)
-            {
-                case 0:
-                    Debug.Log("ok");
-                    Instantiate(_campFireInterface);
-                    break;
-            }
+            _canOpenInterface = true;
         }
+        
     }
 }
