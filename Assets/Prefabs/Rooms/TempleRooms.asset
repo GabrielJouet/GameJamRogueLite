@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4a25df56073a0940ab423a7f9007ece, type: 3}
   m_Name: TempleRooms
   m_EditorClassIdentifier: 
-  _roomCount: 250
-  _secretRoomCount: 25
+  _roomCount: 50
+  _secretRoomCount: 5
   _baseRooms:
   - {fileID: 2654299726172551349, guid: c27b75a4c4b61a347b15f94c3a78e7c5, type: 3}
   _bodyRooms:

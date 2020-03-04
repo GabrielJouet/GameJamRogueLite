@@ -21,6 +21,8 @@ public class CreationLevel : MonoBehaviour
     [Header("UI")]
     [SerializeField]
     private Text _text;
+    [SerializeField]
+    private GameObject _generationUI;
 
 
     private Rooms _roomsUsed;
@@ -90,11 +92,11 @@ public class CreationLevel : MonoBehaviour
         foreach (Room current in _levelCreated)
             current.InitializeRoom();
         yield return new WaitForSeconds(0.5f);
-        _text.text = "Polishing Helmet...";
+        _generationUI.SetActive(false);
 
         Instantiate(FindObjectOfType<TransitionSaver>().GetPlayer(), _levelCreated[0].transform.position, Quaternion.identity);
         transform.position = new Vector3(_levelCreated[0].transform.position.x, _levelCreated[0].transform.position.y, -10);
-        yield return new WaitForSeconds(0.5f);
+        FindObjectOfType<FollowCamera>().FollowPlayer(transform.position);
     }
 
 

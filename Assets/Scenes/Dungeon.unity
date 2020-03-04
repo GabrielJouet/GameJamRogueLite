@@ -234,6 +234,7 @@ MonoBehaviour:
   _cavernRooms: {fileID: 11400000, guid: 8c7091c2cc75fe74689ac5f39fba7cad, type: 2}
   _graveyardRooms: {fileID: 11400000, guid: 1e17cee60ffb1fd41a95997f0cb89926, type: 2}
   _text: {fileID: 942025731}
+  _generationUI: {fileID: 1291888926}
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
