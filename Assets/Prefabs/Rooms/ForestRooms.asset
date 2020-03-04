@@ -13,11 +13,19 @@ MonoBehaviour:
   m_Name: ForestRooms
   m_EditorClassIdentifier: 
   _roomCount: 50
-  _secretRoomCount: 5
+  _secretRoomCount: 0
   _baseRooms:
   - {fileID: 2654299726172551349, guid: f07a413adaad5ec4c8be3b64022ec64d, type: 3}
   _bodyRooms:
   - {fileID: 2654299726172551349, guid: 6409c8d7afdc24c49a19f013ed3051df, type: 3}
+  - {fileID: 2654299726172551349, guid: be2034684b683af43b2fa39fcb59fa22, type: 3}
+  - {fileID: 2654299726172551349, guid: 600e8faa48cebd34c98431d8315e432c, type: 3}
+  - {fileID: 2654299726172551349, guid: 8a28a4ed03d1d82449e3d28c02a4f3dd, type: 3}
+  - {fileID: 2654299726172551349, guid: 037ae06770916034aaaf3859343f059e, type: 3}
+  - {fileID: 2654299726172551349, guid: 63b0b9e29c65f794fb44bc95aca0c7ae, type: 3}
+  - {fileID: 2654299726172551349, guid: 92e9894b00a2a2046857c779362b61fc, type: 3}
+  - {fileID: 2654299726172551349, guid: 544fcfb87fa9b7c40b888dc7f04e2645, type: 3}
+  - {fileID: 2654299726172551349, guid: a7e7d04c39ebfe2449c55fb9eaa054f5, type: 3}
   _bossRooms:
   - {fileID: 1362829474639128346, guid: 3201a8e552be94841b36c1a16a5dacbd, type: 3}
   _itemRooms:

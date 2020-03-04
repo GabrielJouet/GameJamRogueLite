@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: TempleRooms
   m_EditorClassIdentifier: 
   _roomCount: 50
-  _secretRoomCount: 5
+  _secretRoomCount: 0
   _baseRooms:
   - {fileID: 2654299726172551349, guid: c27b75a4c4b61a347b15f94c3a78e7c5, type: 3}
   _bodyRooms:
