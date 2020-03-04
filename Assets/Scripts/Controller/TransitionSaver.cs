@@ -19,6 +19,8 @@ public class TransitionSaver : MonoBehaviour
     [SerializeField]
     private PlayerMovement _player;
 
+    
+    private bool _dungeonLoaded = false;
 
 
     private void Awake()
@@ -41,13 +43,21 @@ public class TransitionSaver : MonoBehaviour
 
     public void LoadDungeon()
     {
-        SceneManager.LoadScene("Dungeon");
+        if(!_dungeonLoaded)
+        {
+            SceneManager.LoadScene("Dungeon");
+            _dungeonLoaded = true;
+        }
     }
 
 
     public void LoadBase()
     {
-        SceneManager.LoadScene("Base");
+        if(_dungeonLoaded)
+        {
+            SceneManager.LoadScene("Base");
+            _dungeonLoaded = false;
+        }
     }
 
     public int GetScrapCount() { return _scrapCount; }
