@@ -34,10 +34,9 @@ public class WellInterfaceController : MonoBehaviour
             UpgradeWell();
         }
     }
-
     private void UpgradeWell()
     {
-        if (_fireCampLvl == 0)
+        if (_wellLvl == 0)
         {
             _wellLvl++;
             _transitionSaver.SetWellLvl(_wellLvl); //still have to check if max lvl is not yet reached.

@@ -13,22 +13,7 @@ public class SpellSelector : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-
-            switch (_spellId)
-            {
-                case 0:
-                    _spellInterfaceController.ChangeSelectedSpell(_spellId);
-                    break;
-                case 1:
-                    _spellInterfaceController.ChangeSelectedSpell(_spellId);
-                    break;
-                case 2:
-                    _spellInterfaceController.ChangeSelectedSpell(_spellId);
-                    break;
-                case 3:
-                    _spellInterfaceController.ChangeSelectedSpell(_spellId);
-                    break;
-            }
+            _spellInterfaceController.ChangeSelectedSpell(_spellId);
         }
     }
 }
