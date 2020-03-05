@@ -227,17 +227,29 @@ public class LevelGrid : MonoBehaviour
         _miniMapGrid[position.GetX(), position.GetY()].sprite = position.GetActiveMiniMapIcon();
 
 
-        if(CheckRoomExistence(position.GetX() + 1, position.GetY()))
+        if (CheckRoomExistence(position.GetX() + 1, position.GetY()))
+        {
             _miniMapGrid[position.GetX() + 1, position.GetY()].sprite = GetRoomAtPoint(position.GetX() + 1, position.GetY()).GetMiniMapIcon();
+            _miniMapGrid[position.GetX() + 1, position.GetY()].gameObject.SetActive(true);
+        }
 
         if (CheckRoomExistence(position.GetX() - 1, position.GetY()))
+        {
             _miniMapGrid[position.GetX() - 1, position.GetY()].sprite = GetRoomAtPoint(position.GetX() - 1, position.GetY()).GetMiniMapIcon();
+            _miniMapGrid[position.GetX() - 1, position.GetY()].gameObject.SetActive(true);
+        }
 
         if (CheckRoomExistence(position.GetX(), position.GetY() + 1))
+        {
             _miniMapGrid[position.GetX(), position.GetY() + 1].sprite = GetRoomAtPoint(position.GetX(), position.GetY() + 1).GetMiniMapIcon();
+            _miniMapGrid[position.GetX(), position.GetY() + 1].gameObject.SetActive(true);
+        }
 
         if (CheckRoomExistence(position.GetX(), position.GetY() - 1))
+        {
             _miniMapGrid[position.GetX(), position.GetY() - 1].sprite = GetRoomAtPoint(position.GetX(), position.GetY() - 1).GetMiniMapIcon();
+            _miniMapGrid[position.GetX(), position.GetY() - 1].gameObject.SetActive(true);
+        }
     }
 
 
