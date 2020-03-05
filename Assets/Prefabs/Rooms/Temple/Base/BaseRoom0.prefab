@@ -124,6 +124,9 @@ MonoBehaviour:
   _downDoor: {fileID: 7454257157240358309}
   _rightDoor: {fileID: 815316274724589809}
   _roomEnemies: []
+  _miniMapActiveIcon: {fileID: 21300000, guid: 60a82ffc229d55b41a6e91e9180cdee6, type: 3}
+  _miniMapSeenIcon: {fileID: 21300000, guid: e91855c867387c64da5eff3fec2e19c5, type: 3}
+  _miniMapUnseenIcon: {fileID: 21300000, guid: 5e991dcbb9f81fa49bf8c4a69852e42f, type: 3}
 --- !u!114 &3026716608609521065
 MonoBehaviour:
   m_ObjectHideFlags: 0
