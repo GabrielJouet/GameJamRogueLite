@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 
 public class LevelGrid : MonoBehaviour
 {
@@ -9,9 +10,16 @@ public class LevelGrid : MonoBehaviour
     [SerializeField]
     [Range(5, 100)]
     private int _ySizeMax;
+
+
+    [SerializeField]
+    private RectTransform _miniMap;
+    [SerializeField]
+    private GameObject _roomIcon;
     
 
     private Room[,] _grid;
+    private Image[,] _miniMapGrid;
 
 
     //-------------------------------Grid Creation Methods
@@ -181,6 +189,55 @@ public class LevelGrid : MonoBehaviour
             count += _grid[xPos, yPos + 1] != null ? 1 : 0;
 
         return count;
+    }
+
+
+    public void GenerateMiniMap()
+    {
+        _miniMapGrid = new Image[_xSizeMax, _ySizeMax];
+
+        for (int x = 0; x < _xSizeMax; x ++)
+        {
+            for(int y = 0; y < _ySizeMax; y ++)
+            {
+                if(CheckRoomExistence(x,y))
+                {
+                    GameObject newIcon = Instantiate(_roomIcon, _miniMap);
+                    newIcon.GetComponent<RectTransform>().localPosition = new Vector3(
+                        (_roomIcon.GetComponent<RectTransform>().sizeDelta.x + 5) * x,
+                        (_roomIcon.GetComponent<RectTransform>().sizeDelta.y + 5) * y,
+                        0);
+
+                    _miniMapGrid[x, y] = newIcon.GetComponent<Image>();
+                    newIcon.SetActive(false);
+                }
+            }
+        }
+    }
+
+
+    public void MoveMiniMap(Room position)
+    {
+        _miniMap.GetComponent<RectTransform>().localPosition = new Vector3(
+            -(_roomIcon.GetComponent<RectTransform>().sizeDelta.x + 5) * position.GetX(),
+            -(_roomIcon.GetComponent<RectTransform>().sizeDelta.y + 5) * position.GetY(),
+            0);
+
+        _miniMapGrid[position.GetX(), position.GetY()].gameObject.SetActive(true);
+        _miniMapGrid[position.GetX(), position.GetY()].sprite = position.GetActiveMiniMapIcon();
+
+
+        if(CheckRoomExistence(position.GetX() + 1, position.GetY()))
+            _miniMapGrid[position.GetX() + 1, position.GetY()].sprite = GetRoomAtPoint(position.GetX() + 1, position.GetY()).GetMiniMapIcon();
+
+        if (CheckRoomExistence(position.GetX() - 1, position.GetY()))
+            _miniMapGrid[position.GetX() - 1, position.GetY()].sprite = GetRoomAtPoint(position.GetX() - 1, position.GetY()).GetMiniMapIcon();
+
+        if (CheckRoomExistence(position.GetX(), position.GetY() + 1))
+            _miniMapGrid[position.GetX(), position.GetY() + 1].sprite = GetRoomAtPoint(position.GetX(), position.GetY() + 1).GetMiniMapIcon();
+
+        if (CheckRoomExistence(position.GetX(), position.GetY() - 1))
+            _miniMapGrid[position.GetX(), position.GetY() - 1].sprite = GetRoomAtPoint(position.GetX(), position.GetY() - 1).GetMiniMapIcon();
     }
 
 

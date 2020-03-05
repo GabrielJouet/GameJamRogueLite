@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -104,6 +104,9 @@ public class CreationLevel : MonoBehaviour
 
         foreach (Room current in _levelCreated)
             current.InitializeRoom();
+
+        _grid.GenerateMiniMap();
+        _grid.MoveMiniMap(_levelCreated[0]);
         yield return new WaitForSeconds(0.5f);
         _generationUI.SetActive(false);
 
@@ -330,8 +333,7 @@ public class CreationLevel : MonoBehaviour
         bufferRoom.SetY(Mathf.FloorToInt(placeToUse.y));
 
         _grid.AddRoomToLevel(bufferRoom);
-
-        bufferRoom.GetComponent<BossRoom>().InitializeRoom();
+        _levelCreated.Add(bufferRoom);
     }
 
 

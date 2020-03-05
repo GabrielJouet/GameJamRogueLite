@@ -13,7 +13,7 @@ public class BossRoom : Room
         if (_roomEnemies.Count == 0)
         {
             _levelTransition.SetActive(true);
-            RoomFinished();
+            //RoomFinished();
         }
     }
 }
