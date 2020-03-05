@@ -36,8 +36,8 @@ public class Door : MonoBehaviour
     {
         _up = transform.position.y > _parentRoom.transform.position.y;
         _down = transform.position.y < _parentRoom.transform.position.y;
-        _left = transform.position.x > _parentRoom.transform.position.x;
-        _right = transform.position.x < _parentRoom.transform.position.x;
+        _left = transform.position.x < _parentRoom.transform.position.x;
+        _right = transform.position.x > _parentRoom.transform.position.x;
     }
 
 
