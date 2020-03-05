@@ -113,6 +113,7 @@ public class CreationLevel : MonoBehaviour
         Instantiate(FindObjectOfType<TransitionSaver>().GetPlayer(), _levelCreated[0].transform.position, Quaternion.identity);
         transform.position = new Vector3(_levelCreated[0].transform.position.x, _levelCreated[0].transform.position.y, -10);
         FindObjectOfType<FollowCamera>().FollowPlayer(transform.position);
+        _levelCreated[0].RoomEntered();
     }
 
 
