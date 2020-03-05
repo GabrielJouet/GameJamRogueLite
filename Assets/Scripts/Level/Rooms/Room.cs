@@ -25,11 +25,21 @@ public class Room : MonoBehaviour
     [SerializeField]
     protected List<GameObject> _roomEnemies = new List<GameObject>();
 
-    
+
+    [Header("UI")]
+    [SerializeField]
+    private Sprite _miniMapActiveIcon;
+    [SerializeField]
+    private Sprite _miniMapSeenIcon;
+    [SerializeField]
+    private Sprite _miniMapUnseenIcon;
+
+
+
     protected int _x, _y;
     protected LevelGrid _grid;
     
-    protected bool _completed = false;
+    protected bool _seen = false;
 
     
 
@@ -37,8 +47,6 @@ public class Room : MonoBehaviour
     public void InitializeRoom()
     {
         CheckNeighbours();
-
-        _completed = _roomEnemies.Count == 0;
 
         foreach (GameObject current in _roomEnemies)
             current.SetActive(false);
@@ -119,47 +127,27 @@ public class Room : MonoBehaviour
 
 
 
-    //-------------------------------Player Interaction Methods
-    protected void RoomFinished()
-    {
-        _completed = true;
-
-        //We open every door that can be opened
-        if (_upDoor != null && _upDoor.GetCanBeOpened())
-            _upDoor.Open();
-
-        if (_downDoor != null && _downDoor.GetCanBeOpened())
-            _downDoor.Open();
-
-        if (_rightDoor != null && _rightDoor.GetCanBeOpened())
-            _rightDoor.Open();
-
-        if (_leftDoor != null && _leftDoor.GetCanBeOpened())
-            _leftDoor.Open();
-    }
-
-    
+    //-------------------------------Player Interaction Methods    
     public void RoomEntered()
     {
-        if (!_completed)
-        {
-            /*
-            foreach (GameObject current in _roomEnemies)
-                current.GetComponent<Enemy>().PlayerEntered(this);
-            */
-            //We close every doors
-            if (_upDoor != null && _upDoor.GetCanBeClosed())
-                _upDoor.Close();
+        _seen = true;
+        /*
+        foreach (GameObject current in _roomEnemies)
+            current.GetComponent<Enemy>().PlayerEntered(this);
+        
+        //We close every doors
+        if (_upDoor != null && _upDoor.GetCanBeClosed())
+            _upDoor.Close();
 
-            if (_downDoor != null && _downDoor.GetCanBeClosed())
-                _downDoor.Close();
+        if (_downDoor != null && _downDoor.GetCanBeClosed())
+            _downDoor.Close();
 
-            if (_rightDoor != null && _rightDoor.GetCanBeClosed())
-                _rightDoor.Close();
+        if (_rightDoor != null && _rightDoor.GetCanBeClosed())
+            _rightDoor.Close();
 
-            if (_leftDoor != null && _leftDoor.GetCanBeClosed())
-                _leftDoor.Close();
-        }
+        if (_leftDoor != null && _leftDoor.GetCanBeClosed())
+            _leftDoor.Close();
+        */
     }
 
 
@@ -168,9 +156,10 @@ public class Room : MonoBehaviour
     public void EnemyKilled(GameObject other)
     {
         _roomEnemies.Remove(other);
-
+        /*
         if (_roomEnemies.Count == 0)
             RoomFinished();
+            */
     }
 
 
@@ -198,4 +187,10 @@ public class Room : MonoBehaviour
     public bool GetCanBeChanged() { return _canBeChanged; }
 
     public Transform GetCameraPosition() { return _cameraPosition; }
+
+    public Sprite GetMiniMapIcon() { return _seen? _miniMapSeenIcon : _miniMapUnseenIcon; }
+
+    public Sprite GetActiveMiniMapIcon() { return _miniMapActiveIcon; }
+
+    public bool GetSeen() { return _seen; }
 }

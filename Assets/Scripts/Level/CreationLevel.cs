@@ -25,6 +25,19 @@ public class CreationLevel : MonoBehaviour
     private GameObject _generationUI;
 
 
+    [Header("Generation Texts")]
+    [SerializeField]
+    private List<string> _forestGenerationTexts;
+    [SerializeField]
+    private List<string> _templeGenerationTexts;
+    [SerializeField]
+    private List<string> _cavernGenerationTexts;
+    [SerializeField]
+    private List<string> _graveyardGenerationTexts;
+    [SerializeField]
+    private List<string> _endGenerationTexts;
+
+
     private Rooms _roomsUsed;
 
     private List<Room> _levelCreatedUsed = new List<Room>();
@@ -52,17 +65,17 @@ public class CreationLevel : MonoBehaviour
     {
         _grid.CreateGrid();
         yield return new WaitForFixedUpdate();
-        _text.text = "Magic tree creation...";
+        _text.text = _forestGenerationTexts[Random.Range(0, _forestGenerationTexts.Count)];
 
         //We create every forest room
         CreateForestLevel();
         yield return new WaitUntil(() => _forestLevelGenerated);
-        _text.text = "Building marble tiles...";
+        _text.text = _templeGenerationTexts[Random.Range(0, _templeGenerationTexts.Count)];
 
         //We create every temple room
         CreateTempleLevel();
         yield return new WaitUntil(() => _templeLevelGenerated);
-        _text.text = "Killing humans...";
+        _text.text = _graveyardGenerationTexts[Random.Range(0, _graveyardGenerationTexts.Count)];
 
         _availablePlaces.Shuffle();
         _graveyardGenerationPoint = _availablePlaces[0];
@@ -82,15 +95,18 @@ public class CreationLevel : MonoBehaviour
         //We create every graveyard room
         CreateGraveyardLevel();
         yield return new WaitUntil(() => _graveyardLevelGenerated);
-        _text.text = "Carving gems...";
+        _text.text = _cavernGenerationTexts[Random.Range(0, _cavernGenerationTexts.Count)];
 
         //We create every cavern room
         CreateCavernLevel();
         yield return new WaitUntil(() => _caverLevelGenerated);
-        _text.text = "Awake monsters...";
+        _text.text = _endGenerationTexts[Random.Range(0, _endGenerationTexts.Count)];
 
         foreach (Room current in _levelCreated)
             current.InitializeRoom();
+
+        _grid.GenerateMiniMap();
+        _grid.MoveMiniMap(_levelCreated[0]);
         yield return new WaitForSeconds(0.5f);
         _generationUI.SetActive(false);
 
@@ -317,8 +333,7 @@ public class CreationLevel : MonoBehaviour
         bufferRoom.SetY(Mathf.FloorToInt(placeToUse.y));
 
         _grid.AddRoomToLevel(bufferRoom);
-
-        bufferRoom.GetComponent<BossRoom>().InitializeRoom();
+        _levelCreated.Add(bufferRoom);
     }
 
 

@@ -76,6 +76,7 @@ public class Door : MonoBehaviour
                _right && collision.transform.position.x < transform.position.x || 
                _left  && collision.transform.position.x > transform.position.x)
             {
+                FindObjectOfType<LevelGrid>().MoveMiniMap(_parentRoom);
                 FindObjectOfType<FollowCamera>().FollowPlayer(_parentRoom.GetCameraPosition().position);
                 _parentRoom.RoomEntered();
             }
