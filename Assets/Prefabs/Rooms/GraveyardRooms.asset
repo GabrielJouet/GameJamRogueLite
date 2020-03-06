@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4a25df56073a0940ab423a7f9007ece, type: 3}
   m_Name: GraveyardRooms
   m_EditorClassIdentifier: 
-  _roomCount: 55
+  _roomCount: 45
   _secretRoomCount: 0
   _baseRooms:
   - {fileID: 2654299726172551349, guid: 2e32d12c8b354814c9b1526b659cd72b, type: 3}
