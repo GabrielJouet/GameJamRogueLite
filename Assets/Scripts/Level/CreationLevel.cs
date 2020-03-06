@@ -44,9 +44,6 @@ public class CreationLevel : MonoBehaviour
     private List<Room> _levelCreated = new List<Room>();
     private List<Vector2> _availablePlaces = new List<Vector2>();
 
-    private Vector2 _graveyardGenerationPoint;
-    private Vector2 _cavernGenerationPoint;
-
     private bool _forestLevelGenerated = false;
     private bool _templeLevelGenerated = false;
     private bool _caverLevelGenerated = false;
@@ -66,39 +63,22 @@ public class CreationLevel : MonoBehaviour
         _grid.CreateGrid();
         yield return new WaitForFixedUpdate();
         _text.text = _forestGenerationTexts[Random.Range(0, _forestGenerationTexts.Count)];
-
-        //We create every forest room
+        
         CreateForestLevel();
         yield return new WaitUntil(() => _forestLevelGenerated);
         _text.text = _templeGenerationTexts[Random.Range(0, _templeGenerationTexts.Count)];
-
-        //We create every temple room
+        
         CreateTempleLevel();
         yield return new WaitUntil(() => _templeLevelGenerated);
         _text.text = _graveyardGenerationTexts[Random.Range(0, _graveyardGenerationTexts.Count)];
 
         _availablePlaces.Shuffle();
-        _graveyardGenerationPoint = _availablePlaces[0];
-        foreach (Vector2 current in _availablePlaces)
-        {
-            if (current.x < _graveyardGenerationPoint.x)
-                _graveyardGenerationPoint = current;
-        }
-
-        _cavernGenerationPoint = _availablePlaces[0];
-        foreach (Vector2 current in _availablePlaces)
-        {
-            if (current.x > _cavernGenerationPoint.x)
-                _cavernGenerationPoint = current;
-        }
-
-        //We create every graveyard room
-        CreateGraveyardLevel();
+        Vector2 cavernGeneration = RecoverCavernGenerationPoint();
+        CreateGraveyardLevel(RecoverGraveyardGenerationPoint());
         yield return new WaitUntil(() => _graveyardLevelGenerated);
         _text.text = _cavernGenerationTexts[Random.Range(0, _cavernGenerationTexts.Count)];
-
-        //We create every cavern room
-        CreateCavernLevel();
+        
+        CreateCavernLevel(cavernGeneration);
         yield return new WaitUntil(() => _caverLevelGenerated);
         _text.text = _endGenerationTexts[Random.Range(0, _endGenerationTexts.Count)];
 
@@ -114,6 +94,32 @@ public class CreationLevel : MonoBehaviour
         transform.position = new Vector3(_levelCreated[0].transform.position.x, _levelCreated[0].transform.position.y, -10);
         FindObjectOfType<FollowCamera>().FollowPlayer(transform.position);
         _levelCreated[0].RoomEntered();
+    }
+
+
+    private Vector2 RecoverGraveyardGenerationPoint()
+    {
+        Vector2 newPosition = _availablePlaces[0];
+        foreach (Vector2 current in _availablePlaces)
+        {
+            if (current.x < newPosition.x)
+                newPosition = current;
+        }
+
+        return newPosition;
+    }
+
+
+    private Vector2 RecoverCavernGenerationPoint()
+    {
+        Vector2 newPosition = _availablePlaces[0];
+        foreach (Vector2 current in _availablePlaces)
+        {
+            if (current.x > newPosition.x)
+                newPosition = current;
+        }
+
+        return newPosition;
     }
 
 
@@ -141,19 +147,19 @@ public class CreationLevel : MonoBehaviour
     }
 
 
-    private void CreateGraveyardLevel()
+    private void CreateGraveyardLevel(Vector2 graveyardGenerationPoint)
     {
         _roomsUsed = _graveyardRooms;
         _levelCurrentlyGenerated = "Graveyard";
-        StartCoroutine(GenerateLevel(_graveyardGenerationPoint));
+        StartCoroutine(GenerateLevel(graveyardGenerationPoint));
     }
 
 
-    private void CreateCavernLevel()
+    private void CreateCavernLevel(Vector2 cavernGenerationPoint)
     {
         _roomsUsed = _cavernRooms;
         _levelCurrentlyGenerated = "Cavern";
-        StartCoroutine(GenerateLevel(_cavernGenerationPoint));
+        StartCoroutine(GenerateLevel(cavernGenerationPoint));
     }
 
 
@@ -299,7 +305,7 @@ public class CreationLevel : MonoBehaviour
         CheckAllAvailablePlaces();
         AddBossRoom();
 
-        AddItemRoom();
+        //AddItemRoom();
 
         for (int i = 0; i < _roomsUsed.GetSecretRoomCount(); i++)
             AddSecretRoom();
@@ -317,7 +323,7 @@ public class CreationLevel : MonoBehaviour
             if(_grid.FindPlaceNeighbour(Mathf.FloorToInt(current.x), Mathf.FloorToInt(current.y)) == 1)
             {
                 //We compute its distance from origin
-                float dSqrToTarget = Mathf.Sqrt((new Vector2(7, 7) - new Vector2(current.x, current.y)).sqrMagnitude);
+                float dSqrToTarget = Mathf.Sqrt((new Vector2(_levelCreatedUsed[0].GetX(), _levelCreatedUsed[0].GetY()) - new Vector2(current.x, current.y)).sqrMagnitude);
 
                 //And if it's more than previous we store it
                 if (dSqrToTarget > distanceMin)
