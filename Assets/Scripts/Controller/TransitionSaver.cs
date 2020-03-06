@@ -13,8 +13,9 @@ public class TransitionSaver : MonoBehaviour
     private int _bootsLvl;
     private int _selectedSpell;
     private int _spellLvl;
-    
 
+    
+    private bool _canReturnToBase = true;
 
     [SerializeField]
     private PlayerMovement _player;
@@ -81,6 +82,10 @@ public class TransitionSaver : MonoBehaviour
     public void SetSelectedSpell(int lvl) { _selectedSpell = lvl; }
 
     public void SetSpellLvl(int lvl) { _spellLvl = lvl; }
+
+    public bool GetCanTeleport() { return _canReturnToBase; }
+
+    public void SetCanTeleport(bool other) { _canReturnToBase = other; }
 
 
 
