@@ -15,13 +15,20 @@ public class TransitionSaver : MonoBehaviour
     private int _spellLvl;
 
     
-    private bool _canReturnToBase = true;
 
     [SerializeField]
     private PlayerMovement _player;
 
     
     private bool _dungeonLoaded = false;
+    private bool _canReturnToBase = true;
+
+    [SerializeField]
+    private bool _forestKeyGained = false;
+    [SerializeField]
+    private bool _cavernKeyGained = false;
+    [SerializeField]
+    private bool _graveyardKeyGained = false;
 
 
     private void Awake()
@@ -86,6 +93,18 @@ public class TransitionSaver : MonoBehaviour
     public bool GetCanTeleport() { return _canReturnToBase; }
 
     public void SetCanTeleport(bool other) { _canReturnToBase = other; }
+
+    public bool GetGraveyardKey() { return _graveyardKeyGained; }
+
+    public bool GetForestKey() { return _forestKeyGained; }
+
+    public bool GetCavernKey() { return _cavernKeyGained; }
+
+    public void SetGraveyardKey(bool other) { _graveyardKeyGained = other; }
+
+    public void SetForestKey(bool other) { _forestKeyGained = other; }
+
+    public void SetCavernKey(bool other) { _cavernKeyGained = other; }
 
 
 
