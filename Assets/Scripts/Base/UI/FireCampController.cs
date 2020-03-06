@@ -25,22 +25,15 @@ public class FireCampController : MonoBehaviour
             Debug.Log("transition Server Object hasn't been instantiated");
         }
     }
-    private void OnMouseOver()
-    {
-        if (Input.GetMouseButton(0)) //still have to check if the player have enought scraps
-        {
-            UpgradeFireCamp();
-        }
-    }
 
-    private void UpgradeFireCamp()
+    public void UpgradeFireCamp()
     {
         if (_fireCampLvl == 0)
         {
             _fireCampLvl++;
             _transitionSaver.SetFireCampLvl(_fireCampLvl); //still have to check if max lvl is not yet reached.
             _upgradeCost *= 2;
-            _MainText.text = "The fireplace finally breathe\n again, making you feel\n a bit warmer";
+            _MainText.text = "The fireplace finally\nbreathe again, making you feel a bit warmer";
             _vitalityBoostText.text = "10";
             _upgradeText.text = "Upgrade for " + _upgradeCost;
         }

@@ -3,15 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class WellInterfaceController : MonoBehaviour
+public class ArmorInterfaceController : MonoBehaviour
 {
-    private int _wellLvl = 0;
+    private int _armorLvl;
     private int _upgradeCost = 20;
 
     [SerializeField]
     private Text _MainText;
     [SerializeField]
-    private Text _staminaBoostText;
+    private Text _armorBoostText;
     [SerializeField]
     private Text _upgradeText;
 
@@ -25,16 +25,15 @@ public class WellInterfaceController : MonoBehaviour
             Debug.Log("transition Server Object hasn't been instantiated");
         }
     }
-
-    public void UpgradeWell()
+    public void UpgradeArmor()
     {
-        if (_wellLvl == 0)
+        if (_armorLvl == 0)
         {
-            _wellLvl++;
-            _transitionSaver.SetWellLvl(_wellLvl); //still have to check if max lvl is not yet reached.
+            _armorLvl++;
+            _transitionSaver.SetWellLvl(_armorLvl); //still have to check if max lvl is not yet reached.
             _upgradeCost *= 2;
-            _MainText.text = "You installed a rustic\n mechanism to access the water, making you fill\n a bit more energic";
-            _staminaBoostText.text = "10 %";
+            _MainText.text = "Your armor is now poorly fixed, making you a bit more resistant to any damage";
+            _armorBoostText.text = "10";
             _upgradeText.text = "Upgrade for " + _upgradeCost;
         }
     }

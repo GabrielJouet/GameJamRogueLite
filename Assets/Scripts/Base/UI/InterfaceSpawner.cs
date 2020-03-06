@@ -4,35 +4,18 @@ using UnityEngine;
 
 public class InterfaceSpawner : MonoBehaviour
 {
-    [SerializeField]
-    private int _interfaceId;
     private bool _canOpenInterface = false;
+    private bool _interfaceIsOpen = false;
 
     [SerializeField]
-    private GameObject _interfacePrefab;
+    private GameObject _interface;
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E) && _canOpenInterface)
+        if (Input.GetKeyDown(KeyCode.E) && _canOpenInterface && !_interfaceIsOpen)
         {
-            switch (_interfaceId)
-            {
-                case 0: //FireCamp
-                    Instantiate(_interfacePrefab, new Vector3(0f,0f,0f), Quaternion.identity);
-                    break;
-                case 1: //Well
-                    Instantiate(_interfacePrefab, new Vector3(0f, 0f, 0f), Quaternion.identity);
-                    break;
-                case 2: //ArmorStand
-                    break;
-                case 3: //Backpack
-                    break;
-                case 4: //Spells
-                    Instantiate(_interfacePrefab, new Vector3(0f, 0f, 0f), Quaternion.identity);
-                    break;
-                case 5: // ShoesStorage
-                    break;
-            }
+            _interface.SetActive(true);
+            _interfaceIsOpen = true;
         }
     }
 
@@ -43,5 +26,14 @@ public class InterfaceSpawner : MonoBehaviour
             _canOpenInterface = true;
         }
         
+    }
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.tag == "Player")
+        {
+            _interface.SetActive(false);
+            _interfaceIsOpen = false;
+            _canOpenInterface = false;
+        }
     }
 }
