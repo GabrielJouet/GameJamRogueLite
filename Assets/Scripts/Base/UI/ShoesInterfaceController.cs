@@ -3,15 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ArmorInterfaceController : MonoBehaviour
+public class ShoesInterfaceController : MonoBehaviour
 {
-    private int _armorLvl;
+    private int _shoesLvl;
     private int _upgradeCost = 20;
 
     [SerializeField]
     private Text _MainText;
     [SerializeField]
-    private Text _armorBoostText;
+    private Text _shoesBoostText;
     [SerializeField]
     private Text _upgradeText;
 
@@ -25,15 +25,15 @@ public class ArmorInterfaceController : MonoBehaviour
             Debug.Log("transition Server Object hasn't been instantiated");
         }
     }
-    public void UpgradeArmor()
+    public void UpgradeShoes()
     {
-        if (_armorLvl == 0)
+        if (_shoesLvl == 0)
         {
-            _armorLvl++;
-            _transitionSaver.SetArmorLvl(_armorLvl); //still have to check if max lvl is not yet reached.
+            _shoesLvl++;
+            _transitionSaver.SetShoesLvl(_shoesLvl); //still have to check if max lvl is not yet reached.
             _upgradeCost *= 2;
-            _MainText.text = "Your armor is now poorly fixed, making you a bit more resistant to any damage";
-            _armorBoostText.text = "10";
+            _MainText.text = "Your shoes are now poorly fixed, making you a bit more at ease";
+            _shoesBoostText.text = "5 %";
             _upgradeText.text = "Upgrade for " + _upgradeCost;
         }
     }

@@ -16,6 +16,8 @@ public class FireCampController : MonoBehaviour
     private Text _upgradeText;
 
     private TransitionSaver _transitionSaver;
+    [SerializeField]
+    private Animator _campFireAnimator;
 
     private void Start()
     {
@@ -28,14 +30,29 @@ public class FireCampController : MonoBehaviour
 
     public void UpgradeFireCamp()
     {
-        if (_fireCampLvl == 0)
+        switch (_fireCampLvl) //still have to check if player has enough scrap for each lvl
         {
-            _fireCampLvl++;
-            _transitionSaver.SetFireCampLvl(_fireCampLvl); //still have to check if max lvl is not yet reached.
-            _upgradeCost *= 2;
-            _MainText.text = "The fireplace finally\nbreathe again, making you feel a bit warmer";
-            _vitalityBoostText.text = "10";
-            _upgradeText.text = "Upgrade for " + _upgradeCost;
+            case 0:
+                _fireCampLvl++;
+                _transitionSaver.SetFireCampLvl(_fireCampLvl); //still have to check if max lvl is not yet reached.
+                _upgradeCost *= 2;
+                _MainText.text = "The fireplace finally\nbreathe again, making you feel a bit warmer.";
+                _vitalityBoostText.text = "10";
+                _upgradeText.text = "Upgrade for " + _upgradeCost;
+                _campFireAnimator.SetTrigger("campFireLvl1&2");
+                break;
+            case 1:
+                _fireCampLvl++;
+                _transitionSaver.SetFireCampLvl(_fireCampLvl); //still have to check if max lvl is not yet reached.
+                _upgradeCost *= 2;
+                _MainText.text = "The fireplace is stronger\n making you feel warm.";
+                _vitalityBoostText.text = "20";
+                _upgradeText.text = "Upgrade for " + _upgradeCost;
+                _campFireAnimator.SetTrigger("campFireLvl1&2");
+                break;
         }
+        
+            
+        
     }
 }

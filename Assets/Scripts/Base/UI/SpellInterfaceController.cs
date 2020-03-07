@@ -13,11 +13,6 @@ public class SpellInterfaceController : MonoBehaviour
     [SerializeField]
     private GameObject[] _selector;
 
-    private void Update()
-    {
-        
-    }
-
     public void ChangeSelectedSpell(int spellId)
     {
         if (_nbEquipedSpell < _maxEquipedSpell && _1stSpellId == 10 && _selector[spellId].activeSelf != true)
@@ -25,14 +20,12 @@ public class SpellInterfaceController : MonoBehaviour
             _selector[spellId].SetActive(true);
             _nbEquipedSpell++;
             _1stSpellId = spellId;
-            Debug.Log(_nbEquipedSpell + " 1");
         }
         else if (_nbEquipedSpell < _maxEquipedSpell && _1stSpellId != 10 && _selector[spellId].activeSelf != true)
         {
             _selector[spellId].SetActive(true);
             _nbEquipedSpell++;
             _2ndSpellId = spellId;
-            Debug.Log(_nbEquipedSpell + " 2");
         }
         else if (_selector[spellId].activeSelf == true)
         {
@@ -41,13 +34,11 @@ public class SpellInterfaceController : MonoBehaviour
             {
                 _2ndSpellId = 10;
                 _nbEquipedSpell--;
-                Debug.Log(_nbEquipedSpell + " Ok");
             }
             else if (_nbEquipedSpell == 1)
             {
                 _nbEquipedSpell--;
                 _1stSpellId = 10;
-                Debug.Log(_nbEquipedSpell + " Okok");
             }
         }
     }

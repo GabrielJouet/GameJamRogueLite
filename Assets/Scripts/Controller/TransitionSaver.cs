@@ -84,7 +84,7 @@ public class TransitionSaver : MonoBehaviour
 
     public void SetArmorLvl(int lvl) { _armorLvl = lvl; }
 
-    public void SetBootsLvl(int lvl) { _bootsLvl = lvl; }
+    public void SetShoesLvl(int lvl) { _bootsLvl = lvl; }
 
     public void SetSelectedSpell(int lvl) { _selectedSpell = lvl; }
 
