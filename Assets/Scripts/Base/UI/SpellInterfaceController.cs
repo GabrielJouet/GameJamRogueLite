@@ -12,6 +12,16 @@ public class SpellInterfaceController : MonoBehaviour
 
     [SerializeField]
     private GameObject[] _selector;
+    private TransitionSaver _transitionSaver;
+
+    private void Start()
+    {
+        _transitionSaver = FindObjectOfType<TransitionSaver>();
+        if (_transitionSaver == null)
+        {
+            Debug.Log("transition Server Object hasn't been instantiated");
+        }
+    }
 
     public void ChangeSelectedSpell(int spellId)
     {
@@ -20,12 +30,14 @@ public class SpellInterfaceController : MonoBehaviour
             _selector[spellId].SetActive(true);
             _nbEquipedSpell++;
             _1stSpellId = spellId;
+            _transitionSaver.Set1stSelectedSpell(_1stSpellId);
         }
         else if (_nbEquipedSpell < _maxEquipedSpell && _1stSpellId != 10 && _selector[spellId].activeSelf != true)
         {
             _selector[spellId].SetActive(true);
             _nbEquipedSpell++;
             _2ndSpellId = spellId;
+            _transitionSaver.Set2ndSelectedSpell(_2ndSpellId);
         }
         else if (_selector[spellId].activeSelf == true)
         {

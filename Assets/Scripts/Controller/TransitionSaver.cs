@@ -7,19 +7,26 @@ public class TransitionSaver : MonoBehaviour
     private int _scrapCount;
     [SerializeField]
     private int _firecampLvl;
+    [SerializeField]
     private int _storageLvl;
+    [SerializeField]
     private int _wellLvl;
+    [SerializeField]
     private int _armorLvl;
+    [SerializeField]
     private int _bootsLvl;
-    private int _selectedSpell;
-    private int _spellLvl;
-
-    
+    [SerializeField]
+    private int _1stSelectedSpell;
+    [SerializeField]
+    private int _2ndSelectedSpell;
+    [SerializeField]
+    private int _1stSpellLvl;
+    [SerializeField]
+    private int _2ndSpellLvl;
 
     [SerializeField]
     private PlayerMovement _player;
 
-    
     private bool _dungeonLoaded = false;
     private bool _canReturnToBase = true;
 
@@ -86,9 +93,13 @@ public class TransitionSaver : MonoBehaviour
 
     public void SetShoesLvl(int lvl) { _bootsLvl = lvl; }
 
-    public void SetSelectedSpell(int lvl) { _selectedSpell = lvl; }
+    public void Set1stSelectedSpell(int lvl) { _1stSelectedSpell = lvl; }
 
-    public void SetSpellLvl(int lvl) { _spellLvl = lvl; }
+    public void Set2ndSelectedSpell(int lvl) { _2ndSelectedSpell = lvl; }
+
+    public void Set1stSpellLvl(int lvl) { _1stSpellLvl = lvl; }
+
+    public void Set2ndSpellLvl(int lvl) { _2ndSpellLvl = lvl; }
 
     public bool GetCanTeleport() { return _canReturnToBase; }
 
@@ -105,8 +116,6 @@ public class TransitionSaver : MonoBehaviour
     public void SetForestKey(bool other) { _forestKeyGained = other; }
 
     public void SetCavernKey(bool other) { _cavernKeyGained = other; }
-
-
 
     public PlayerMovement GetPlayer() { return _player; }
 }
