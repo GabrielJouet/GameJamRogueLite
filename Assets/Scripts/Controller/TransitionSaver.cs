@@ -78,7 +78,7 @@ public class TransitionSaver : MonoBehaviour
 
     public void SetFireCampLvl(int lvl){ _firecampLvl = lvl; }
 
-    public void SetStorageLvl(int lvl) { _storageLvl = lvl; }
+    public void SetBackpackLvl(int lvl) { _storageLvl = lvl; }
 
     public void SetWellLvl(int lvl) { _wellLvl = lvl; }
 
