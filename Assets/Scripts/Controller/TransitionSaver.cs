@@ -6,23 +6,23 @@ public class TransitionSaver : MonoBehaviour
     [SerializeField]
     private int _scrapCount;
     [SerializeField]
-    private int _firecampLvl;
+    private int _firecampLevel;
     [SerializeField]
-    private int _storageLvl;
+    private int _storageLevel;
     [SerializeField]
-    private int _wellLvl;
+    private int _wellLevel;
     [SerializeField]
-    private int _armorLvl;
+    private int _armorLevel;
     [SerializeField]
-    private int _bootsLvl;
+    private int _bootsLevel;
     [SerializeField]
     private int _1stSelectedSpell;
     [SerializeField]
     private int _2ndSelectedSpell;
     [SerializeField]
-    private int _1stSpellLvl;
+    private int _1stSpellLevel;
     [SerializeField]
-    private int _2ndSpellLvl;
+    private int _2ndSpellLevel;
 
     [SerializeField]
     private PlayerMovement _player;
@@ -75,6 +75,52 @@ public class TransitionSaver : MonoBehaviour
         }
     }
 
+
+    public int RecoverUpgradeBench(string type)
+    {
+        switch (type)
+        {
+            case "Fire":
+                return _firecampLevel;
+                
+            case "Shoes":
+                return _bootsLevel;
+
+            case "Storage":
+                return _storageLevel;
+
+            case "Spells":
+                return _1stSelectedSpell;
+
+            case "Armor":
+                return _armorLevel;
+            default:
+                return 0;
+        };
+    }
+
+    public void SetBenchUpgrade(string type)
+    {
+        switch(type)
+        {
+            case "Fire":
+                _firecampLevel++;
+                break;
+            case "Shoes":
+                _bootsLevel++;
+                break;
+            case "Storage":
+                _storageLevel++;
+                break;
+            case "Spells":
+                _1stSpellLevel++;
+                break;
+            case "Armor":
+                _armorLevel++;
+                break;
+        };
+    }
+
     public int GetScrapCount() { return _scrapCount; }
 
     public void AddScrapCount (int other) { _scrapCount += other; }
@@ -82,26 +128,26 @@ public class TransitionSaver : MonoBehaviour
     public void RemoveScrapCount (int other) { _scrapCount -= other; }
 
     public void SetScrapCount (int other) { _scrapCount = other; }
-
-    public void SetFireCampLvl(int lvl){ _firecampLvl = lvl; }
-
-    public void SetBackpackLvl(int lvl) { _storageLvl = lvl; }
-
-    public void SetWellLvl(int lvl) { _wellLvl = lvl; }
-
-    public void SetArmorLvl(int lvl) { _armorLvl = lvl; }
-
-    public void SetShoesLvl(int lvl) { _bootsLvl = lvl; }
-
+    
     public void Set1stSelectedSpell(int lvl) { _1stSelectedSpell = lvl; }
 
     public void Set2ndSelectedSpell(int lvl) { _2ndSelectedSpell = lvl; }
 
-    public void Set1stSpellLvl(int lvl) { _1stSpellLvl = lvl; }
-
-    public void Set2ndSpellLvl(int lvl) { _2ndSpellLvl = lvl; }
-
     public bool GetCanTeleport() { return _canReturnToBase; }
+
+    public void SetFireCampLvl(int lvl) { _firecampLevel = lvl; }
+
+    public void SetBackpackLvl(int lvl) { _storageLevel = lvl; }
+
+    public void SetWellLvl(int lvl) { _wellLevel = lvl; }
+
+    public void SetArmorLvl(int lvl) { _armorLevel = lvl; }
+
+    public void SetShoesLvl(int lvl) { _bootsLevel = lvl; }
+
+    public void Set1stSpellLvl(int lvl) { _1stSpellLevel = lvl; }
+
+    public void Set2ndSpellLvl(int lvl) { _2ndSpellLevel = lvl; }
 
     public void SetCanTeleport(bool other) { _canReturnToBase = other; }
 
