@@ -5,24 +5,14 @@ public class TransitionSaver : MonoBehaviour
 {
     [SerializeField]
     private int _scrapCount;
-    [SerializeField]
     private int _firecampLevel;
-    [SerializeField]
     private int _storageLevel;
-    [SerializeField]
     private int _wellLevel;
-    [SerializeField]
     private int _armorLevel;
-    [SerializeField]
     private int _bootsLevel;
-    [SerializeField]
     private int _1stSelectedSpell;
-    [SerializeField]
     private int _2ndSelectedSpell;
-    [SerializeField]
-    private int _1stSpellLevel;
-    [SerializeField]
-    private int _2ndSpellLevel;
+    private int _spellLevel;
 
     [SerializeField]
     private PlayerMovement _player;
@@ -90,10 +80,13 @@ public class TransitionSaver : MonoBehaviour
                 return _storageLevel;
 
             case "Spells":
-                return _1stSelectedSpell;
+                return _spellLevel;
 
             case "Armor":
                 return _armorLevel;
+
+            case "Well":
+                return _wellLevel;
             default:
                 return 0;
         };
@@ -113,10 +106,13 @@ public class TransitionSaver : MonoBehaviour
                 _storageLevel++;
                 break;
             case "Spells":
-                _1stSpellLevel++;
+                _spellLevel++;
                 break;
             case "Armor":
                 _armorLevel++;
+                break;
+            case "Well":
+                _wellLevel ++;
                 break;
         };
     }
@@ -145,9 +141,7 @@ public class TransitionSaver : MonoBehaviour
 
     public void SetShoesLvl(int lvl) { _bootsLevel = lvl; }
 
-    public void Set1stSpellLvl(int lvl) { _1stSpellLevel = lvl; }
-
-    public void Set2ndSpellLvl(int lvl) { _2ndSpellLevel = lvl; }
+    public void SetSpellLvl(int lvl) { _spellLevel = lvl; }
 
     public void SetCanTeleport(bool other) { _canReturnToBase = other; }
 

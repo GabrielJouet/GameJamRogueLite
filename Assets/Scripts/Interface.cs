@@ -9,9 +9,12 @@ public class Interface : MonoBehaviour
     [SerializeField]
     private Text _boostText;
     [SerializeField]
-    private Text _upgradeText;
+    private Image _boostIcon;
     [SerializeField]
-    private Button _upgradeButton;
+    private Text _upgradeText;
+
+    [SerializeField]
+    private GameObject _ui;
 
     [SerializeField]
     private string _type;
@@ -24,15 +27,17 @@ public class Interface : MonoBehaviour
 
     private int _level = 0;
 
+
+
     private void Start()
     {
         _transitionSaver = FindObjectOfType<TransitionSaver>();
-        _loadedUpgrade = _availableUpgrades[_transitionSaver.RecoverUpgradeBench(_type)];
+        _level = _transitionSaver.RecoverUpgradeBench(_type);
         DisplayChange();
     }
 
 
-    public void UpgradeArmor()
+    public void Upgrade()
     {
         if(_level < _availableUpgrades.Count)
         {
@@ -40,16 +45,30 @@ public class Interface : MonoBehaviour
             {
                 _level++;
                 _transitionSaver.SetBenchUpgrade(_type);
-                _loadedUpgrade = _availableUpgrades[_level];
                 DisplayChange();
             }
         }
     }
 
+
     private void DisplayChange()
     {
+        _loadedUpgrade = _availableUpgrades[_level];
         _mainText.text = _loadedUpgrade.GetDescriptionText();
         _boostText.text = _loadedUpgrade.GetBoost().ToString();
         _upgradeText.text = "Upgrade for " + _loadedUpgrade.GetCost();
+        _boostIcon.sprite = _loadedUpgrade.GetIconSprite();
+    }
+
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        _ui.SetActive(true);
+    }
+
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        _ui.SetActive(false);
     }
 }

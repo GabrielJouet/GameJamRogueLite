@@ -48,6 +48,9 @@ TagManager:
   - name: ForeGround
     uniqueID: 1819138617
     locked: 0
+  - name: Default
+    uniqueID: 0
+    locked: 0
   - name: UIBackGround
     uniqueID: 3562591339
     locked: 0
@@ -56,7 +59,4 @@ TagManager:
     locked: 0
   - name: UIForeGround
     uniqueID: 3716408323
-    locked: 0
-  - name: Default
-    uniqueID: 0
     locked: 0
