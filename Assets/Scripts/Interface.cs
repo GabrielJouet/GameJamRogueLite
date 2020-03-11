@@ -64,6 +64,7 @@ public class Interface : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         _ui.SetActive(true);
+        DisplayChange();
     }
 
 
