@@ -17,6 +17,9 @@ public class Interface : MonoBehaviour
     private GameObject _ui;
 
     [SerializeField]
+    private Button btn;
+
+    [SerializeField]
     private string _type;
 
     [SerializeField]
@@ -39,6 +42,7 @@ public class Interface : MonoBehaviour
 
     public void Upgrade()
     {
+        Debug.Log("Ok");
         if(_level < _availableUpgrades.Count)
         {
             if(_transitionSaver.GetScrapCount() >= _loadedUpgrade.GetCost())
@@ -65,6 +69,8 @@ public class Interface : MonoBehaviour
     {
         _ui.SetActive(true);
         DisplayChange();
+        btn.onClick.RemoveAllListeners();
+        btn.onClick.AddListener(delegate { Debug.Log("test");});
     }
 
 
