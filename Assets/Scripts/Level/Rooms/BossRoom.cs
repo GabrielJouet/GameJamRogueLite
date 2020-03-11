@@ -3,7 +3,7 @@
 public class BossRoom : Room
 {
     [SerializeField]
-    private GameObject _levelTransition;
+    private GameObject _key;
 
 
     public new void EnemyKilled(GameObject other)
@@ -12,7 +12,7 @@ public class BossRoom : Room
 
         if (_roomEnemies.Count == 0)
         {
-            _levelTransition.SetActive(true);
+            _key.SetActive(true);
             //RoomFinished();
         }
     }
