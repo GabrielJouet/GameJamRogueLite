@@ -66,20 +66,24 @@ public class CreationLevel : MonoBehaviour
         
         CreateForestLevel();
         yield return new WaitUntil(() => _forestLevelGenerated);
+        yield return new WaitForSeconds(0.5f);
         _text.text = _templeGenerationTexts[Random.Range(0, _templeGenerationTexts.Count)];
         
         CreateTempleLevel();
         yield return new WaitUntil(() => _templeLevelGenerated);
+        yield return new WaitForSeconds(0.5f);
         _text.text = _graveyardGenerationTexts[Random.Range(0, _graveyardGenerationTexts.Count)];
 
         _availablePlaces.Shuffle();
         Vector2 cavernGeneration = RecoverCavernGenerationPoint();
         CreateGraveyardLevel(RecoverGraveyardGenerationPoint());
         yield return new WaitUntil(() => _graveyardLevelGenerated);
+        yield return new WaitForSeconds(0.5f);
         _text.text = _cavernGenerationTexts[Random.Range(0, _cavernGenerationTexts.Count)];
         
         CreateCavernLevel(cavernGeneration);
         yield return new WaitUntil(() => _caverLevelGenerated);
+        yield return new WaitForSeconds(0.5f);
         _text.text = _endGenerationTexts[Random.Range(0, _endGenerationTexts.Count)];
 
         foreach (Room current in _levelCreated)

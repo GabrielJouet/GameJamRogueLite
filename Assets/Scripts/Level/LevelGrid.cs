@@ -35,7 +35,7 @@ public class LevelGrid : MonoBehaviour
     {
         _grid[room.GetX(), room.GetY()] = room;
 
-        room.transform.position = new Vector3(4.16f * (room.GetX() - Mathf.FloorToInt(_xSizeMax/2f)), 2.56f * (room.GetY() - Mathf.FloorToInt(_ySizeMax / 2f)), 0f);
+        room.transform.position = new Vector3(3.84f * (room.GetX() - Mathf.FloorToInt(_xSizeMax/2f)), 2.56f * (room.GetY() - Mathf.FloorToInt(_ySizeMax / 2f)), 0f);
     }
 
     
