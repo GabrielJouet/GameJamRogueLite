@@ -4670,7 +4670,7 @@ MonoBehaviour:
   _ui: {fileID: 2049832817}
   _type: Shoes
   _availableUpgrades:
-  - {fileID: 11400000, guid: 071225708873bbb4e9cb6406331b3d15, type: 2}
+  - {fileID: 11400000, guid: 0914e923b6f1e914ab15560b68ae452a, type: 2}
 --- !u!61 &1440350229
 BoxCollider2D:
   m_ObjectHideFlags: 0
