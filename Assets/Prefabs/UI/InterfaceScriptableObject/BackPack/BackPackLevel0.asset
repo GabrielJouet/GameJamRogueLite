@@ -15,5 +15,5 @@ MonoBehaviour:
   _cost: 25
   _descriptionText: Your pack is filled with holes and rats
   _placeName: BackPack
-  _iconSprite: {fileID: 21300000, guid: e72e61e67af8e7848b6f623a96ee7ae2, type: 3}
-  _boost: 1
+  _iconSprite: {fileID: 21300000, guid: 0df410753a4c244418897bea48bc0a72, type: 3}
+  _boost: 40

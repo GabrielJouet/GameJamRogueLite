@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1362867421c86d547a97be27f134c4cc, type: 3}
-  m_Name: WellLevel0
+  m_Name: BackPackLevel3
   m_EditorClassIdentifier: 
-  _cost: 25
-  _descriptionText: Unfortunantly, you can't get water from the well
-  _placeName: Well
-  _iconSprite: {fileID: 21300000, guid: 8e8c70a1962ab574cab78fd67d4e8845, type: 3}
-  _boost: 3
+  _cost: 80
+  _descriptionText: You upgraded the leather quality of the bag
+  _placeName: BackPack
+  _iconSprite: {fileID: 21300000, guid: 0df410753a4c244418897bea48bc0a72, type: 3}
+  _boost: 100
