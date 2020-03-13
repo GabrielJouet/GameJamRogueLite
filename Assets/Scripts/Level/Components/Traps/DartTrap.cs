@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
 public class DartTrap : MonoBehaviour, IActivable
 {
@@ -33,6 +34,16 @@ public class DartTrap : MonoBehaviour, IActivable
     public void Desactivate()
     {
         if (_canBeDesactivated)
-            _isActive = false;
+        {
+            _canBeActivated = false;
+            StartCoroutine(ResetActiveState());
+        }
+    }
+
+
+    public IEnumerator ResetActiveState()
+    {
+        yield return new WaitForSeconds(0.5f);
+        _canBeActivated = true;
     }
 }

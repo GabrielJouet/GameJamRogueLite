@@ -1,4 +1,6 @@
-﻿public interface IActivable
+﻿using System.Collections;
+
+public interface IActivable
 {
     bool CanBeActivated { get; set; }
 
@@ -10,4 +12,6 @@
     void Activate();
 
     void Desactivate();
+
+    IEnumerator ResetActiveState();
 }

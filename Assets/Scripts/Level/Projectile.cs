@@ -17,7 +17,7 @@ public class Projectile : MonoBehaviour
 
     private void Start()
     {
-        transform.localRotation = Quaternion.Euler(0,0, transform.localRotation.z + Random.Range(-_dispersion, _dispersion));
+        transform.Rotate( new Vector3(0,0, Random.Range(-_dispersion, _dispersion)));
     }
 
 
