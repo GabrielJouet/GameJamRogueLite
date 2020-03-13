@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
@@ -10,12 +11,6 @@ public class TileMapGenerator : MonoBehaviour
     [SerializeField]
     private List<MultiDimensionnalArray> _tileMapIndexes;
 
-    
-    [Header("Generation position")]
-    [SerializeField]
-    private Transform _tileMapStartPoint;
-    private float _initialYPosition;
-
 
     private Tilemap _tileMap;
 
@@ -24,25 +19,41 @@ public class TileMapGenerator : MonoBehaviour
     //-------------------------------Unity Methods
     private void Start()
     {
-        GenerateTerrain();
+        StartCoroutine(GenerateTerrain());
     }
 
 
 
     //-------------------------------Tile map Generation Methods
-    public void GenerateTerrain()
+    public IEnumerator GenerateTerrain()
     {
-        _initialYPosition = _tileMapStartPoint.localPosition.y;
         _tileMap = FindObjectOfType<Tilemap>();
+        Grid neGrid = FindObjectOfType<Grid>();
+        int x = 0;
+        int y = 0;
 
         foreach(MultiDimensionnalArray current in _tileMapIndexes)
         {
             foreach(int other in current.GetValues())
             {
-                _tileMap.SetTile(_tileMap.LocalToCell(_tileMapStartPoint.position), _availableTiles[other]);
-                _tileMapStartPoint.localPosition = new Vector3(_tileMapStartPoint.localPosition.x, _tileMapStartPoint.localPosition.y - 0.32f, _tileMapStartPoint.localPosition.z);
+                Vector3Int cellPosition = _tileMap.LocalToCell(new Vector3(
+                    transform.localPosition.x - (_tileMapIndexes.Count / 2 - x) * neGrid.cellSize.x,
+                    transform.localPosition.y - (current.GetValues().Count / 2 - y) * neGrid.cellSize.y,
+                    0));
+
+                if (_tileMap.GetTile(cellPosition) == null)
+                    _tileMap.SetTile(cellPosition, _availableTiles[other]);
+                else
+                    _tileMap.SetTile(_tileMap.LocalToCell(new Vector3(
+                    transform.localPosition.x - (_tileMapIndexes.Count / 2 - x) * neGrid.cellSize.x + 0.01f,
+                    transform.localPosition.y - (current.GetValues().Count / 2 - y) * neGrid.cellSize.y,
+                    0)), _availableTiles[other]);
+                yield return new WaitForFixedUpdate();
+                y++;
             }
-            _tileMapStartPoint.localPosition = new Vector3(_tileMapStartPoint.localPosition.x + 0.32f, _initialYPosition, _tileMapStartPoint.localPosition.z);
+            x++;
+
+            y = 0;
         }
     }
 
