@@ -1142,7 +1142,7 @@ Transform:
   m_Children:
   - {fileID: 1066291606}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1839735485 &861125939
 Tilemap:
@@ -2725,7 +2725,7 @@ PrefabInstance:
     - target: {fileID: 2103884799722561537, guid: 81fd89ece85e5ce4a80286afe331885f,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2103884799722561537, guid: 81fd89ece85e5ce4a80286afe331885f,
         type: 3}
