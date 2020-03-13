@@ -4,6 +4,9 @@
 
     bool CanBeDesactivated { get; set; }
 
+    bool IsActive { get; set; }
+
+
     void Activate();
 
     void Desactivate();
