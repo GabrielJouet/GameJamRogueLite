@@ -36,18 +36,17 @@ public class TileMapGenerator : MonoBehaviour
         {
             foreach(int other in current.GetValues())
             {
-                Vector3Int cellPosition = _tileMap.LocalToCell(new Vector3(
+                Vector3 computedPosition = new Vector3(
                     transform.localPosition.x - (_tileMapIndexes.Count / 2 - x) * neGrid.cellSize.x,
-                    transform.localPosition.y - (current.GetValues().Count / 2 - y) * neGrid.cellSize.y,
-                    0));
+                    transform.localPosition.y + (current.GetValues().Count / 2 - y - 1) * neGrid.cellSize.y,
+                    0);
+
+                Vector3Int cellPosition = _tileMap.LocalToCell(computedPosition);
 
                 if (_tileMap.GetTile(cellPosition) == null)
                     _tileMap.SetTile(cellPosition, _availableTiles[other]);
                 else
-                    _tileMap.SetTile(_tileMap.LocalToCell(new Vector3(
-                    transform.localPosition.x - (_tileMapIndexes.Count / 2 - x) * neGrid.cellSize.x + 0.01f,
-                    transform.localPosition.y - (current.GetValues().Count / 2 - y) * neGrid.cellSize.y,
-                    0)), _availableTiles[other]);
+                    _tileMap.SetTile(cellPosition, _availableTiles[other]);
                 yield return new WaitForFixedUpdate();
                 y++;
             }
