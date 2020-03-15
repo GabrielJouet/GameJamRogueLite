@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
@@ -19,13 +18,13 @@ public class TileMapGenerator : MonoBehaviour
     //-------------------------------Unity Methods
     private void Start()
     {
-        StartCoroutine(GenerateTerrain());
+        GenerateTerrain();
     }
 
 
 
     //-------------------------------Tile map Generation Methods
-    public IEnumerator GenerateTerrain()
+    public void GenerateTerrain()
     {
         _tileMap = FindObjectOfType<Tilemap>();
         Grid neGrid = FindObjectOfType<Grid>();
@@ -46,8 +45,10 @@ public class TileMapGenerator : MonoBehaviour
                 if (_tileMap.GetTile(cellPosition) == null)
                     _tileMap.SetTile(cellPosition, _availableTiles[other]);
                 else
-                    _tileMap.SetTile(cellPosition, _availableTiles[other]);
-                yield return new WaitForFixedUpdate();
+                    _tileMap.SetTile(_tileMap.LocalToCell(new Vector3(
+                    transform.localPosition.x - (_tileMapIndexes.Count / 2 - x) * neGrid.cellSize.x + 0.01f,
+                    transform.localPosition.y + (current.GetValues().Count / 2 - y - 1) * neGrid.cellSize.y,
+                    0)), _availableTiles[other]);
                 y++;
             }
             x++;
