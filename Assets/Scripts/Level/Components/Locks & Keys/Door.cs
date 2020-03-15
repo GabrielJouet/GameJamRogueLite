@@ -36,6 +36,12 @@ public class Door : MonoBehaviour
 
     private void Start()
     {
+        FindBestDisplay();
+    }
+
+
+    private void FindBestDisplay()
+    {
         _up = transform.position.y > _parentRoom.transform.position.y;
         _down = transform.position.y < _parentRoom.transform.position.y;
         _left = transform.position.x < _parentRoom.transform.position.x;
@@ -50,6 +56,10 @@ public class Door : MonoBehaviour
         _collider.isTrigger = false;
         _canBeClosed = false;
         _canBeOpened = false;
+        _spriteRenderer.flipX = false;
+        _spriteRenderer.flipY = false;
+
+        transform.localRotation = Quaternion.Euler(new Vector3(0, 0, 0));
     }
 
     

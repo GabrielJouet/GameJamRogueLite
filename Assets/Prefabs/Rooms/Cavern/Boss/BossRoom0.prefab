@@ -351,7 +351,7 @@ PrefabInstance:
         type: 3}
       propertyPath: _wallSprite
       value: 
-      objectReference: {fileID: -7473566814717989622, guid: 5ed30c81c4915e444808cbd915626367,
+      objectReference: {fileID: -1638699065954793771, guid: 5ed30c81c4915e444808cbd915626367,
         type: 3}
     - target: {fileID: 5369179082181438720, guid: cf91adb6bfe9665499bfeba32cfc7d2c,
         type: 3}
@@ -885,7 +885,7 @@ PrefabInstance:
         type: 3}
       propertyPath: _wallSprite
       value: 
-      objectReference: {fileID: -7473566814717989622, guid: 5ed30c81c4915e444808cbd915626367,
+      objectReference: {fileID: 1930920874650655544, guid: 5ed30c81c4915e444808cbd915626367,
         type: 3}
     - target: {fileID: 5369179082181438720, guid: cf91adb6bfe9665499bfeba32cfc7d2c,
         type: 3}
@@ -1267,7 +1267,7 @@ PrefabInstance:
         type: 3}
       propertyPath: _wallSprite
       value: 
-      objectReference: {fileID: -7473566814717989622, guid: 5ed30c81c4915e444808cbd915626367,
+      objectReference: {fileID: -691195155442402433, guid: 5ed30c81c4915e444808cbd915626367,
         type: 3}
     - target: {fileID: 5369179082181438720, guid: cf91adb6bfe9665499bfeba32cfc7d2c,
         type: 3}
