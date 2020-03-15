@@ -6,6 +6,8 @@ public class Door : MonoBehaviour
     [SerializeField]
     private Sprite _closedSprite;
     [SerializeField]
+    private Sprite _openedSprite;
+    [SerializeField]
     private Sprite _wallSprite;
 
 
@@ -61,7 +63,7 @@ public class Door : MonoBehaviour
     public void Open()
     {
         _collider.isTrigger = true;
-        _spriteRenderer.sprite = null;
+        _spriteRenderer.sprite = _openedSprite;
     }
 
 
