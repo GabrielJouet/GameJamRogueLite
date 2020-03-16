@@ -117,7 +117,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _cameraPosition: {fileID: 7716672097746992855}
-  _canBeChanged: 1
+  _canBeChanged: 0
   _upDoor: {fileID: 1335119289021796731}
   _leftDoor: {fileID: 1904250173585931808}
   _downDoor: {fileID: 7454257157240358309}
