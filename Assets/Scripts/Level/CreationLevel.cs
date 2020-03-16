@@ -42,7 +42,7 @@ public class CreationLevel : MonoBehaviour
 
     private List<Room> _levelCreatedUsed = new List<Room>();
     private List<Room> _levelCreated = new List<Room>();
-    private List<Vector2> _availablePlaces = new List<Vector2>();
+    private List<Vector2Int> _availablePlaces = new List<Vector2Int>();
 
     private bool _forestLevelGenerated = false;
     private bool _templeLevelGenerated = false;
@@ -227,7 +227,7 @@ public class CreationLevel : MonoBehaviour
         Room chosenRoom = ChooseRoom();
         Room bufferRoom = Instantiate(chosenRoom);
 
-        _availablePlaces.Remove(new Vector2(chosenRoom.GetX(), chosenRoom.GetY()));
+        _availablePlaces.Remove(new Vector2Int(chosenRoom.GetX(), chosenRoom.GetY()));
         bufferRoom.SetX(chosenRoom.GetX());
         bufferRoom.SetY(chosenRoom.GetY());
 
@@ -237,7 +237,7 @@ public class CreationLevel : MonoBehaviour
         _levelCreated.Add(bufferRoom);
         _levelCreatedUsed.Add(bufferRoom);
 
-        foreach (Vector2 current in bufferRoom.GetAllNeighbourPlaces())
+        foreach (Vector2Int current in bufferRoom.GetAllNeighbourPlaces())
         {
             if (!_availablePlaces.Contains(current))
                 _availablePlaces.Add(current);
@@ -269,8 +269,8 @@ public class CreationLevel : MonoBehaviour
 
     private Vector2 FindOneAvailablePlace()
     {
-        Vector2 buffer = Vector2.zero;
-        bool result = false;
+        Vector2Int buffer;
+        bool result;
 
         do
         {
@@ -289,15 +289,15 @@ public class CreationLevel : MonoBehaviour
 
     private void CheckAllAvailablePlaces()
     {
-        List<Vector2> uselessPlaces = new List<Vector2>();
+        List<Vector2Int> uselessPlaces = new List<Vector2Int>();
 
-        foreach (Vector2 current in _availablePlaces)
+        foreach (Vector2Int current in _availablePlaces)
         {
             if (!_grid.FindPlaceAvailability(Mathf.FloorToInt(current.x), Mathf.FloorToInt(current.y)))
                 uselessPlaces.Add(current);
         }
 
-        foreach (Vector2 current in uselessPlaces)
+        foreach (Vector2Int current in uselessPlaces)
             _availablePlaces.Remove(current);
     }
 
@@ -310,19 +310,19 @@ public class CreationLevel : MonoBehaviour
         AddBossRoom();
 
         //AddItemRoom();
-
+        /*
         for (int i = 0; i < _roomsUsed.GetSecretRoomCount(); i++)
-            AddSecretRoom();
+            AddSecretRoom();*/
     }
 
 
     private void AddBossRoom()
     {
-        Vector2 placeToUse = Vector2.zero;
+        Vector2Int placeToUse = Vector2Int.zero;
         float distanceMin = 0f;
 
         //We want to find the farest room in the level
-        foreach (Vector2 current in _availablePlaces)
+        foreach (Vector2Int current in _availablePlaces)
         {
             if(_grid.FindPlaceNeighbour(Mathf.FloorToInt(current.x), Mathf.FloorToInt(current.y)) == 1)
             {
@@ -337,11 +337,19 @@ public class CreationLevel : MonoBehaviour
                 }
             }
         }
-        
+
         Room bufferRoom = Instantiate(_roomsUsed.GetBossRoom());
 
-        bufferRoom.SetX(Mathf.FloorToInt(placeToUse.x));
-        bufferRoom.SetY(Mathf.FloorToInt(placeToUse.y));
+        bufferRoom.SetX(placeToUse.x);
+        bufferRoom.SetY(placeToUse.y);
+
+        _availablePlaces.Remove(placeToUse);
+
+        foreach (Vector2Int current in bufferRoom.GetAllNeighbourPlaces())
+        {
+            if (!_availablePlaces.Contains(current))
+                _availablePlaces.Add(current);
+        }
 
         _grid.AddRoomToLevel(bufferRoom);
         _levelCreated.Add(bufferRoom);
@@ -366,12 +374,12 @@ public class CreationLevel : MonoBehaviour
 
     private void AddSecretRoom()
     {
-        Vector2 placeToUse = Vector2.zero;
+        Vector2Int placeToUse = Vector2Int.zero;
         
         //We want to find the farest room in the level
-        while(placeToUse == Vector2.zero)
+        while(placeToUse == Vector2Int.zero)
         {
-            Vector2 current = _availablePlaces[Random.Range(0, _availablePlaces.Count)];
+            Vector2Int current = _availablePlaces[Random.Range(0, _availablePlaces.Count)];
 
             if (_grid.FindPlaceNeighbour(Mathf.FloorToInt(current.x), Mathf.FloorToInt(current.y)) >= 2)
                 placeToUse = current;

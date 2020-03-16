@@ -103,24 +103,24 @@ public class Room : MonoBehaviour
     }
 
 
-    public List<Vector2> GetAllNeighbourPlaces()
+    public List<Vector2Int> GetAllNeighbourPlaces()
     {
-        List<Vector2> buffer = new List<Vector2>();
+        List<Vector2Int> buffer = new List<Vector2Int>();
 
         if (_grid == null)
             _grid = FindObjectOfType<LevelGrid>();
 
         if (!_grid.CheckRoomExistence(_x, _y + 1) && _upDoor != null)
-            buffer.Add(new Vector2(_x, _y + 1));
+            buffer.Add(new Vector2Int(_x, _y + 1));
 
         if (!_grid.CheckRoomExistence(_x - 1, _y) && _leftDoor != null)
-            buffer.Add(new Vector2(_x - 1, _y));
+            buffer.Add(new Vector2Int(_x - 1, _y));
 
         if (!_grid.CheckRoomExistence(_x, _y - 1) && _downDoor != null)
-            buffer.Add(new Vector2(_x, _y - 1));
+            buffer.Add(new Vector2Int(_x, _y - 1));
 
         if (!_grid.CheckRoomExistence(_x + 1, _y) && _rightDoor != null)
-            buffer.Add(new Vector2(_x + 1, _y));
+            buffer.Add(new Vector2Int(_x + 1, _y));
 
         return buffer;
     }
