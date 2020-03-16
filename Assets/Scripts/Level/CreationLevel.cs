@@ -50,10 +50,16 @@ public class CreationLevel : MonoBehaviour
     private bool _graveyardLevelGenerated = false;
     private string _levelCurrentlyGenerated;
 
+    private TransitionSaver _transitionSaver;
 
     //-------------------------------Creation Base Level Methods
     private void Start()
     {
+        _transitionSaver = FindObjectOfType<TransitionSaver>();
+        if (_transitionSaver == null)
+        {
+            Debug.Log("TransitionSaver hasn't been found");
+        }
         StartCoroutine(CreateDungeon());
     }
 
@@ -98,6 +104,7 @@ public class CreationLevel : MonoBehaviour
         transform.position = new Vector3(_levelCreated[0].transform.position.x, _levelCreated[0].transform.position.y, -10);
         FindObjectOfType<FollowCamera>().FollowPlayer(transform.position);
         _levelCreated[0].RoomEntered();
+        _transitionSaver.ApplyPlayerStat();
     }
 
 

@@ -16,4 +16,4 @@ MonoBehaviour:
   _descriptionText: The fire is cold and you feel numb
   _placeName: Fire
   _iconSprite: {fileID: 21300000, guid: e93bc1169b18c7d42b36862dfde4aa02, type: 3}
-  _boost: 2
+  _boost: 20

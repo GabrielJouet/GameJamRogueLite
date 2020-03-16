@@ -15,6 +15,17 @@ public class TransitionSaver : MonoBehaviour
     private int _spellLevel;
 
     [SerializeField]
+    private int[] _healthStat;
+    [SerializeField]
+    private int[] _staminaStat;
+    [SerializeField]
+    private int[] _armorStat;
+    [SerializeField]
+    private int[] _speedStat;
+    [SerializeField]
+    private int[] _storageStat;
+
+    [SerializeField]
     private PlayerMovement _player;
 
     private bool _dungeonLoaded = false;
@@ -115,6 +126,20 @@ public class TransitionSaver : MonoBehaviour
                 _wellLevel ++;
                 break;
         };
+    }
+
+    public void ApplyPlayerStat()
+    {
+        _player = FindObjectOfType<PlayerMovement>();
+        if (_player == null)
+        {
+            Debug.Log("Player hasn't been instantiated");
+        }
+        _player.SetMaxHealth(_healthStat[_firecampLevel]);
+        _player.SetMaxStamina(_staminaStat[_wellLevel]);
+        _player.SetMaxStorage(_storageStat[_storageLevel]);
+        _player.SetSpeedBoost(_speedStat[_bootsLevel]);
+        _player.SetArmor(_armorStat[_armorLevel]);
     }
 
     public int GetScrapCount() { return _scrapCount; }

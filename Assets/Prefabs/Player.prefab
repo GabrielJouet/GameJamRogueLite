@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8224979895197767882}
   - component: {fileID: 8224979895197767883}
   - component: {fileID: 8224979895197767880}
+  - component: {fileID: 524181911595471213}
   - component: {fileID: 8224979895197767885}
   - component: {fileID: 8224979895197767884}
   m_Layer: 0
@@ -96,7 +97,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05573f9c65b97f14c8f4d915069a54d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 1
+  _maxHealth: 0
+  _currentHealth: 0
+  _maxStamina: 0
+  _currentStamina: 0
+  _speedBoost: 0
+  _armor: 0
+  _maxStorage: 0
+  _playerUI: {fileID: 0}
+--- !u!114 &524181911595471213
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8224979895197767881}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6557ab49eacbdb84dad65c97121679df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _healthBar: {fileID: 0}
+  _staminaBar: {fileID: 0}
 --- !u!61 &8224979895197767885
 BoxCollider2D:
   m_ObjectHideFlags: 0

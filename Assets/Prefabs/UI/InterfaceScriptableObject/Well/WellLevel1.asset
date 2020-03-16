@@ -16,4 +16,4 @@ MonoBehaviour:
   _descriptionText: You can now grab some water with a little gourd
   _placeName: Well
   _iconSprite: {fileID: 21300000, guid: 8e8c70a1962ab574cab78fd67d4e8845, type: 3}
-  _boost: 5
+  _boost: 25
