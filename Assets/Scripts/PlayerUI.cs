@@ -18,17 +18,6 @@ public class PlayerUI : MonoBehaviour
     private Gradient _staminaGradient;
     [SerializeField]
     private Image _staminaFill;
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
 
     public void SetMaxHealth(int health)
     {
@@ -41,6 +30,20 @@ public class PlayerUI : MonoBehaviour
     {
         _healthSlider.value = health;
         _healthFill.color = _healthGradient.Evaluate(_healthSlider.normalizedValue);
+    }
+
+    public void SetMaxStamina(int stamina)
+    {
+        _staminaSlider.maxValue = stamina;
+        _staminaSlider.value = stamina;
+        _staminaFill.color = _staminaGradient.Evaluate(1f);
+    }
+
+    public void SetStamina(int stamina)
+    {
+        _staminaSlider.value = stamina;
+
+        _staminaFill.color = _staminaGradient.Evaluate(_staminaSlider.normalizedValue);
     }
 }
 
