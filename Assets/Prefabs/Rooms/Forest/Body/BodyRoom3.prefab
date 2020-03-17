@@ -285,6 +285,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: DartTrap (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 5053118533792465805, guid: c35020e1a1a49924bb4e72a6466b6989,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c35020e1a1a49924bb4e72a6466b6989, type: 3}
 --- !u!1 &5606626823490794822 stripped
@@ -366,6 +371,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: DartTrap (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 5053118533792465805, guid: c35020e1a1a49924bb4e72a6466b6989,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c35020e1a1a49924bb4e72a6466b6989, type: 3}
 --- !u!4 &6281124990765527455 stripped
@@ -446,6 +456,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: DartTrap (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5053118533792465805, guid: c35020e1a1a49924bb4e72a6466b6989,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c35020e1a1a49924bb4e72a6466b6989, type: 3}
@@ -709,6 +724,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: DartTrap (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5053118533792465805, guid: c35020e1a1a49924bb4e72a6466b6989,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c35020e1a1a49924bb4e72a6466b6989, type: 3}
@@ -1370,6 +1390,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: PressurePlate
       objectReference: {fileID: 0}
+    - target: {fileID: 1197532224369783461, guid: f1e1d7f81643906479699d714fd2c126,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1197532224369783463, guid: f1e1d7f81643906479699d714fd2c126,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1616,6 +1641,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: PressurePlate (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1197532224369783461, guid: f1e1d7f81643906479699d714fd2c126,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1197532224369783463, guid: f1e1d7f81643906479699d714fd2c126,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1786,6 +1816,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: DartTrap (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5053118533792465805, guid: c35020e1a1a49924bb4e72a6466b6989,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c35020e1a1a49924bb4e72a6466b6989, type: 3}
@@ -1967,6 +2002,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: DartTrap
+      objectReference: {fileID: 0}
+    - target: {fileID: 5053118533792465805, guid: c35020e1a1a49924bb4e72a6466b6989,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c35020e1a1a49924bb4e72a6466b6989, type: 3}
