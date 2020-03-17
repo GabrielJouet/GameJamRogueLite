@@ -23,7 +23,12 @@ public class Room : MonoBehaviour
 
     [Header("Enemies")]
     [SerializeField]
-    protected List<GameObject> _roomEnemies = new List<GameObject>();
+    protected List<GameObject> _roomEnemies;
+
+
+    [Header("Desactivate Objects")]
+    [SerializeField]
+    private List<GameObject> _objectToDesactivate;
 
 
     [Header("UI")]
@@ -41,15 +46,18 @@ public class Room : MonoBehaviour
     
     protected bool _seen = false;
 
-    
+
+    private void Start()
+    {
+        foreach (GameObject current in _objectToDesactivate)
+            current.SetActive(false);
+    }
+
 
     //-------------------------------Initialization Methods
     public void InitializeRoom()
     {
         CheckNeighbours();
-
-        foreach (GameObject current in _roomEnemies)
-            current.SetActive(false);
     }
 
 
@@ -131,10 +139,12 @@ public class Room : MonoBehaviour
     public void RoomEntered()
     {
         _seen = true;
+        foreach (GameObject current in _objectToDesactivate)
+        {
+            if(current != null)
+                current.SetActive(true);
+        }
         /*
-        foreach (GameObject current in _roomEnemies)
-            current.GetComponent<Enemy>().PlayerEntered(this);
-        
         //We close every doors
         if (_upDoor != null && _upDoor.GetCanBeClosed())
             _upDoor.Close();
@@ -148,6 +158,16 @@ public class Room : MonoBehaviour
         if (_leftDoor != null && _leftDoor.GetCanBeClosed())
             _leftDoor.Close();
         */
+    }
+
+
+    public void RoomExited()
+    {
+        foreach (GameObject current in _objectToDesactivate)
+        {
+            if (current != null)
+                current.SetActive(false);
+        }
     }
 
 

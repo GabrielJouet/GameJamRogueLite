@@ -92,6 +92,13 @@ public class Door : MonoBehaviour
                 FindObjectOfType<FollowCamera>().FollowPlayer(_parentRoom.GetCameraPosition().position);
                 _parentRoom.RoomEntered();
             }
+            else if(_up && collision.transform.position.y > transform.position.y ||
+                    _down && collision.transform.position.y < transform.position.y ||
+                    _right && collision.transform.position.x > transform.position.x ||
+                    _left && collision.transform.position.x < transform.position.x)
+            {
+                _parentRoom.RoomExited();
+            }
         }
     }
 

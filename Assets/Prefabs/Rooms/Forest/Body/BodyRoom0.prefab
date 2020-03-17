@@ -126,6 +126,10 @@ MonoBehaviour:
   _downDoor: {fileID: 7454257157240358309}
   _rightDoor: {fileID: 815316274724589809}
   _roomEnemies: []
+  _objectToDesactivate:
+  - {fileID: 8111842101053253550}
+  - {fileID: 2093035022835360231}
+  - {fileID: 340083022547958223}
   _miniMapActiveIcon: {fileID: 969035622748939135, guid: 5009e8560cf93bf408a7511f96d20a8b,
     type: 3}
   _miniMapSeenIcon: {fileID: -6372485282413835371, guid: 5009e8560cf93bf408a7511f96d20a8b,
@@ -324,6 +328,12 @@ PrefabInstance:
 --- !u!4 &2093035022835360229 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1197532224369783463, guid: f1e1d7f81643906479699d714fd2c126,
+    type: 3}
+  m_PrefabInstance: {fileID: 978839629998936898}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2093035022835360231 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1197532224369783461, guid: f1e1d7f81643906479699d714fd2c126,
     type: 3}
   m_PrefabInstance: {fileID: 978839629998936898}
   m_PrefabAsset: {fileID: 0}
@@ -940,15 +950,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8f78434240337ad43973d55497ea1d78, type: 3}
---- !u!4 &340083022547958217 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4555405773679375392, guid: 8f78434240337ad43973d55497ea1d78,
-    type: 3}
-  m_PrefabInstance: {fileID: 4287491576502980073}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &340083022547958223 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4555405773679375398, guid: 8f78434240337ad43973d55497ea1d78,
+    type: 3}
+  m_PrefabInstance: {fileID: 4287491576502980073}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &340083022547958217 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4555405773679375392, guid: 8f78434240337ad43973d55497ea1d78,
     type: 3}
   m_PrefabInstance: {fileID: 4287491576502980073}
   m_PrefabAsset: {fileID: 0}

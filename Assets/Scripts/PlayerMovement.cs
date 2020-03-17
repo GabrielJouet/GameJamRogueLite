@@ -12,7 +12,7 @@ public class PlayerMovement : MonoBehaviour
     private int _currentStamina;
     [SerializeField]
     private int _speedBoost;
-    private float _speed = 2f;
+    private float _speed = 0.75f;
     [SerializeField]
     private int _armor;
     [SerializeField]
