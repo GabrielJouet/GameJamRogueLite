@@ -50,7 +50,7 @@ public class Room : MonoBehaviour
     private void Start()
     {
         foreach (GameObject current in _objectToDesactivate)
-            current.SetActive(false);
+            current.GetComponent<IHidable>()?.Hide();
     }
 
 
@@ -140,10 +140,7 @@ public class Room : MonoBehaviour
     {
         _seen = true;
         foreach (GameObject current in _objectToDesactivate)
-        {
-            if(current != null)
-                current.SetActive(true);
-        }
+            current.GetComponent<IHidable>()?.Show();
         /*
         //We close every doors
         if (_upDoor != null && _upDoor.GetCanBeClosed())
@@ -164,10 +161,7 @@ public class Room : MonoBehaviour
     public void RoomExited()
     {
         foreach (GameObject current in _objectToDesactivate)
-        {
-            if (current != null)
-                current.SetActive(false);
-        }
+            current.GetComponent<IHidable>()?.Hide();
     }
 
 
@@ -176,10 +170,6 @@ public class Room : MonoBehaviour
     public void EnemyKilled(GameObject other)
     {
         _roomEnemies.Remove(other);
-        /*
-        if (_roomEnemies.Count == 0)
-            RoomFinished();
-            */
     }
 
 

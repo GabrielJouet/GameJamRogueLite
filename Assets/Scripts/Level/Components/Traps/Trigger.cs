@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-public class Trigger : MonoBehaviour
+public class Trigger : MonoBehaviour, IHidable
 {
     [SerializeField]
     private List<GameObject> _triggeredObjects;
@@ -14,5 +14,15 @@ public class Trigger : MonoBehaviour
             foreach (GameObject current in _triggeredObjects)
                 current.GetComponent<IActivable>().Activate();
         }
+    }
+
+    public void Hide()
+    {
+        gameObject.SetActive(false);
+    }
+
+    public void Show()
+    {
+        gameObject.SetActive(true);
     }
 }

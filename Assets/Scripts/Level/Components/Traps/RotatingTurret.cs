@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-public class RotatingTurret : MonoBehaviour, IActivable
+public class RotatingTurret : MonoBehaviour, IActivable, IHidable
 {
     [SerializeField]
     private GameObject _dart;
@@ -75,5 +75,17 @@ public class RotatingTurret : MonoBehaviour, IActivable
     {
         yield return new WaitForSeconds(0.5f);
         _isActive = true;
+    }
+
+    public void Hide()
+    {
+        gameObject.SetActive(false);
+    }
+
+    public void Show()
+    {
+        gameObject.SetActive(true);
+        if (_isActive)
+            StartCoroutine(ShootDarts());
     }
 }

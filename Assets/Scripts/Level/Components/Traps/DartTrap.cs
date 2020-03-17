@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-public class DartTrap : MonoBehaviour, IActivable
+public class DartTrap : MonoBehaviour, IActivable, IHidable
 {
     [SerializeField]
     private GameObject _dart;
@@ -45,5 +45,16 @@ public class DartTrap : MonoBehaviour, IActivable
     {
         yield return new WaitForSeconds(0.5f);
         _canBeActivated = true;
+    }
+
+
+    public void Hide()
+    {
+        gameObject.SetActive(false);
+    }
+
+    public void Show()
+    {
+        gameObject.SetActive(true);
     }
 }
