@@ -18,6 +18,9 @@ MonoBehaviour:
   - {fileID: 2654299726172551349, guid: 88b38b82abd45804ebc39cee72fcfe25, type: 3}
   _bodyRooms:
   - {fileID: 2654299726172551349, guid: f5cd36497be61eb4aadb25b0029d4862, type: 3}
+  - {fileID: 2654299726172551349, guid: 60287469b5764704eb2fc41400a6e500, type: 3}
+  - {fileID: 2654299726172551349, guid: 03e1046c53574724daae7e0fecd41172, type: 3}
+  - {fileID: 2654299726172551349, guid: 9e6f4eb45f5af3d46a5fc264f33ca76e, type: 3}
   _bossRooms:
   - {fileID: 980700632584583380, guid: 331eda2259580694aad002553859721e, type: 3}
   _itemRooms: []
