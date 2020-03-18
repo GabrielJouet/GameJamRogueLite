@@ -44,10 +44,8 @@ public class RotatingTurret : ShootingTraps, IActivable, IHidable
 
     private IEnumerator ShootDarts()
     {
-        Debug.Log("shoot?");
         while (_isActive)
         {
-            Debug.Log("shoot");
             Instantiate(_projectile, _shootingStartPoint.position, Quaternion.Euler(new Vector3(0,0, transform.localEulerAngles.z)));
             yield return new WaitForSeconds(_fireRate);
         }
