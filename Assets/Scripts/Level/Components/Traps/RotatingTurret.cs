@@ -28,13 +28,6 @@ public class RotatingTurret : MonoBehaviour, IActivable, IHidable
     private Vector2 _shootingDirections;
 
 
-    private void Start()
-    {
-        if(_isActive)
-            StartCoroutine(ShootDarts());
-    }
-
-
     private void Update()
     {
         transform.Rotate(new Vector3(0,0,_rotatingSpeed * Time.deltaTime));
