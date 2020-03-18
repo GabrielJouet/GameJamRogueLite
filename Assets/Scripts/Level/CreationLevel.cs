@@ -219,15 +219,14 @@ public class CreationLevel : MonoBehaviour
         Room buffer = Instantiate(_roomsUsed.GetBaseRoom());
 
         //We put it at 7;0 (the down center)
-        buffer.SetX(generationStartPosition.x);
-        buffer.SetY(generationStartPosition.y);
+        buffer.SetPosition(generationStartPosition);
 
         //We add this room to the grid, to available room and level created
         _grid.AddRoomToLevel(buffer);
 
         _levelCreated.Add(buffer);
         _levelCreatedUsed.Add(buffer);
-        _availablePlaces.AddRange(buffer.GetAllNeighbourPlaces());
+        _availablePlaces.AddRange(buffer.GetAllAvailableNeighbourPlaces());
     }
 
     
@@ -236,9 +235,8 @@ public class CreationLevel : MonoBehaviour
         Room chosenRoom = ChooseRoom();
         Room bufferRoom = Instantiate(chosenRoom);
 
-        _availablePlaces.Remove(new Vector2Int(chosenRoom.GetX(), chosenRoom.GetY()));
-        bufferRoom.SetX(chosenRoom.GetX());
-        bufferRoom.SetY(chosenRoom.GetY());
+        _availablePlaces.Remove(chosenRoom.GetPosition());
+        bufferRoom.SetPosition(chosenRoom.GetPosition());
 
         _grid.AddRoomToLevel(bufferRoom);
 
@@ -246,7 +244,7 @@ public class CreationLevel : MonoBehaviour
         _levelCreated.Add(bufferRoom);
         _levelCreatedUsed.Add(bufferRoom);
 
-        foreach (Vector2Int current in bufferRoom.GetAllNeighbourPlaces())
+        foreach (Vector2Int current in bufferRoom.GetAllAvailableNeighbourPlaces())
         {
             if (!_availablePlaces.Contains(current))
                 _availablePlaces.Add(current);
@@ -266,9 +264,7 @@ public class CreationLevel : MonoBehaviour
             buffer = _roomsUsed.GetBodyRoom();
             Vector2Int bufferedPlace = FindOneAvailablePlace();
 
-            //We set x and y positions
-            buffer.SetX(bufferedPlace.x);
-            buffer.SetY(bufferedPlace.y);
+            buffer.SetPosition(bufferedPlace);
         }
         while (!_grid.FindRoomAvailability(buffer));
 
@@ -285,7 +281,7 @@ public class CreationLevel : MonoBehaviour
         {
             buffer = _availablePlaces[Random.Range(0, _availablePlaces.Count)];
 
-            result = _grid.FindPlaceAvailability(buffer.x, buffer.y);
+            result = _grid.FindPlaceAvailability(buffer);
 
             if (!result)
                 _availablePlaces.Remove(buffer);
@@ -302,7 +298,7 @@ public class CreationLevel : MonoBehaviour
 
         foreach (Vector2Int current in _availablePlaces)
         {
-            if (!_grid.FindPlaceAvailability(current.x, current.y))
+            if (!_grid.FindPlaceAvailability(current))
                 uselessPlaces.Add(current);
         }
 
@@ -328,10 +324,10 @@ public class CreationLevel : MonoBehaviour
         //We want to find the farest room in the level
         foreach (Vector2Int current in _availablePlaces)
         {
-            if(_grid.FindPlaceNeighbour(Mathf.FloorToInt(current.x), Mathf.FloorToInt(current.y)) == 1)
+            if(_grid.FindPlaceNeighbour(current) == 1)
             {
                 //We compute its distance from origin
-                float dSqrToTarget = Mathf.Sqrt((new Vector2(_levelCreatedUsed[0].GetX(), _levelCreatedUsed[0].GetY()) - new Vector2(current.x, current.y)).sqrMagnitude);
+                float dSqrToTarget = Mathf.Sqrt((_levelCreatedUsed[0].GetPosition() - current).sqrMagnitude);
 
                 //And if it's more than previous we store it
                 if (dSqrToTarget > distanceMin)
@@ -344,12 +340,11 @@ public class CreationLevel : MonoBehaviour
 
         Room bufferRoom = Instantiate(_roomsUsed.GetBossRoom());
 
-        bufferRoom.SetX(placeToUse.x);
-        bufferRoom.SetY(placeToUse.y);
+        bufferRoom.SetPosition(placeToUse);
 
         _availablePlaces.Remove(placeToUse);
 
-        foreach (Vector2Int current in bufferRoom.GetAllNeighbourPlaces())
+        foreach (Vector2Int current in bufferRoom.GetAllAvailableNeighbourPlaces())
         {
             if (!_availablePlaces.Contains(current))
                 _availablePlaces.Add(current);

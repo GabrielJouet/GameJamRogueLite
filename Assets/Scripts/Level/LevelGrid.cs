@@ -33,15 +33,17 @@ public class LevelGrid : MonoBehaviour
     //-------------------------------Grid Alteration Methods
     public void AddRoomToLevel(Room room)
     {
-        _grid[room.GetX(), room.GetY()] = room;
+        _grid[room.GetPosition().x, room.GetPosition().y] = room;
 
-        room.transform.position = new Vector3(3.84f * (room.GetX() - Mathf.FloorToInt(_xSizeMax/2f)), 2.56f * (room.GetY() - Mathf.FloorToInt(_ySizeMax / 2f)), 0f);
+        room.transform.position = new Vector3(3.84f * (room.GetPosition().x - Mathf.FloorToInt(_xSizeMax/2f)), 
+                                              2.56f * (room.GetPosition().y - Mathf.FloorToInt(_ySizeMax / 2f)), 
+                                              0f);
     }
 
     
     public void RemoveRoomToLevel(Room room)
     {
-        _grid[room.GetX(), room.GetY()] = null;
+        _grid[room.GetPosition().x, room.GetPosition().y] = null;
     }
 
 
@@ -51,8 +53,7 @@ public class LevelGrid : MonoBehaviour
 
         Room buffer = Instantiate(newRoom);
 
-        buffer.SetX(oldRoom.GetX());
-        buffer.SetY(oldRoom.GetY());
+        buffer.SetPosition(oldRoom.GetPosition());
 
         Destroy(oldRoom.gameObject);
 
@@ -65,48 +66,50 @@ public class LevelGrid : MonoBehaviour
 
     //-------------------------------Check Place Methods
     public bool FindRoomAvailability(Room room)
-    {   
+    {
+        Vector2Int roomPosition = room.GetPosition();
+
         //If the room is within the grid
-        if(room.GetY() - 1 < _ySizeMax && room.GetY() - 1 > 0)
+        if (roomPosition.y - 1 < _ySizeMax && roomPosition.y - 1 > 0)
         {            
             //If the room location is already occupied
-            if (_grid[room.GetX(), room.GetY() - 1] != null)
+            if (_grid[roomPosition.x, roomPosition.y - 1] != null)
             {
                 //If the neighbour room has a up door but this room does not
-                if (!(room.GetDown() && _grid[room.GetX(), room.GetY() - 1].GetUp()))
+                if (!(room.GetDown() && _grid[roomPosition.x, roomPosition.y - 1].GetUp()))
                     return false;
             }
         }
         else
             return false;
         
-        if (room.GetX() - 1 < _xSizeMax && room.GetX() - 1 > 0)
+        if (roomPosition.x - 1 < _xSizeMax && roomPosition.x - 1 > 0)
         {
-            if (_grid[room.GetX() - 1, room.GetY()] != null)
+            if (_grid[roomPosition.x - 1, roomPosition.y] != null)
             {
-                if (!(room.GetLeft() && _grid[room.GetX() - 1, room.GetY()].GetRight()))
+                if (!(room.GetLeft() && _grid[roomPosition.x - 1, roomPosition.y].GetRight()))
                     return false;
             }
         }
         else
             return false;
         
-        if (room.GetX() + 1 < _xSizeMax && room.GetX() + 1 > 0)
+        if (roomPosition.x + 1 < _xSizeMax && roomPosition.x + 1 > 0)
         {
-            if (_grid[room.GetX() + 1, room.GetY()] != null)
+            if (_grid[roomPosition.x + 1, roomPosition.y] != null)
             {
-                if (!(room.GetRight() && _grid[room.GetX() + 1, room.GetY()].GetLeft()))
+                if (!(room.GetRight() && _grid[roomPosition.x + 1, roomPosition.y].GetLeft()))
                     return false;
             }
         }
         else
             return false;
         
-        if (room.GetY() + 1 < _ySizeMax && room.GetY() + 1 > 0)
+        if (roomPosition.y + 1 < _ySizeMax && roomPosition.y + 1 > 0)
         {
-            if (_grid[room.GetX(), room.GetY() + 1] != null)
+            if (_grid[roomPosition.x, roomPosition.y + 1] != null)
             {
-                if (!(room.GetUp() && _grid[room.GetX(), room.GetY() + 1].GetDown()))
+                if (!(room.GetUp() && _grid[roomPosition.x, roomPosition.y + 1].GetDown()))
                     return false;
             }
         }
@@ -118,75 +121,75 @@ public class LevelGrid : MonoBehaviour
     }
 
    
-    public bool CheckRoomPosition(int xPos, int yPos)
+    public bool CheckRoomPosition(Vector2Int position)
     {
-        if (xPos >= _xSizeMax || xPos < 0)
+        if (position.x >= _xSizeMax || position.x < 0)
             return false;
-        else if (yPos >= _ySizeMax || yPos < 0)
+        else if (position.y >= _ySizeMax || position.y < 0)
             return false;
 
-        if (_grid[xPos, yPos] != null)
+        if (_grid[position.x, position.y] != null)
             return false;
 
         return true;
     }
 
     
-    public bool CheckRoomExistence(int xPos, int yPos)
+    public bool CheckRoomExistence(Vector2Int position)
     {
-        if (xPos >= _xSizeMax || yPos >= _ySizeMax || xPos < 0 || yPos < 0)
+        if (position.x >= _xSizeMax || position.y >= _ySizeMax || position.x < 0 || position.y < 0)
             return false;
 
-        if (_grid[xPos, yPos] == null)
+        if (_grid[position.x, position.y] == null)
             return false;
         else
             return true;
     }
 
 
-    public bool FindPlaceAvailability(int xPos, int yPos)
+    public bool FindPlaceAvailability(Vector2Int position)
     {
-        bool result = true && CheckRoomPosition(xPos, yPos);
+        bool result = true && CheckRoomPosition(position);
 
-        if (xPos - 1 < 0 || xPos + 1 >= _xSizeMax || yPos - 1 < 0 || yPos + 1 >= _ySizeMax)
+        if (position.x - 1 < 0 || position.x + 1 >= _xSizeMax || position.y - 1 < 0 || position.y + 1 >= _ySizeMax)
             return false;
 
 
-        if(_grid[xPos + 1, yPos] != null)
-            if (!_grid[xPos + 1, yPos].GetLeft())
+        if(_grid[position.x + 1, position.y] != null)
+            if (!_grid[position.x + 1, position.y].GetLeft())
                 result = false;
 
-        if (_grid[xPos - 1, yPos] != null)
-            if (!_grid[xPos - 1, yPos].GetRight())
+        if (_grid[position.x - 1, position.y] != null)
+            if (!_grid[position.x - 1, position.y].GetRight())
                 result = false;
 
-        if (_grid[xPos, yPos + 1] != null)
-            if (!_grid[xPos, yPos + 1].GetDown())
+        if (_grid[position.x, position.y + 1] != null)
+            if (!_grid[position.x, position.y + 1].GetDown())
                 result = false;
 
-        if (_grid[xPos, yPos - 1] != null)
-            if (!_grid[xPos, yPos - 1].GetUp())
+        if (_grid[position.x, position.y - 1] != null)
+            if (!_grid[position.x, position.y - 1].GetUp())
                 result = false;
 
         return result;
     }
 
 
-    public int FindPlaceNeighbour(int xPos, int yPos)
+    public int FindPlaceNeighbour(Vector2Int position)
     {
         int count = 0;
 
-        if (xPos - 1 > 0)
-            count += _grid[xPos - 1, yPos] != null ? 1 : 0;
+        if (position.x - 1 > 0)
+            count += _grid[position.x - 1, position.y] != null ? 1 : 0;
 
-        if (xPos + 1 < _xSizeMax)
-            count += _grid[xPos + 1, yPos] != null ? 1 : 0;
+        if (position.x + 1 < _xSizeMax)
+            count += _grid[position.x + 1, position.y] != null ? 1 : 0;
 
-        if (yPos - 1 > 0)
-            count += _grid[xPos, yPos - 1] != null ? 1 : 0;
+        if (position.y - 1 > 0)
+            count += _grid[position.x, position.y - 1] != null ? 1 : 0;
 
-        if (xPos + 1 < _ySizeMax)
-            count += _grid[xPos, yPos + 1] != null ? 1 : 0;
+        if (position.y + 1 < _ySizeMax)
+            count += _grid[position.x, position.y + 1] != null ? 1 : 0;
 
         return count;
     }
@@ -200,7 +203,7 @@ public class LevelGrid : MonoBehaviour
         {
             for(int y = 0; y < _ySizeMax; y ++)
             {
-                if(CheckRoomExistence(x,y))
+                if(CheckRoomExistence(new Vector2Int(x,y)))
                 {
                     RectTransform newIcon = Instantiate(_roomIcon, _miniMap);
                     newIcon.localPosition = new Vector3(
@@ -218,44 +221,31 @@ public class LevelGrid : MonoBehaviour
 
     public void MoveMiniMap(Room position)
     {
+        Vector2Int roomPosition = position.GetPosition();
         _miniMap.localPosition = new Vector3(
-            -(_roomIcon.sizeDelta.x + 5) * position.GetX(),
-            -(_roomIcon.sizeDelta.y + 5) * position.GetY(),
+            -(_roomIcon.sizeDelta.x + 5) * roomPosition.x,
+            -(_roomIcon.sizeDelta.y + 5) * roomPosition.y,
             0);
 
-        _miniMapGrid[position.GetX(), position.GetY()].gameObject.SetActive(true);
-        _miniMapGrid[position.GetX(), position.GetY()].sprite = position.GetActiveMiniMapIcon();
+        _miniMapGrid[roomPosition.x, roomPosition.y].gameObject.SetActive(true);
+        _miniMapGrid[roomPosition.x, roomPosition.y].sprite = position.GetActiveMiniMapIcon();
 
-        ActivateMiniMapIcon(new Vector2Int(position.GetX() + 1, position.GetY()));
-        ActivateMiniMapIcon(new Vector2Int(position.GetX() - 1, position.GetY()));
-        ActivateMiniMapIcon(new Vector2Int(position.GetX(), position.GetY() + 1));
-        ActivateMiniMapIcon(new Vector2Int(position.GetX(), position.GetY() - 1));
+        foreach (Vector2Int current in position.GetAllNeighbourPlaces()) 
+            ActivateMiniMapIcon(current);
     }
 
 
     private void ActivateMiniMapIcon(Vector2Int position)
     {
-        if (CheckRoomExistence(position.x, position.y))
-        {
-            _miniMapGrid[position.x, position.y].sprite = GetRoomAtPoint(position.x, position.y).GetMiniMapIcon();
-            _miniMapGrid[position.x, position.y].gameObject.SetActive(true);
-        }
+        _miniMapGrid[position.x, position.y].sprite = GetRoomAtPoint(position).GetMiniMapIcon();
+        _miniMapGrid[position.x, position.y].gameObject.SetActive(true);
     }
 
 
     public void DesactivateNeighboursRooms(Room other)
     {
-        if(CheckRoomExistence(other.GetX() + 1, other.GetY()))
-            GetRoomAtPoint(other.GetX() + 1, other.GetY()).DesactivateElements();
-
-        if (CheckRoomExistence(other.GetX() - 1, other.GetY()))
-            GetRoomAtPoint(other.GetX() - 1, other.GetY()).DesactivateElements();
-
-        if (CheckRoomExistence(other.GetX(), other.GetY() - 1))
-            GetRoomAtPoint(other.GetX(), other.GetY() - 1).DesactivateElements();
-
-        if (CheckRoomExistence(other.GetX(), other.GetY() + 1))
-            GetRoomAtPoint(other.GetX(), other.GetY() + 1).DesactivateElements();
+        foreach(Vector2Int current in other.GetAllNeighbourPlaces())
+            GetRoomAtPoint(current)?.DesactivateElements();
     }
 
 
@@ -265,5 +255,5 @@ public class LevelGrid : MonoBehaviour
 
     public int GetYSize() { return _ySizeMax; }
 
-    public Room GetRoomAtPoint(int x, int y) { return _grid[x, y]; }
+    public Room GetRoomAtPoint(Vector2Int position) { return _grid[position.x, position.y]; }
 }

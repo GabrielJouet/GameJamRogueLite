@@ -1,41 +1,48 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-public class DartTrap : MonoBehaviour, IActivable, IHidable
+public class DartTrap : ShootingTraps, IActivable, IHidable
 {
+    [Header("Activation Parameters")]
     [SerializeField]
-    private GameObject _dart;
-
-    [SerializeField]
-    private bool _canBeActivated;
-    public bool CanBeActivated { get => _canBeActivated; set => _canBeActivated = value; }
-
-    [SerializeField]
-    private bool _canBeDesactivated;
-    public bool CanBeDesactivated { get => _canBeDesactivated; set => _canBeDesactivated = value; }
-
+    private bool _isAlwaysActive;
+    public bool IsAlwaysActive { get => _isAlwaysActive; set => _isAlwaysActive = value; }
     [SerializeField]
     private bool _isActive;
     public bool IsActive { get => _isActive; set => _isActive = value; }
 
-    [SerializeField]
-    private Vector2 _shootingDirections;
 
 
     public void Activate()
     {
-        if(_canBeActivated)
-        {
-            Projectile newDart = Instantiate(_dart, transform.position, Quaternion.identity).GetComponent<Projectile>();
-            newDart.SetDirections(_shootingDirections);
-        }
+        _isActive = true;
+        ShotDart();
+    }
+
+
+    private void ShotDart()
+    {
+        float angle = 0f;
+
+        if (_shootingDirections.x == -1)
+            angle = -90;
+        else if (_shootingDirections.x == 1)
+            angle = 90;
+
+        if (_shootingDirections.y == -1)
+            angle = 0;
+        else if (_shootingDirections.y == 1)
+            angle = 180;
+
+        if(_isActive)
+            Instantiate(_projectile, _shootingStartPoint.position, Quaternion.Euler(new Vector3(0, 0, angle)));
     }
 
     public void Desactivate()
     {
-        if (_canBeDesactivated)
+        if (!_isAlwaysActive)
         {
-            _canBeActivated = false;
+            _isActive = false;
             StartCoroutine(ResetActiveState());
         }
     }
@@ -44,7 +51,7 @@ public class DartTrap : MonoBehaviour, IActivable, IHidable
     public IEnumerator ResetActiveState()
     {
         yield return new WaitForSeconds(0.5f);
-        _canBeActivated = true;
+        _isActive = true;
     }
 
 
@@ -56,5 +63,8 @@ public class DartTrap : MonoBehaviour, IActivable, IHidable
     public void Show()
     {
         gameObject.SetActive(true);
+
+        if(_isAlwaysActive)
+            Activate();
     }
 }
