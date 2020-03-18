@@ -690,7 +690,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b72bcf4851ab764c9f00495f143409d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _cameraSpeed: 8
+  _cameraSpeed: 10
 --- !u!114 &519420035
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -703,10 +703,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d3779188dd568541822a8a7e17ce4ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _xSizeMax: 100
-  _ySizeMax: 100
+  _xSizeMax: 75
+  _ySizeMax: 75
   _miniMap: {fileID: 1957091275}
-  _roomIcon: {fileID: 6508901530970350240, guid: c16342b5f462d484dbae2fbac7dc9eef,
+  _roomIcon: {fileID: 6508901530970350241, guid: c16342b5f462d484dbae2fbac7dc9eef,
     type: 3}
 --- !u!1 &935247218
 GameObject:

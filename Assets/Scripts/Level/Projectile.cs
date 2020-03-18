@@ -7,17 +7,17 @@ public class Projectile : MonoBehaviour
     private float _speed;
 
     [SerializeField]
-    [Range(0f,100f)]
+    [Range(0f, 100f)]
     private float _dispersion;
 
-
+    [SerializeField]
     private Vector2 _directions;
 
 
 
     private void Start()
     {
-        transform.Rotate( new Vector3(0,0, Random.Range(-_dispersion, _dispersion)));
+        transform.rotation = Quaternion.Euler(new Vector3(0,0, transform.localEulerAngles.z + Random.Range(-_dispersion, _dispersion)));
     }
 
 
@@ -25,7 +25,4 @@ public class Projectile : MonoBehaviour
     {
         transform.Translate(_directions * Time.deltaTime * _speed);
     }
-
-
-    public void SetDirections(Vector2 newDirections) { _directions = newDirections; }
 }

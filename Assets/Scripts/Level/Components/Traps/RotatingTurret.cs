@@ -1,38 +1,20 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-public class RotatingTurret : MonoBehaviour, IActivable, IHidable
+public class RotatingTurret : ShootingTraps, IActivable, IHidable
 {
-    [SerializeField]
-    private GameObject _dart;
-
-    [SerializeField]
-    private float _fireRate;
-
     [SerializeField]
     private float _rotatingSpeed;
 
-    [SerializeField]
-    private bool _canBeActivated;
-    public bool CanBeActivated { get => _canBeActivated; set => _canBeActivated = value; }
 
+    [Header("Activation Parameters")]
     [SerializeField]
-    private bool _canBeDesactivated;
-    public bool CanBeDesactivated { get => _canBeDesactivated; set => _canBeDesactivated = value; }
-
+    private bool _isAlwaysActive;
+    public bool IsAlwaysActive { get => _isAlwaysActive; set => _isAlwaysActive = value; }
     [SerializeField]
     private bool _isActive;
     public bool IsActive { get => _isActive; set => _isActive = value; }
 
-    [SerializeField]
-    private Vector2 _shootingDirections;
-
-
-    private void Start()
-    {
-        if(_isActive)
-            StartCoroutine(ShootDarts());
-    }
 
 
     private void Update()
@@ -43,7 +25,7 @@ public class RotatingTurret : MonoBehaviour, IActivable, IHidable
 
     public void Activate()
     {
-        if (_canBeActivated && !_isActive)
+        if (!_isActive)
         {
             _isActive = true;
             StartCoroutine(ShootDarts());
@@ -52,7 +34,7 @@ public class RotatingTurret : MonoBehaviour, IActivable, IHidable
 
     public void Desactivate()
     {
-        if (_canBeDesactivated)
+        if (!_isAlwaysActive)
         {
             _isActive = false;
             StartCoroutine(ResetActiveState());
@@ -64,8 +46,7 @@ public class RotatingTurret : MonoBehaviour, IActivable, IHidable
     {
         while (_isActive)
         {
-            Projectile newDart = Instantiate(_dart, transform.position, Quaternion.Euler(transform.localEulerAngles)).GetComponent<Projectile>();
-            newDart.SetDirections(_shootingDirections);
+            Instantiate(_projectile, _shootingStartPoint.position, Quaternion.Euler(new Vector3(0,0, transform.localEulerAngles.z)));
             yield return new WaitForSeconds(_fireRate);
         }
     }
@@ -77,15 +58,19 @@ public class RotatingTurret : MonoBehaviour, IActivable, IHidable
         _isActive = true;
     }
 
+
     public void Hide()
     {
         gameObject.SetActive(false);
+        _isActive = false;
     }
+
 
     public void Show()
     {
         gameObject.SetActive(true);
-        if (_isActive)
-            StartCoroutine(ShootDarts());
+
+        if(_isAlwaysActive)
+            Activate();
     }
 }

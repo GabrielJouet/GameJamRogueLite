@@ -1,46 +1,34 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-public class ContinousDartTrap : MonoBehaviour, IActivable, IHidable
+public class ContinousDartTrap : ShootingTraps, IActivable, IHidable
 {
+    [Header("Activation Parameters")]
     [SerializeField]
-    private GameObject _dart;
-
-    [SerializeField]
-    private float _activatedTime;
-
-    [SerializeField]
-    private float _fireRate;
-
-    [SerializeField]
-    private bool _canBeActivated;
-    public bool CanBeActivated { get => _canBeActivated; set => _canBeActivated = value; }
-
-    [SerializeField]
-    private bool _canBeDesactivated;
-    public bool CanBeDesactivated { get => _canBeDesactivated; set => _canBeDesactivated = value; }
-
+    private bool _isAlwaysActive;
+    public bool IsAlwaysActive { get => _isAlwaysActive; set => _isAlwaysActive = value; }
     [SerializeField]
     private bool _isActive;
     public bool IsActive { get => _isActive; set => _isActive = value; }
-
-    [SerializeField]
-    private Vector2 _shootingDirections;
 
 
 
     public void Activate()
     {
-        if (_canBeActivated && !_isActive)
+        if (!_isActive)
         {
             _isActive = true;
-            StartCoroutine(ResetState());
+            StartCoroutine(ShootDarts());
+
+            if(!_isAlwaysActive)
+                StartCoroutine(ResetState());
         }
     }
 
+
     public void Desactivate()
     {
-        if (_canBeDesactivated)
+        if (!_isAlwaysActive)
         {
             StartCoroutine(ResetActiveState());
             _isActive = false;
@@ -50,10 +38,21 @@ public class ContinousDartTrap : MonoBehaviour, IActivable, IHidable
 
     private IEnumerator ShootDarts()
     {
-        while(_isActive)
+        float angle = 0f;
+
+        if (_shootingDirections.x == -1)
+            angle = -90;
+        else if (_shootingDirections.x == 1)
+            angle = 90;
+
+        if (_shootingDirections.y == -1)
+            angle = 0;
+        else if (_shootingDirections.y == 1)
+            angle = 180;
+
+        while (_isActive)
         {
-            Projectile newDart = Instantiate(_dart, transform.position, Quaternion.identity).GetComponent<Projectile>();
-            newDart.SetDirections(_shootingDirections);
+            Instantiate(_projectile, _shootingStartPoint.position, Quaternion.Euler(new Vector3(0, 0, angle)));
             yield return new WaitForSeconds(_fireRate);
         }
     }
@@ -61,7 +60,6 @@ public class ContinousDartTrap : MonoBehaviour, IActivable, IHidable
 
     private IEnumerator ResetState()
     {
-        StartCoroutine(ShootDarts());
         yield return new WaitForSeconds(_activatedTime);
         _isActive = false;
     }
@@ -76,16 +74,14 @@ public class ContinousDartTrap : MonoBehaviour, IActivable, IHidable
     public void Hide()
     {
         gameObject.SetActive(false);
+        _isActive = false;
     }
 
     public void Show()
     {
-        gameObject.SetActive(true); 
-        
-        if (_canBeActivated && !_isActive)
-        {
-            _isActive = true;
-            StartCoroutine(ResetState());
-        }
+        gameObject.SetActive(true);
+
+        if (_isAlwaysActive)
+            Activate();
     }
 }

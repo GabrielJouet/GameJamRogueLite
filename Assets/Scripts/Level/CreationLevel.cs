@@ -52,54 +52,58 @@ public class CreationLevel : MonoBehaviour
 
     private TransitionSaver _transitionSaver;
 
+
     //-------------------------------Creation Base Level Methods
     private void Start()
     {
         _transitionSaver = FindObjectOfType<TransitionSaver>();
-        if (_transitionSaver == null)
-        {
-            Debug.Log("TransitionSaver hasn't been found");
-        }
+
         StartCoroutine(CreateDungeon());
     }
 
 
     private IEnumerator CreateDungeon()
     {
+        //Creating dungeon grid
         _grid.CreateGrid();
         yield return new WaitForFixedUpdate();
+
+        //Creating forest level
         _text.text = _forestGenerationTexts[Random.Range(0, _forestGenerationTexts.Count)];
-        
         CreateForestLevel();
         yield return new WaitUntil(() => _forestLevelGenerated);
         yield return new WaitForSeconds(0.5f);
+
+        //Creating temple level
         _text.text = _templeGenerationTexts[Random.Range(0, _templeGenerationTexts.Count)];
-        
         CreateTempleLevel();
         yield return new WaitUntil(() => _templeLevelGenerated);
         yield return new WaitForSeconds(0.5f);
-        _text.text = _graveyardGenerationTexts[Random.Range(0, _graveyardGenerationTexts.Count)];
 
+        //Creating graveyard level
+        _text.text = _graveyardGenerationTexts[Random.Range(0, _graveyardGenerationTexts.Count)];
         _availablePlaces.Shuffle();
-        Vector2 cavernGeneration = RecoverCavernGenerationPoint();
+        Vector2Int cavernGeneration = RecoverCavernGenerationPoint();
         CreateGraveyardLevel(RecoverGraveyardGenerationPoint());
         yield return new WaitUntil(() => _graveyardLevelGenerated);
         yield return new WaitForSeconds(0.5f);
+
+        //Creating cavern level
         _text.text = _cavernGenerationTexts[Random.Range(0, _cavernGenerationTexts.Count)];
-        
         CreateCavernLevel(cavernGeneration);
         yield return new WaitUntil(() => _caverLevelGenerated);
         yield return new WaitForSeconds(0.5f);
-        _text.text = _endGenerationTexts[Random.Range(0, _endGenerationTexts.Count)];
 
+        //Initializing level
+        _text.text = _endGenerationTexts[Random.Range(0, _endGenerationTexts.Count)];
         foreach (Room current in _levelCreated)
             current.InitializeRoom();
-
         _grid.GenerateMiniMap();
         _grid.MoveMiniMap(_levelCreated[0]);
         yield return new WaitForSeconds(0.5f);
-        _generationUI.SetActive(false);
 
+        //Initializing player
+        _generationUI.SetActive(false);
         Instantiate(FindObjectOfType<TransitionSaver>().GetPlayer(), _levelCreated[0].transform.position, Quaternion.identity);
         transform.position = new Vector3(_levelCreated[0].transform.position.x, _levelCreated[0].transform.position.y, -10);
         FindObjectOfType<FollowCamera>().FollowPlayer(transform.position);
@@ -108,10 +112,10 @@ public class CreationLevel : MonoBehaviour
     }
 
 
-    private Vector2 RecoverGraveyardGenerationPoint()
+    private Vector2Int RecoverGraveyardGenerationPoint()
     {
-        Vector2 newPosition = _availablePlaces[0];
-        foreach (Vector2 current in _availablePlaces)
+        Vector2Int newPosition = _availablePlaces[0];
+        foreach (Vector2Int current in _availablePlaces)
         {
             if (current.x < newPosition.x)
                 newPosition = current;
@@ -121,10 +125,10 @@ public class CreationLevel : MonoBehaviour
     }
 
 
-    private Vector2 RecoverCavernGenerationPoint()
+    private Vector2Int RecoverCavernGenerationPoint()
     {
-        Vector2 newPosition = _availablePlaces[0];
-        foreach (Vector2 current in _availablePlaces)
+        Vector2Int newPosition = _availablePlaces[0];
+        foreach (Vector2Int current in _availablePlaces)
         {
             if (current.x > newPosition.x)
                 newPosition = current;
@@ -138,16 +142,16 @@ public class CreationLevel : MonoBehaviour
     {
         _roomsUsed = _forestRooms;
         _levelCurrentlyGenerated = "Forest";
-        StartCoroutine(GenerateLevel(new Vector2(_grid.GetXSize() / 2, 1)));
+        StartCoroutine(GenerateLevel(new Vector2Int(_grid.GetXSize() / 2, 1)));
     }
 
 
     private void CreateTempleLevel()
     {
         _roomsUsed = _templeRooms;
-        Vector2 position = new Vector2();
+        Vector2Int position = new Vector2Int();
 
-        foreach(Vector2 current in _availablePlaces)
+        foreach(Vector2Int current in _availablePlaces)
         {
             if (current.y > position.y)
                 position = current;
@@ -158,7 +162,7 @@ public class CreationLevel : MonoBehaviour
     }
 
 
-    private void CreateGraveyardLevel(Vector2 graveyardGenerationPoint)
+    private void CreateGraveyardLevel(Vector2Int graveyardGenerationPoint)
     {
         _roomsUsed = _graveyardRooms;
         _levelCurrentlyGenerated = "Graveyard";
@@ -166,7 +170,7 @@ public class CreationLevel : MonoBehaviour
     }
 
 
-    private void CreateCavernLevel(Vector2 cavernGenerationPoint)
+    private void CreateCavernLevel(Vector2Int cavernGenerationPoint)
     {
         _roomsUsed = _cavernRooms;
         _levelCurrentlyGenerated = "Cavern";
@@ -174,7 +178,7 @@ public class CreationLevel : MonoBehaviour
     }
 
 
-    private IEnumerator GenerateLevel(Vector2 generationStartPosition)
+    private IEnumerator GenerateLevel(Vector2Int generationStartPosition)
     {
         _levelCreatedUsed.Clear();
         _availablePlaces.Clear();
@@ -182,9 +186,7 @@ public class CreationLevel : MonoBehaviour
         InstantiateBaseRoom(generationStartPosition);
         yield return new WaitForFixedUpdate();
 
-        int roomCount = _roomsUsed.GetRoomCount() + Mathf.RoundToInt(Random.Range(0, _roomsUsed.GetRoomCount() * 0.25f));
-
-        for (int i = 0; i < roomCount; i++)
+        for (int i = 0; i < _roomsUsed.GetRoomCount() + Mathf.RoundToInt(Random.Range(0, _roomsUsed.GetRoomCount() * 0.25f)); i++)
         {
             InstantiateBodyRoom();
             if(i % 10 == 0)
@@ -212,20 +214,19 @@ public class CreationLevel : MonoBehaviour
     }
 
     
-    private void InstantiateBaseRoom(Vector2 generationStartPosition)
+    private void InstantiateBaseRoom(Vector2Int generationStartPosition)
     {
         Room buffer = Instantiate(_roomsUsed.GetBaseRoom());
 
         //We put it at 7;0 (the down center)
-        buffer.SetX(Mathf.FloorToInt(generationStartPosition.x));
-        buffer.SetY(Mathf.FloorToInt(generationStartPosition.y));
+        buffer.SetPosition(generationStartPosition);
 
         //We add this room to the grid, to available room and level created
         _grid.AddRoomToLevel(buffer);
 
         _levelCreated.Add(buffer);
         _levelCreatedUsed.Add(buffer);
-        _availablePlaces.AddRange(buffer.GetAllNeighbourPlaces());
+        _availablePlaces.AddRange(buffer.GetAllAvailableNeighbourPlaces());
     }
 
     
@@ -234,9 +235,8 @@ public class CreationLevel : MonoBehaviour
         Room chosenRoom = ChooseRoom();
         Room bufferRoom = Instantiate(chosenRoom);
 
-        _availablePlaces.Remove(new Vector2Int(chosenRoom.GetX(), chosenRoom.GetY()));
-        bufferRoom.SetX(chosenRoom.GetX());
-        bufferRoom.SetY(chosenRoom.GetY());
+        _availablePlaces.Remove(chosenRoom.GetPosition());
+        bufferRoom.SetPosition(chosenRoom.GetPosition());
 
         _grid.AddRoomToLevel(bufferRoom);
 
@@ -244,7 +244,7 @@ public class CreationLevel : MonoBehaviour
         _levelCreated.Add(bufferRoom);
         _levelCreatedUsed.Add(bufferRoom);
 
-        foreach (Vector2Int current in bufferRoom.GetAllNeighbourPlaces())
+        foreach (Vector2Int current in bufferRoom.GetAllAvailableNeighbourPlaces())
         {
             if (!_availablePlaces.Contains(current))
                 _availablePlaces.Add(current);
@@ -262,11 +262,9 @@ public class CreationLevel : MonoBehaviour
         do
         {
             buffer = _roomsUsed.GetBodyRoom();
-            Vector2 bufferedPlace = FindOneAvailablePlace();
+            Vector2Int bufferedPlace = FindOneAvailablePlace();
 
-            //We set x and y positions
-            buffer.SetX(Mathf.FloorToInt(bufferedPlace.x));
-            buffer.SetY(Mathf.FloorToInt(bufferedPlace.y));
+            buffer.SetPosition(bufferedPlace);
         }
         while (!_grid.FindRoomAvailability(buffer));
 
@@ -274,7 +272,7 @@ public class CreationLevel : MonoBehaviour
     }
 
 
-    private Vector2 FindOneAvailablePlace()
+    private Vector2Int FindOneAvailablePlace()
     {
         Vector2Int buffer;
         bool result;
@@ -283,7 +281,7 @@ public class CreationLevel : MonoBehaviour
         {
             buffer = _availablePlaces[Random.Range(0, _availablePlaces.Count)];
 
-            result = _grid.FindPlaceAvailability(Mathf.FloorToInt(buffer.x), Mathf.FloorToInt(buffer.y));
+            result = _grid.FindPlaceAvailability(buffer);
 
             if (!result)
                 _availablePlaces.Remove(buffer);
@@ -300,7 +298,7 @@ public class CreationLevel : MonoBehaviour
 
         foreach (Vector2Int current in _availablePlaces)
         {
-            if (!_grid.FindPlaceAvailability(Mathf.FloorToInt(current.x), Mathf.FloorToInt(current.y)))
+            if (!_grid.FindPlaceAvailability(current))
                 uselessPlaces.Add(current);
         }
 
@@ -315,11 +313,6 @@ public class CreationLevel : MonoBehaviour
     {
         CheckAllAvailablePlaces();
         AddBossRoom();
-
-        //AddItemRoom();
-        /*
-        for (int i = 0; i < _roomsUsed.GetSecretRoomCount(); i++)
-            AddSecretRoom();*/
     }
 
 
@@ -331,10 +324,10 @@ public class CreationLevel : MonoBehaviour
         //We want to find the farest room in the level
         foreach (Vector2Int current in _availablePlaces)
         {
-            if(_grid.FindPlaceNeighbour(Mathf.FloorToInt(current.x), Mathf.FloorToInt(current.y)) == 1)
+            if(_grid.FindPlaceNeighbour(current) == 1)
             {
                 //We compute its distance from origin
-                float dSqrToTarget = Mathf.Sqrt((new Vector2(_levelCreatedUsed[0].GetX(), _levelCreatedUsed[0].GetY()) - new Vector2(current.x, current.y)).sqrMagnitude);
+                float dSqrToTarget = Mathf.Sqrt((_levelCreatedUsed[0].GetPosition() - current).sqrMagnitude);
 
                 //And if it's more than previous we store it
                 if (dSqrToTarget > distanceMin)
@@ -347,12 +340,11 @@ public class CreationLevel : MonoBehaviour
 
         Room bufferRoom = Instantiate(_roomsUsed.GetBossRoom());
 
-        bufferRoom.SetX(placeToUse.x);
-        bufferRoom.SetY(placeToUse.y);
+        bufferRoom.SetPosition(placeToUse);
 
         _availablePlaces.Remove(placeToUse);
 
-        foreach (Vector2Int current in bufferRoom.GetAllNeighbourPlaces())
+        foreach (Vector2Int current in bufferRoom.GetAllAvailableNeighbourPlaces())
         {
             if (!_availablePlaces.Contains(current))
                 _availablePlaces.Add(current);
@@ -361,49 +353,6 @@ public class CreationLevel : MonoBehaviour
         _grid.AddRoomToLevel(bufferRoom);
         _levelCreated.Add(bufferRoom);
     }
-
-
-    private void AddItemRoom()
-    {
-        Room roomToDestroy;
-        do
-            roomToDestroy = _levelCreatedUsed[Random.Range(0, _levelCreatedUsed.Count)];
-        while (!roomToDestroy.GetCanBeChanged());
-
-        Room roomToCreate = _roomsUsed.GetItemRoom();
-        Room bufferRoom = _grid.ReplaceOldRoom(roomToDestroy, roomToCreate);
-
-        _levelCreated.Add(bufferRoom);
-        _levelCreatedUsed.Add(bufferRoom);
-        _levelCreated.Remove(roomToDestroy);
-    }
-
-
-    private void AddSecretRoom()
-    {
-        Vector2Int placeToUse = Vector2Int.zero;
-        
-        //We want to find the farest room in the level
-        while(placeToUse == Vector2Int.zero)
-        {
-            Vector2Int current = _availablePlaces[Random.Range(0, _availablePlaces.Count)];
-
-            if (_grid.FindPlaceNeighbour(Mathf.FloorToInt(current.x), Mathf.FloorToInt(current.y)) >= 2)
-                placeToUse = current;
-        }
-
-        _availablePlaces.Remove(placeToUse);
-
-        Room bufferRoom = Instantiate(_roomsUsed.GetSecretRoom());
-
-        bufferRoom.SetX(Mathf.FloorToInt(placeToUse.x));
-        bufferRoom.SetY(Mathf.FloorToInt(placeToUse.y));
-
-        _grid.AddRoomToLevel(bufferRoom);
-        _levelCreated.Add(bufferRoom);
-        _levelCreatedUsed.Add(bufferRoom);
-    }
-
 
 
     //-------------------------------Getter

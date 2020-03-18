@@ -2,9 +2,7 @@
 
 public interface IActivable
 {
-    bool CanBeActivated { get; set; }
-
-    bool CanBeDesactivated { get; set; }
+    bool IsAlwaysActive { get; set; }
 
     bool IsActive { get; set; }
 
