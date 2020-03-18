@@ -15,7 +15,7 @@ public class LevelGrid : MonoBehaviour
     [SerializeField]
     private RectTransform _miniMap;
     [SerializeField]
-    private GameObject _roomIcon;
+    private RectTransform _roomIcon;
     
 
     private Room[,] _grid;
@@ -202,14 +202,14 @@ public class LevelGrid : MonoBehaviour
             {
                 if(CheckRoomExistence(x,y))
                 {
-                    GameObject newIcon = Instantiate(_roomIcon, _miniMap);
-                    newIcon.GetComponent<RectTransform>().localPosition = new Vector3(
-                        (_roomIcon.GetComponent<RectTransform>().sizeDelta.x + 5) * x,
-                        (_roomIcon.GetComponent<RectTransform>().sizeDelta.y + 5) * y,
+                    RectTransform newIcon = Instantiate(_roomIcon, _miniMap);
+                    newIcon.localPosition = new Vector3(
+                        (_roomIcon.sizeDelta.x + 5) * x,
+                        (_roomIcon.sizeDelta.y + 5) * y,
                         0);
 
                     _miniMapGrid[x, y] = newIcon.GetComponent<Image>();
-                    newIcon.SetActive(false);
+                    newIcon.gameObject.SetActive(false);
                 }
             }
         }
@@ -218,38 +218,44 @@ public class LevelGrid : MonoBehaviour
 
     public void MoveMiniMap(Room position)
     {
-        _miniMap.GetComponent<RectTransform>().localPosition = new Vector3(
-            -(_roomIcon.GetComponent<RectTransform>().sizeDelta.x + 5) * position.GetX(),
-            -(_roomIcon.GetComponent<RectTransform>().sizeDelta.y + 5) * position.GetY(),
+        _miniMap.localPosition = new Vector3(
+            -(_roomIcon.sizeDelta.x + 5) * position.GetX(),
+            -(_roomIcon.sizeDelta.y + 5) * position.GetY(),
             0);
 
         _miniMapGrid[position.GetX(), position.GetY()].gameObject.SetActive(true);
         _miniMapGrid[position.GetX(), position.GetY()].sprite = position.GetActiveMiniMapIcon();
 
+        ActivateMiniMapIcon(new Vector2Int(position.GetX() + 1, position.GetY()));
+        ActivateMiniMapIcon(new Vector2Int(position.GetX() - 1, position.GetY()));
+        ActivateMiniMapIcon(new Vector2Int(position.GetX(), position.GetY() + 1));
+        ActivateMiniMapIcon(new Vector2Int(position.GetX(), position.GetY() - 1));
+    }
 
-        if (CheckRoomExistence(position.GetX() + 1, position.GetY()))
-        {
-            _miniMapGrid[position.GetX() + 1, position.GetY()].sprite = GetRoomAtPoint(position.GetX() + 1, position.GetY()).GetMiniMapIcon();
-            _miniMapGrid[position.GetX() + 1, position.GetY()].gameObject.SetActive(true);
-        }
 
-        if (CheckRoomExistence(position.GetX() - 1, position.GetY()))
+    private void ActivateMiniMapIcon(Vector2Int position)
+    {
+        if (CheckRoomExistence(position.x, position.y))
         {
-            _miniMapGrid[position.GetX() - 1, position.GetY()].sprite = GetRoomAtPoint(position.GetX() - 1, position.GetY()).GetMiniMapIcon();
-            _miniMapGrid[position.GetX() - 1, position.GetY()].gameObject.SetActive(true);
+            _miniMapGrid[position.x, position.y].sprite = GetRoomAtPoint(position.x, position.y).GetMiniMapIcon();
+            _miniMapGrid[position.x, position.y].gameObject.SetActive(true);
         }
+    }
 
-        if (CheckRoomExistence(position.GetX(), position.GetY() + 1))
-        {
-            _miniMapGrid[position.GetX(), position.GetY() + 1].sprite = GetRoomAtPoint(position.GetX(), position.GetY() + 1).GetMiniMapIcon();
-            _miniMapGrid[position.GetX(), position.GetY() + 1].gameObject.SetActive(true);
-        }
 
-        if (CheckRoomExistence(position.GetX(), position.GetY() - 1))
-        {
-            _miniMapGrid[position.GetX(), position.GetY() - 1].sprite = GetRoomAtPoint(position.GetX(), position.GetY() - 1).GetMiniMapIcon();
-            _miniMapGrid[position.GetX(), position.GetY() - 1].gameObject.SetActive(true);
-        }
+    public void DesactivateNeighboursRooms(Room other)
+    {
+        if(CheckRoomExistence(other.GetX() + 1, other.GetY()))
+            GetRoomAtPoint(other.GetX() + 1, other.GetY()).DesactivateElements();
+
+        if (CheckRoomExistence(other.GetX() - 1, other.GetY()))
+            GetRoomAtPoint(other.GetX() - 1, other.GetY()).DesactivateElements();
+
+        if (CheckRoomExistence(other.GetX(), other.GetY() - 1))
+            GetRoomAtPoint(other.GetX(), other.GetY() - 1).DesactivateElements();
+
+        if (CheckRoomExistence(other.GetX(), other.GetY() + 1))
+            GetRoomAtPoint(other.GetX(), other.GetY() + 1).DesactivateElements();
     }
 
 

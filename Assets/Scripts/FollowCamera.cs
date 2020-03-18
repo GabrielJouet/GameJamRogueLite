@@ -17,7 +17,6 @@ public class FollowCamera : MonoBehaviour
 
     private void FixedUpdate()
     {
-        //If we are not at the goal position
         if(transform.position != _goal)
             transform.position = Vector3.MoveTowards(transform.position, new Vector3(_goal.x, _goal.y, -10), Time.fixedDeltaTime * _cameraSpeed);
     }

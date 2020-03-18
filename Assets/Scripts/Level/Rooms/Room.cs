@@ -141,24 +141,10 @@ public class Room : MonoBehaviour
         _seen = true;
         foreach (GameObject current in _objectToDesactivate)
             current.GetComponent<IHidable>()?.Show();
-        /*
-        //We close every doors
-        if (_upDoor != null && _upDoor.GetCanBeClosed())
-            _upDoor.Close();
-
-        if (_downDoor != null && _downDoor.GetCanBeClosed())
-            _downDoor.Close();
-
-        if (_rightDoor != null && _rightDoor.GetCanBeClosed())
-            _rightDoor.Close();
-
-        if (_leftDoor != null && _leftDoor.GetCanBeClosed())
-            _leftDoor.Close();
-        */
     }
 
 
-    public void RoomExited()
+    public void DesactivateElements()
     {
         foreach (GameObject current in _objectToDesactivate)
             current.GetComponent<IHidable>()?.Hide();
