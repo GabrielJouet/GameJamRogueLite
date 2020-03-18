@@ -14,11 +14,14 @@ public class PlayerMovement : MonoBehaviour
     private int _currentStamina;
     [SerializeField]
     private int _speedBoost;
-    private float _speed = 0.75f;
+    private float _speed = 5000;
     [SerializeField]
     private int _armor;
     [SerializeField]
     private int _maxStorage;
+
+    [SerializeField]
+    private Rigidbody2D _rigidBody;
 
     private int _dashCost = 5;
     private int _staminaRegenAmount = 2;
@@ -49,17 +52,8 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-        float horizontalInput = Input.GetAxis("Horizontal");
-        float verticalInput = Input.GetAxis("Vertical");
+        _rigidBody.AddForce(Vector2.ClampMagnitude(new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")), 1) * _speed * Time.deltaTime);
 
-        if (horizontalInput != 0)
-        {
-            transform.Translate(Vector2.right * horizontalInput * Time.deltaTime * _speed);
-        }
-        if (verticalInput != 0)
-        {
-            transform.Translate(Vector2.up * verticalInput * Time.deltaTime * _speed);
-        }
 
         if (Input.GetKeyDown(KeyCode.R) && _transitionSaver.GetCanTeleport())
         {
