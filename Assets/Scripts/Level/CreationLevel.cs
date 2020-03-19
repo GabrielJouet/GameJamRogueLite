@@ -50,14 +50,10 @@ public class CreationLevel : MonoBehaviour
     private bool _graveyardLevelGenerated = false;
     private string _levelCurrentlyGenerated;
 
-    private TransitionSaver _transitionSaver;
-
 
     //-------------------------------Creation Base Level Methods
     private void Start()
     {
-        _transitionSaver = FindObjectOfType<TransitionSaver>();
-
         StartCoroutine(CreateDungeon());
     }
 
@@ -104,11 +100,7 @@ public class CreationLevel : MonoBehaviour
 
         //Initializing player
         _generationUI.SetActive(false);
-        Instantiate(FindObjectOfType<TransitionSaver>().GetPlayer(), _levelCreated[0].transform.position, Quaternion.identity);
-        transform.position = new Vector3(_levelCreated[0].transform.position.x, _levelCreated[0].transform.position.y, -10);
-        FindObjectOfType<FollowCamera>().FollowPlayer(transform.position);
-        _levelCreated[0].RoomEntered();
-        _transitionSaver.ApplyPlayerStat();
+        SpawnPlayer();
     }
 
 
@@ -355,6 +347,17 @@ public class CreationLevel : MonoBehaviour
     }
 
 
-    //-------------------------------Getter
-    public Vector3 GetSpawnPoint() { return _levelCreated[0].transform.position; }
+
+    private void SpawnPlayer()
+    {
+        TransitionSaver saver = FindObjectOfType<TransitionSaver>();
+
+        PlayerMovement newPlayer = Instantiate(saver.GetPlayer(), _levelCreated[0].transform.position, Quaternion.identity);
+        newPlayer.Initialize(saver, GetComponent<PlayerUI>());
+
+        transform.position = new Vector3(_levelCreated[0].transform.position.x, _levelCreated[0].transform.position.y, -10);
+        GetComponent<FollowCamera>().FollowPlayer(transform.position);
+
+        _levelCreated[0].RoomEntered();
+    }
 }

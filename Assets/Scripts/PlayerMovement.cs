@@ -1,52 +1,50 @@
 ﻿using System.Collections;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
+    [Header("Player Stats")]
     [SerializeField]
     private int _maxHealth;
+    private int _health;
     [SerializeField]
-    private int _currentHealth;
+    private float _maxStamina;
+    private float _stamina;
     [SerializeField]
-    private int _maxStamina;
+    private float _speed = 7500;
+    private float _maxSpeed;
     [SerializeField]
-    private int _currentStamina;
+    private float _armor;
     [SerializeField]
-    private int _speedBoost;
-    private float _speed = 5000;
+    private int _storageMalus;
     [SerializeField]
-    private int _armor;
+    private float _dashCost = 5;
     [SerializeField]
-    private int _maxStorage;
+    private float _staminaRegenAmount = 2;
+    [SerializeField]
+    private float _staminaRegenTime = 2f;
 
+
+    private int _scrapCount = 0;
+
+
+    [Header("Components")]
     [SerializeField]
     private Rigidbody2D _rigidBody;
 
-    private int _dashCost = 5;
-    private int _staminaRegenAmount = 2;
-    private float _staminaRegenTime = 2f;
     private bool _staminaCR_running = false;
     private IEnumerator _coStamina;
 
     private TransitionSaver _transitionSaver;
     private PlayerUI _playerUI;
-    private string _currentScene;
 
 
-    private void Start()
+    public void Initialize(TransitionSaver newSaver, PlayerUI newPlayerUI)
     {
-        _transitionSaver = FindObjectOfType<TransitionSaver>();
-        _currentScene = SceneManager.GetActiveScene().name;
-        _coStamina = RegenMana();
-        if (_currentScene == "Dungeon")
-        {
-            _playerUI = FindObjectOfType<PlayerUI>();
-            _currentHealth = _maxHealth;
-            _playerUI.SetMaxHealth(_currentHealth);
-            _currentStamina = _maxStamina;
-            _playerUI.SetMaxStamina(_maxStamina);
-        }
+        _transitionSaver = newSaver;
+        _playerUI = newPlayerUI;
+
+        _transitionSaver.ApplyPlayerStat(this);
     }
 
 
@@ -60,68 +58,94 @@ public class PlayerMovement : MonoBehaviour
             _transitionSaver.LoadBase();
             _transitionSaver.SetCanTeleport(false);
         }
-
-        if (Input.GetKeyDown(KeyCode.Space)) //to test the health bar
-        {
-            TakeDamage(1);
-        }
-
-        if (Input.GetKeyDown(KeyCode.X)) //to test the staminaBar
-        {
-            LooseStamina(_dashCost);
-        }
     }
+
 
     private void TakeDamage(int damage)
     {
-        _currentHealth -= damage;
-        _playerUI.SetHealth(_currentHealth);
+        _health -= damage;
+        _playerUI.SetHealth(_health);
     }
+
 
     private void LooseStamina(int staminaCost)
     {
-        Debug.Log(_staminaCR_running);
-        _currentStamina -= staminaCost;
-        _playerUI.SetStamina(_currentStamina);
-        if (_staminaCR_running == true)
+        _stamina -= staminaCost;
+        _playerUI.SetStamina(_stamina);
+
+        if (_staminaCR_running)
         {
             StopCoroutine(_coStamina);
-            _staminaCR_running = false;
             StartCoroutine(_coStamina);
         }
         else
-        {
             StartCoroutine(_coStamina);
-        }
     }
 
-    private IEnumerator RegenMana()
+
+    private IEnumerator RegenStamina()
     {
-        while (true)
+        _staminaCR_running = true;
+
+        while (_stamina < _maxStamina)
         {
             yield return new WaitForSeconds(_staminaRegenTime);
-            _staminaCR_running = true;
-            if (_currentStamina + _staminaRegenAmount >= _maxStamina)
-            {
-                _currentStamina = _maxStamina;
-                _playerUI.SetStamina(_currentStamina);
-                _staminaCR_running = false;
-                StopCoroutine(_coStamina);
-            }
-            else
-            {
-                _currentStamina += _staminaRegenAmount;
-                _playerUI.SetStamina(_currentStamina);
-            }
+
+            _stamina += (_stamina + _staminaRegenAmount >= _maxStamina) ? 0 : _staminaRegenAmount;
+            _playerUI.SetStamina(_stamina);
         }
+
+        _staminaCR_running = false;
+    }
+
+
+    public void CollectScrap(int value)
+    {
+        _scrapCount += value;
+        _speed = _maxSpeed - (_maxSpeed * (_scrapCount * _storageMalus) / 100f);
+        _playerUI.SetScrap(_scrapCount);
+    }
+
+
+    public void AbandonScrap()
+    {
+        _scrapCount--;
+        _speed = _maxSpeed - (_maxSpeed * (_scrapCount * _storageMalus) / 100f);
+        _playerUI.SetScrap(_scrapCount);
     }
 
 
     //--------------------------------Setter
+    public void SetMaxHealth(int health) 
+    { 
+        _maxHealth = health;
+        _playerUI.SetMaxHealth(_maxHealth);
+    }
 
-    public void SetMaxHealth(int health) { _maxHealth = health; }
-    public void SetMaxStamina(int stamina) { _maxStamina = stamina; }
-    public void SetMaxStorage(int storage) { _maxStorage = storage; }
-    public void SetArmor(int armor) { _armor = armor; }
-    public void SetSpeedBoost(int speedBoost) { _speedBoost = speedBoost; }
+    public void SetMaxStamina(int stamina) 
+    { 
+        _maxStamina = stamina;
+        _playerUI.SetMaxStamina(_maxStamina);
+    }
+
+    public void SetStorageMalus(int storage) 
+    {
+        _storageMalus = storage; 
+    }
+
+    public void SetArmor(float armor) 
+    { 
+        _armor = armor; 
+    }
+
+    public void SetSpeed(float speed) 
+    { 
+        _speed = speed;
+        _maxSpeed = _speed;
+    }
+
+    public void SetSupportBoost(float supportBoost) 
+    {
+        _staminaRegenAmount = supportBoost; 
+    }
 }

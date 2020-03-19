@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 public class PlayerUI : MonoBehaviour
@@ -19,32 +17,39 @@ public class PlayerUI : MonoBehaviour
     [SerializeField]
     private Image _staminaFill;
 
-    public void SetMaxHealth(int health)
+    [SerializeField]
+    private Text _scrapCount;
+
+
+
+    public void SetMaxHealth(float health)
     {
         _healthSlider.maxValue = health;
         _healthSlider.value = health;
         _healthFill.color = _healthGradient.Evaluate(1f);
     }
 
-    public void SetHealth(int health)
+    public void SetHealth(float health)
     {
         _healthSlider.value = health;
         _healthFill.color = _healthGradient.Evaluate(_healthSlider.normalizedValue);
     }
 
-    public void SetMaxStamina(int stamina)
+    public void SetMaxStamina(float stamina)
     {
         _staminaSlider.maxValue = stamina;
         _staminaSlider.value = stamina;
         _staminaFill.color = _staminaGradient.Evaluate(1f);
     }
 
-    public void SetStamina(int stamina)
+    public void SetStamina(float stamina)
     {
         _staminaSlider.value = stamina;
-
         _staminaFill.color = _staminaGradient.Evaluate(_staminaSlider.normalizedValue);
     }
+
+    public void SetScrap(int other)
+    {
+        _scrapCount.text = other.ToString();
+    }
 }
-
-

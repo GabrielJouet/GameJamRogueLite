@@ -16,4 +16,4 @@ MonoBehaviour:
   _descriptionText: The fastest shoes on Earth
   _placeName: Shoes
   _iconSprite: {fileID: 21300000, guid: c40119bb4248e954daad7305c1489ffe, type: 3}
-  _boost: 10
+  _boost: 21000

@@ -16,4 +16,4 @@ MonoBehaviour:
   _descriptionText: Your shoes are weathered and too big for you
   _placeName: Shoes
   _iconSprite: {fileID: 21300000, guid: c40119bb4248e954daad7305c1489ffe, type: 3}
-  _boost: 1
+  _boost: 15000

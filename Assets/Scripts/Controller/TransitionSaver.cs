@@ -1,9 +1,9 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class TransitionSaver : MonoBehaviour
 {
-    [SerializeField]
     private int _scrapCount;
     private int _firecampLevel;
     private int _storageLevel;
@@ -14,28 +14,31 @@ public class TransitionSaver : MonoBehaviour
     private int _2ndSelectedSpell;
     private int _spellLevel;
 
-    [SerializeField]
-    private int[] _healthStat;
-    [SerializeField]
-    private int[] _staminaStat;
-    [SerializeField]
-    private int[] _armorStat;
-    [SerializeField]
-    private int[] _speedStat;
-    [SerializeField]
-    private int[] _storageStat;
 
+    [Header("Upgrades")]
+    [SerializeField]
+    private List<Upgrade> _fireCampUpgrades;
+    [SerializeField]
+    private List<Upgrade> _wellUpgrades;
+    [SerializeField]
+    private List<Upgrade> _spellsUpgrades;
+    [SerializeField]
+    private List<Upgrade> _shoesUpgrades;
+    [SerializeField]
+    private List<Upgrade> _armorUpgrades;
+    [SerializeField]
+    private List<Upgrade> _backpackUpgrades;
+
+
+    [Header("Player prefabs")]
     [SerializeField]
     private PlayerMovement _player;
 
     private bool _dungeonLoaded = false;
     private bool _canReturnToBase = true;
 
-    [SerializeField]
     private bool _forestKeyGained = false;
-    [SerializeField]
     private bool _cavernKeyGained = false;
-    [SerializeField]
     private bool _graveyardKeyGained = false;
 
 
@@ -52,7 +55,6 @@ public class TransitionSaver : MonoBehaviour
     {
         int rng = System.Environment.TickCount;
         Random.InitState(rng);
-        Debug.Log(rng);
     }
 
 
@@ -128,19 +130,17 @@ public class TransitionSaver : MonoBehaviour
         };
     }
 
-    public void ApplyPlayerStat()
+
+    public void ApplyPlayerStat(PlayerMovement newPlayer)
     {
-        _player = FindObjectOfType<PlayerMovement>();
-        if (_player == null)
-        {
-            Debug.Log("Player hasn't been instantiated");
-        }
-        _player.SetMaxHealth(_healthStat[_firecampLevel]);
-        _player.SetMaxStamina(_staminaStat[_wellLevel]);
-        _player.SetMaxStorage(_storageStat[_storageLevel]);
-        _player.SetSpeedBoost(_speedStat[_bootsLevel]);
-        _player.SetArmor(_armorStat[_armorLevel]);
+        newPlayer.SetMaxHealth(_fireCampUpgrades[_firecampLevel].GetBoost());
+        newPlayer.SetMaxStamina(_wellUpgrades[_wellLevel].GetBoost());
+        newPlayer.SetStorageMalus(_backpackUpgrades[_storageLevel].GetBoost());
+        newPlayer.SetSpeed(_shoesUpgrades[_bootsLevel].GetBoost());
+        newPlayer.SetArmor(_armorUpgrades[_armorLevel].GetBoost());
+        //newPlayer.SetSupportBoost(_spellsUpgrades[_spellLevel].GetBoost());
     }
+
 
     public int GetScrapCount() { return _scrapCount; }
 
