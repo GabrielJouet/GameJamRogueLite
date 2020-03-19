@@ -26,7 +26,7 @@ public class PlayerMovement : MonoBehaviour
 
 
     private int _scrapCount = 0;
-    private bool _canMove;
+    private bool _canMove = true;
 
 
     [Header("Components")]
