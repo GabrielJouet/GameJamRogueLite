@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4a25df56073a0940ab423a7f9007ece, type: 3}
   m_Name: ForestRooms
   m_EditorClassIdentifier: 
-  _roomCount: 35
+  _roomCount: 55
   _secretRoomCount: 0
   _baseRooms:
   - {fileID: 2654299726172551349, guid: 88b38b82abd45804ebc39cee72fcfe25, type: 3}
