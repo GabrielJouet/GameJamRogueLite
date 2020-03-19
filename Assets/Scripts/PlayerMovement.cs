@@ -26,6 +26,7 @@ public class PlayerMovement : MonoBehaviour
 
 
     private int _scrapCount = 0;
+    private bool _canMove;
 
 
     [Header("Components")]
@@ -50,13 +51,16 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-        _rigidBody.AddForce(Vector2.ClampMagnitude(new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")), 1) * _speed * Time.deltaTime);
-
-
-        if (Input.GetKeyDown(KeyCode.R) && _transitionSaver.GetCanTeleport())
+        if(_canMove)
         {
-            _transitionSaver.LoadBase();
-            _transitionSaver.SetCanTeleport(false);
+            _rigidBody.AddForce(Vector2.ClampMagnitude(new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")), 1) * _speed * Time.deltaTime);
+
+
+            if (Input.GetKeyDown(KeyCode.R) && _transitionSaver.GetCanTeleport())
+            {
+                _transitionSaver.LoadBase();
+                _transitionSaver.SetCanTeleport(false);
+            }
         }
     }
 
@@ -148,4 +152,6 @@ public class PlayerMovement : MonoBehaviour
     {
         _staminaRegenAmount = supportBoost; 
     }
+
+    public void SetCanMove(bool other) { _canMove = other; }
 }

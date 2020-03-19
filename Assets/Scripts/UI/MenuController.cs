@@ -7,32 +7,45 @@ public class MenuController : MonoBehaviour
     private List<GameObject> _menuElements;
     private int _index = 0;
 
+    [SerializeField]
+    private bool _canBeHide;
+
+    [SerializeField]
+    private GameObject _menu;
+
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Z) || Input.GetKeyDown(KeyCode.W))
+        if(_menu.activeSelf)
         {
-            if (_index == 0)
-                _index = _menuElements.Count - 1;
-            else
-                _index--;
+            if (Input.GetKeyDown(KeyCode.Z) || Input.GetKeyDown(KeyCode.W))
+            {
+                if (_index == 0)
+                    _index = _menuElements.Count - 1;
+                else
+                    _index--;
 
-            ActivateMenuElements();
+                ActivateMenuElements();
+            }
+            else if (Input.GetKeyDown(KeyCode.S))
+            {
+                if (_index == _menuElements.Count - 1)
+                    _index = 0;
+                else
+                    _index++;
+
+                ActivateMenuElements();
+            }
+
+            if (Input.GetKeyDown(KeyCode.Return))
+                _menuElements[_index].GetComponent<IChoosable>().Choose();
         }
-        else if (Input.GetKeyDown(KeyCode.S))
+
+        if (_canBeHide && Input.GetKeyDown(KeyCode.Escape))
         {
-            if (_index == _menuElements.Count - 1)
-                _index = 0;
-            else
-                _index++;
-
-            ActivateMenuElements();
+            _menu.SetActive(!_menu.activeSelf);
+            FindObjectOfType<PlayerMovement>().SetCanMove(!_menu.activeSelf);
         }
-
-        Debug.Log(_index);
-
-        if (Input.GetKeyDown(KeyCode.Return))
-            _menuElements[_index].GetComponent<IChoosable>().Choose();
     }
 
 
