@@ -9,13 +9,10 @@ public class PlayerUI : MonoBehaviour
     private Gradient _healthGradient;
     [SerializeField]
     private Image _healthFill;
-
     [SerializeField]
-    private Slider _staminaSlider;
+    private Text _maxHealth;
     [SerializeField]
-    private Gradient _staminaGradient;
-    [SerializeField]
-    private Image _staminaFill;
+    private Text _health;
 
     [SerializeField]
     private Text _scrapCount;
@@ -24,29 +21,23 @@ public class PlayerUI : MonoBehaviour
 
     public void SetMaxHealth(float health)
     {
+        _maxHealth.text = "/" + health;
+        _health.text = health.ToString();
+
         _healthSlider.maxValue = health;
         _healthSlider.value = health;
         _healthFill.color = _healthGradient.Evaluate(1f);
     }
 
+
     public void SetHealth(float health)
     {
+        _health.text = health.ToString();
+
         _healthSlider.value = health;
         _healthFill.color = _healthGradient.Evaluate(_healthSlider.normalizedValue);
     }
 
-    public void SetMaxStamina(float stamina)
-    {
-        _staminaSlider.maxValue = stamina;
-        _staminaSlider.value = stamina;
-        _staminaFill.color = _staminaGradient.Evaluate(1f);
-    }
-
-    public void SetStamina(float stamina)
-    {
-        _staminaSlider.value = stamina;
-        _staminaFill.color = _staminaGradient.Evaluate(_staminaSlider.normalizedValue);
-    }
 
     public void SetScrap(int other)
     {

@@ -4,24 +4,9 @@ using UnityEngine.SceneManagement;
 
 public class TransitionSaver : MonoBehaviour
 {
-    private int _scrapCount;
-    private int _firecampLevel;
-    private int _storageLevel;
-    private int _wellLevel;
-    private int _armorLevel;
-    private int _bootsLevel;
-    private int _1stSelectedSpell;
-    private int _2ndSelectedSpell;
-    private int _spellLevel;
-
-
     [Header("Upgrades")]
     [SerializeField]
     private List<Upgrade> _fireCampUpgrades;
-    [SerializeField]
-    private List<Upgrade> _wellUpgrades;
-    [SerializeField]
-    private List<Upgrade> _spellsUpgrades;
     [SerializeField]
     private List<Upgrade> _shoesUpgrades;
     [SerializeField]
@@ -33,13 +18,20 @@ public class TransitionSaver : MonoBehaviour
     [Header("Player prefabs")]
     [SerializeField]
     private PlayerMovement _player;
+    private PlayerUI _playerUI;
 
-    private bool _dungeonLoaded = false;
-    private bool _canReturnToBase = true;
 
     private bool _forestKeyGained = false;
     private bool _cavernKeyGained = false;
     private bool _graveyardKeyGained = false;
+
+    private bool _dungeonLoaded = false;
+
+    private int _scrapCount;
+    private int _firecampLevel;
+    private int _storageLevel;
+    private int _armorLevel;
+    private int _bootsLevel;
 
 
     private void Awake()
@@ -48,11 +40,7 @@ public class TransitionSaver : MonoBehaviour
             Destroy(gameObject);
 
         DontDestroyOnLoad(gameObject);
-    }
 
-
-    private void Start()
-    {
         int rng = System.Environment.TickCount;
         Random.InitState(rng);
     }
@@ -79,38 +67,58 @@ public class TransitionSaver : MonoBehaviour
     }
 
 
-    public int RecoverUpgradeBench(string type)
+    public List<Upgrade> RecoverUpgrades(string type)
+    {
+        switch (type)
+        {
+            case "Fire":
+                return _fireCampUpgrades;
+                
+            case "Shoes":
+                return _shoesUpgrades;
+
+            case "Storage":
+                return _backpackUpgrades;
+
+            case "Armor":
+                return _armorUpgrades;
+
+            default:
+                return null;
+        };
+    }
+
+
+    public int RecoverUpgradesNumber(string type)
     {
         switch (type)
         {
             case "Fire":
                 return _firecampLevel;
-                
+
             case "Shoes":
                 return _bootsLevel;
 
             case "Storage":
                 return _storageLevel;
 
-            case "Spells":
-                return _spellLevel;
-
             case "Armor":
                 return _armorLevel;
 
-            case "Well":
-                return _wellLevel;
             default:
                 return 0;
         };
     }
 
-    public void SetBenchUpgrade(string type)
+
+    public void UpgradeBench(string type)
     {
         switch(type)
         {
             case "Fire":
                 _firecampLevel++;
+                UpdatePlayerMaxHealth(_fireCampUpgrades[_firecampLevel].GetBoost());
+                UpdatePlayerHealth(_fireCampUpgrades[_firecampLevel].GetBoost());
                 break;
             case "Shoes":
                 _bootsLevel++;
@@ -118,69 +126,78 @@ public class TransitionSaver : MonoBehaviour
             case "Storage":
                 _storageLevel++;
                 break;
-            case "Spells":
-                _spellLevel++;
-                break;
             case "Armor":
                 _armorLevel++;
-                break;
-            case "Well":
-                _wellLevel ++;
                 break;
         };
     }
 
 
-    public void ApplyPlayerStat(PlayerMovement newPlayer)
+    public void SetPlayerStats(PlayerMovement other)
     {
-        newPlayer.SetMaxHealth(_fireCampUpgrades[_firecampLevel].GetBoost());
-        newPlayer.SetMaxStamina(_wellUpgrades[_wellLevel].GetBoost());
-        newPlayer.SetStorageMalus(_backpackUpgrades[_storageLevel].GetBoost());
-        newPlayer.SetSpeed(_shoesUpgrades[_bootsLevel].GetBoost());
-        newPlayer.SetArmor(_armorUpgrades[_armorLevel].GetBoost());
-        //newPlayer.SetSupportBoost(_spellsUpgrades[_spellLevel].GetBoost());
+        other.SetMaxHealth(_fireCampUpgrades[_firecampLevel].GetBoost());
+        other.SetHealth(_fireCampUpgrades[_firecampLevel].GetBoost());
+        other.SetArmor(_armorUpgrades[_armorLevel].GetBoost());
+        other.SetSpeed(_shoesUpgrades[_bootsLevel].GetBoost());
+        other.SetStorageMalus(_backpackUpgrades[_storageLevel].GetBoost());
+
+        UpdatePlayerHealth(_fireCampUpgrades[_firecampLevel].GetBoost());
+        UpdatePlayerMaxHealth(_fireCampUpgrades[_firecampLevel].GetBoost());
+        UpdateScrapCount(_scrapCount);
     }
 
 
-    public int GetScrapCount() { return _scrapCount; }
+    public void UpdatePlayerHealth(float health)
+    {
+        if (_playerUI == null)
+            _playerUI = FindObjectOfType<PlayerUI>();
 
-    public void AddScrapCount (int other) { _scrapCount += other; }
+        _playerUI.SetHealth(health);
+    }
 
-    public void RemoveScrapCount (int other) { _scrapCount -= other; }
 
-    public void SetScrapCount (int other) { _scrapCount = other; }
-    
-    public void Set1stSelectedSpell(int lvl) { _1stSelectedSpell = lvl; }
+    public void UpdatePlayerMaxHealth(float maxHealth)
+    {
+        if (_playerUI == null)
+            _playerUI = FindObjectOfType<PlayerUI>();
 
-    public void Set2ndSelectedSpell(int lvl) { _2ndSelectedSpell = lvl; }
+        _playerUI.SetMaxHealth(maxHealth);
+    }
 
-    public bool GetCanTeleport() { return _canReturnToBase; }
 
-    public void SetFireCampLvl(int lvl) { _firecampLevel = lvl; }
+    public void UpdateScrapCount(int scrapCount)
+    {
+        if (_playerUI == null)
+            _playerUI = FindObjectOfType<PlayerUI>();
+        _playerUI.SetScrap(scrapCount);
+    }
 
-    public void SetBackpackLvl(int lvl) { _storageLevel = lvl; }
 
-    public void SetWellLvl(int lvl) { _wellLevel = lvl; }
+    public void RemoveScrap(int scrapCount) 
+    {
+        _scrapCount -= scrapCount;
+        UpdateScrapCount(_scrapCount); 
+    }
 
-    public void SetArmorLvl(int lvl) { _armorLevel = lvl; }
+    public void AddScrapCount (int scrapCount) 
+    {
+        _scrapCount += scrapCount;
+        UpdateScrapCount(_scrapCount);
+    }
 
-    public void SetShoesLvl(int lvl) { _bootsLevel = lvl; }
+    public int GetScrapCount () { return _scrapCount; }
 
-    public void SetSpellLvl(int lvl) { _spellLevel = lvl; }
+    public bool GetGraveyardKey () { return _graveyardKeyGained; }
 
-    public void SetCanTeleport(bool other) { _canReturnToBase = other; }
+    public bool GetForestKey () { return _forestKeyGained; }
 
-    public bool GetGraveyardKey() { return _graveyardKeyGained; }
+    public bool GetCavernKey () { return _cavernKeyGained; }
 
-    public bool GetForestKey() { return _forestKeyGained; }
+    public void SetGraveyardKey (bool other) { _graveyardKeyGained = other; }
 
-    public bool GetCavernKey() { return _cavernKeyGained; }
+    public void SetForestKey (bool other) { _forestKeyGained = other; }
 
-    public void SetGraveyardKey(bool other) { _graveyardKeyGained = other; }
+    public void SetCavernKey (bool other) { _cavernKeyGained = other; }
 
-    public void SetForestKey(bool other) { _forestKeyGained = other; }
-
-    public void SetCavernKey(bool other) { _cavernKeyGained = other; }
-
-    public PlayerMovement GetPlayer() { return _player; }
+    public PlayerMovement GetPlayer () { return _player; }
 }

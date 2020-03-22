@@ -10,6 +10,6 @@ public class HomeController : MonoBehaviour
         TransitionSaver saver = FindObjectOfType<TransitionSaver>();
 
         PlayerMovement newPlayer = Instantiate(saver.GetPlayer(), _spawnPoint.position, Quaternion.identity);
-        newPlayer.Initialize(saver, GetComponent<PlayerUI>());
+        newPlayer.Initialize(saver);
     }
 }

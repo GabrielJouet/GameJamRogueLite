@@ -13,15 +13,11 @@ public class Upgrade : ScriptableObject
     private string _placeName;
 
     [SerializeField]
-    private Sprite _iconSprite;
-
-    [SerializeField]
-    private int _boost;
+    private float _boost;
 
 
     public int GetCost() { return _cost; }
     public string GetDescriptionText() { return _descriptionText; }
     public string GetPlaceName() { return _placeName; }
-    public Sprite GetIconSprite() { return _iconSprite; }
-    public int GetBoost() { return _boost; }
+    public float GetBoost() { return _boost; }
 }

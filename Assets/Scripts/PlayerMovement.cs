@@ -5,24 +5,20 @@ public class PlayerMovement : MonoBehaviour
 {
     [Header("Player Stats")]
     [SerializeField]
-    private int _maxHealth;
-    private int _health;
+    private float _maxHealth;
+    private float _health;
     [SerializeField]
-    private float _maxStamina;
-    private float _stamina;
-    [SerializeField]
-    private float _speed = 7500;
+    private float _speed = 15000;
     private float _maxSpeed;
     [SerializeField]
     private float _armor;
     [SerializeField]
-    private int _storageMalus;
+    private float _storageMalus;
+
+
+    [Header("Audio Files")]
     [SerializeField]
-    private float _dashCost = 5;
-    [SerializeField]
-    private float _staminaRegenAmount = 2;
-    [SerializeField]
-    private float _staminaRegenTime = 2f;
+    private AudioClip _collectScrapSound;
 
 
     private int _scrapCount = 0;
@@ -32,74 +28,51 @@ public class PlayerMovement : MonoBehaviour
     [Header("Components")]
     [SerializeField]
     private Rigidbody2D _rigidBody;
+    [SerializeField]
+    private AudioSource _audioSource;
 
-    private bool _staminaCR_running = false;
-    private IEnumerator _coStamina;
 
     private TransitionSaver _transitionSaver;
-    private PlayerUI _playerUI;
 
 
-    public void Initialize(TransitionSaver newSaver, PlayerUI newPlayerUI)
+    public void Initialize(TransitionSaver newSaver)
     {
         _transitionSaver = newSaver;
-        _playerUI = newPlayerUI;
 
-        _transitionSaver.ApplyPlayerStat(this);
+        _transitionSaver.SetPlayerStats(this);
     }
 
 
     private void Update()
     {
         if(_canMove)
-        {
             _rigidBody.AddForce(Vector2.ClampMagnitude(new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")), 1) * _speed * Time.deltaTime);
 
-
-            if (Input.GetKeyDown(KeyCode.R) && _transitionSaver.GetCanTeleport())
-            {
-                _transitionSaver.LoadBase();
-                _transitionSaver.SetCanTeleport(false);
-            }
-        }
+        if (Input.GetKeyDown(KeyCode.E))
+            TakeDamage(2);
     }
 
 
     private void TakeDamage(int damage)
     {
-        _health -= damage;
-        _playerUI.SetHealth(_health);
+        if(_health - damage <= 0)
+        {
+            _health = 0;
+            _canMove = false;
+            StartCoroutine(Die());
+        }
+        else 
+            _health -= damage;
+
+        _transitionSaver.UpdatePlayerHealth(_health);
     }
 
 
-    private void LooseStamina(int staminaCost)
+    private IEnumerator Die()
     {
-        _stamina -= staminaCost;
-        _playerUI.SetStamina(_stamina);
-
-        if (_staminaCR_running)
-        {
-            StopCoroutine(_coStamina);
-            StartCoroutine(_coStamina);
-        }
-        else
-            StartCoroutine(_coStamina);
-    }
-
-
-    private IEnumerator RegenStamina()
-    {
-        _staminaCR_running = true;
-
-        while (_stamina < _maxStamina)
-        {
-            yield return new WaitForSeconds(_staminaRegenTime);
-
-            _stamina += (_stamina + _staminaRegenAmount >= _maxStamina) ? 0 : _staminaRegenAmount;
-            _playerUI.SetStamina(_stamina);
-        }
-
-        _staminaCR_running = false;
+        yield return new WaitForSeconds(2.5f);
+        _transitionSaver.AddScrapCount(_scrapCount);
+        _transitionSaver.LoadBase();
     }
 
 
@@ -107,32 +80,25 @@ public class PlayerMovement : MonoBehaviour
     {
         _scrapCount += value;
         _speed = _maxSpeed - (_maxSpeed * (_scrapCount * _storageMalus) / 100f);
-        _playerUI.SetScrap(_scrapCount);
-    }
+        _transitionSaver.UpdateScrapCount(_scrapCount);
 
-
-    public void AbandonScrap()
-    {
-        _scrapCount--;
-        _speed = _maxSpeed - (_maxSpeed * (_scrapCount * _storageMalus) / 100f);
-        _playerUI.SetScrap(_scrapCount);
+        _audioSource.clip = _collectScrapSound;
+        _audioSource.Play();
     }
 
 
     //--------------------------------Setter
-    public void SetMaxHealth(int health) 
+    public void SetMaxHealth(float health) 
     { 
         _maxHealth = health;
-        _playerUI.SetMaxHealth(_maxHealth);
     }
 
-    public void SetMaxStamina(int stamina) 
-    { 
-        _maxStamina = stamina;
-        _playerUI.SetMaxStamina(_maxStamina);
+    public void SetHealth(float health)
+    {
+        _health = health;
     }
 
-    public void SetStorageMalus(int storage) 
+    public void SetStorageMalus(float storage) 
     {
         _storageMalus = storage; 
     }
@@ -146,11 +112,6 @@ public class PlayerMovement : MonoBehaviour
     { 
         _speed = speed;
         _maxSpeed = _speed;
-    }
-
-    public void SetSupportBoost(float supportBoost) 
-    {
-        _staminaRegenAmount = supportBoost; 
     }
 
     public void SetCanMove(bool other) { _canMove = other; }

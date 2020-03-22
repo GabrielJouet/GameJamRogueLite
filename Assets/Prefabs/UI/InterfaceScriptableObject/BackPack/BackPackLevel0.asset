@@ -16,4 +16,4 @@ MonoBehaviour:
   _descriptionText: Your pack is filled with holes and rats
   _placeName: BackPack
   _iconSprite: {fileID: 21300000, guid: 0df410753a4c244418897bea48bc0a72, type: 3}
-  _boost: 40
+  _boost: 2

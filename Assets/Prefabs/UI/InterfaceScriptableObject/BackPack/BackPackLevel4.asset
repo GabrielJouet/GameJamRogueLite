@@ -16,4 +16,4 @@ MonoBehaviour:
   _descriptionText: You upgrade the size of the backpack
   _placeName: BackPack
   _iconSprite: {fileID: 21300000, guid: 0df410753a4c244418897bea48bc0a72, type: 3}
-  _boost: 150
+  _boost: 0.1

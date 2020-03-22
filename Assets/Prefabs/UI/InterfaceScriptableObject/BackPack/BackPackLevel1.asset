@@ -16,4 +16,4 @@ MonoBehaviour:
   _descriptionText: You managed to kill the rats to gain more space
   _placeName: BackPack
   _iconSprite: {fileID: 21300000, guid: 0df410753a4c244418897bea48bc0a72, type: 3}
-  _boost: 60
+  _boost: 1

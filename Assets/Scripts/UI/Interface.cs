@@ -7,10 +7,6 @@ public class Interface : MonoBehaviour
     [SerializeField]
     private Text _mainText;
     [SerializeField]
-    private Text _boostText;
-    [SerializeField]
-    private Image _boostIcon;
-    [SerializeField]
     private Text _upgradeText;
 
     [SerializeField]
@@ -22,32 +18,31 @@ public class Interface : MonoBehaviour
     [SerializeField]
     private string _type;
 
-    [SerializeField]
     private List<Upgrade> _availableUpgrades;
-    private Upgrade _loadedUpgrade;
+    private int _level;
 
     private TransitionSaver _transitionSaver;
-
-    private int _level = 0;
 
 
 
     private void Start()
     {
         _transitionSaver = FindObjectOfType<TransitionSaver>();
-        _level = _transitionSaver.RecoverUpgradeBench(_type);
+        _availableUpgrades = _transitionSaver.RecoverUpgrades(_type);
+        _level = _transitionSaver.RecoverUpgradesNumber(_type);
         DisplayChange();
     }
 
 
     public void Upgrade()
     {
-        if(_level < _availableUpgrades.Count)
+        if (_level < _availableUpgrades.Count)
         {
-            if(_transitionSaver.GetScrapCount() >= _loadedUpgrade.GetCost())
+            if(_transitionSaver.GetScrapCount() >= _availableUpgrades[_level].GetCost())
             {
+                _transitionSaver.RemoveScrap(_availableUpgrades[_level].GetCost());
                 _level++;
-                _transitionSaver.SetBenchUpgrade(_type);
+                _transitionSaver.UpgradeBench(_type);
                 DisplayChange();
             }
         }
@@ -56,11 +51,8 @@ public class Interface : MonoBehaviour
 
     private void DisplayChange()
     {
-        _loadedUpgrade = _availableUpgrades[_level];
-        _mainText.text = _loadedUpgrade.GetDescriptionText();
-        _boostText.text = _loadedUpgrade.GetBoost().ToString();
-        _upgradeText.text = "Upgrade for " + _loadedUpgrade.GetCost();
-        _boostIcon.sprite = _loadedUpgrade.GetIconSprite();
+        _mainText.text = _availableUpgrades[_level].GetDescriptionText();
+        _upgradeText.text = "Upgrade for " + _availableUpgrades[_level].GetCost();
     }
 
 
