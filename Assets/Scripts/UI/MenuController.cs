@@ -37,7 +37,7 @@ public class MenuController : MonoBehaviour
                 ActivateMenuElements();
             }
 
-            if (Input.GetKeyDown(KeyCode.Return))
+            if (Input.GetKeyDown(KeyCode.E))
                 _menuElements[_index].GetComponent<IChoosable>().Choose();
         }
 

@@ -38,7 +38,7 @@ public class Interface : MonoBehaviour
 
     private void Update()
     {
-        if (_activated && Input.GetKeyDown(KeyCode.Return))
+        if (_activated && Input.GetKeyDown(KeyCode.E))
             Upgrade();
     }
 
