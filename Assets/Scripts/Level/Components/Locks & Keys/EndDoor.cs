@@ -38,6 +38,13 @@ public class EndDoor : MonoBehaviour, ILockable
     }
 
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.GetComponent<PlayerMovement>() && !_isLocked)
+            collision.GetComponent<PlayerMovement>().Win();
+    }
+
+
     public void OpenOneLock(Lock other)
     {
         if (_locks.Contains(other))

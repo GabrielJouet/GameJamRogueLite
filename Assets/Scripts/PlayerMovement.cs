@@ -70,9 +70,23 @@ public class PlayerMovement : MonoBehaviour
 
     private IEnumerator Die()
     {
+        FindObjectOfType<PlayerUI>().ShowDeathPanel(true, _scrapCount);
         yield return new WaitForSeconds(2.5f);
         _transitionSaver.AddScrapCount(_scrapCount);
         _transitionSaver.LoadBase();
+    }
+
+    public void Win()
+    {
+        StartCoroutine(DisplayWin());
+    }
+
+    private IEnumerator DisplayWin()
+    {
+        FindObjectOfType<PlayerUI>().ShowDeathPanel(false, _scrapCount);
+        yield return new WaitForSeconds(3.5f);
+        _transitionSaver.AddScrapCount(_scrapCount);
+        _transitionSaver.LoadEnd();
     }
 
 

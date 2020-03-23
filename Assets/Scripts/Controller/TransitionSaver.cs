@@ -67,6 +67,12 @@ public class TransitionSaver : MonoBehaviour
     }
 
 
+    public void LoadEnd()
+    {
+        SceneManager.LoadScene("End");
+    }
+
+
     public List<Upgrade> RecoverUpgrades(string type)
     {
         switch (type)
