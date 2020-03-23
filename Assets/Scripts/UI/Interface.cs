@@ -13,15 +13,17 @@ public class Interface : MonoBehaviour
     private GameObject _ui;
 
     [SerializeField]
-    private Button _btn;
+    private string _type;
 
     [SerializeField]
-    private string _type;
+    private Animator _buttonAnimator;
 
     private List<Upgrade> _availableUpgrades;
     private int _level;
 
     private TransitionSaver _transitionSaver;
+
+    private bool _activated = false;
 
 
 
@@ -34,17 +36,27 @@ public class Interface : MonoBehaviour
     }
 
 
-    public void Upgrade()
+    private void Update()
+    {
+        if (_activated && Input.GetKeyDown(KeyCode.Return))
+            Upgrade();
+    }
+
+
+    private void Upgrade()
     {
         if (_level < _availableUpgrades.Count)
         {
             if(_transitionSaver.GetScrapCount() >= _availableUpgrades[_level].GetCost())
             {
+                _buttonAnimator.SetTrigger("good");
                 _transitionSaver.RemoveScrap(_availableUpgrades[_level].GetCost());
                 _level++;
                 _transitionSaver.UpgradeBench(_type);
                 DisplayChange();
             }
+            else
+                _buttonAnimator.SetTrigger("bad");
         }
     }
 
@@ -58,15 +70,15 @@ public class Interface : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        _activated = true;
         _ui.SetActive(true);
         DisplayChange();
-        _btn.onClick.RemoveAllListeners();
-        _btn.onClick.AddListener(delegate { this.Upgrade(); });
     }
 
 
     private void OnTriggerExit2D(Collider2D collision)
     {
+        _activated = false;
         _ui.SetActive(false);
     }
 }
