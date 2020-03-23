@@ -99,7 +99,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.12
 --- !u!114 &6944007545255614006
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -116,3 +116,4 @@ MonoBehaviour:
   _locked: {fileID: 0}
   _opened: {fileID: 0}
   _spriteRenderer: {fileID: 2799534124511504377}
+  _lockedDoor: {fileID: 0}
