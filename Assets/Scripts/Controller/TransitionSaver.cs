@@ -99,18 +99,25 @@ public class TransitionSaver : MonoBehaviour
         switch(type)
         {
             case "Fire":
-                _firecampLevel++;
+                if(_firecampLevel + 1 < _fireCampUpgrades.Count)
+                    _firecampLevel++;
                 FindObjectOfType<PlayerMovement>().SetMaxHealth(_fireCampUpgrades[_firecampLevel].GetBoost());
                 FindObjectOfType<PlayerMovement>().SetHealth(_fireCampUpgrades[_firecampLevel].GetBoost());
                 break;
+
             case "Shoes":
-                _shoesLevel++;
+                if (_shoesLevel + 1 < _shoesUpgrades.Count)
+                    _shoesLevel++;
                 break;
+
             case "Storage":
-                _backpackLevel++;
+                if (_backpackLevel + 1 < _backpackUpgrades.Count)
+                    _backpackLevel++;
                 break;
+
             case "Armor":
-                _armorLevel++;
+                if (_armorLevel + 1 < _armorUpgrades.Count)
+                    _armorLevel++;
                 break;
         };
     }

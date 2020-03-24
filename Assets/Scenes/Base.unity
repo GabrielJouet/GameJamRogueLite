@@ -425,6 +425,7 @@ MonoBehaviour:
   _ui: {fileID: 1001820565}
   _type: Fire
   _buttonAnimator: {fileID: 608095586}
+  _finalText: The fire is raging!
 --- !u!61 &345807227
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3874,6 +3875,11 @@ MonoBehaviour:
   _maxHealth: {fileID: 381809529}
   _health: {fileID: 366038151}
   _scrapCount: {fileID: 983379369}
+  _deathUI: {fileID: 0}
+  _scrapCountOnDeath: {fileID: 0}
+  _descriptionText: {fileID: 0}
+  _winUI: {fileID: 0}
+  _restartUI: {fileID: 0}
 --- !u!114 &1198827173
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4174,6 +4180,7 @@ MonoBehaviour:
   _ui: {fileID: 1001820565}
   _type: Shoes
   _buttonAnimator: {fileID: 608095586}
+  _finalText: Your boots feels great now!
 --- !u!61 &1440350229
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4559,6 +4566,7 @@ MonoBehaviour:
   _ui: {fileID: 1001820565}
   _type: Storage
   _buttonAnimator: {fileID: 608095586}
+  _finalText: 'Your pack is like you: strong and tough!'
 --- !u!61 &1926478654
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4820,6 +4828,7 @@ MonoBehaviour:
   _ui: {fileID: 1001820565}
   _type: Armor
   _buttonAnimator: {fileID: 608095586}
+  _finalText: Your armor is perfect!
 --- !u!61 &2145928773
 BoxCollider2D:
   m_ObjectHideFlags: 0

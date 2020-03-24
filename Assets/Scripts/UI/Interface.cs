@@ -30,7 +30,7 @@ public class Interface : MonoBehaviour
 
     private void Update()
     {
-        if (_activated && Input.GetKeyDown(KeyCode.E))
+        if (_activated && Input.GetKeyDown(KeyCode.E) && !_noMoreUpgradesLeft)
             Upgrade();
     }
 

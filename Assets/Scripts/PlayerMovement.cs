@@ -101,7 +101,7 @@ public class PlayerMovement : MonoBehaviour
         _scrapCount += value;
         float speedMalus = _maxSpeed - (_maxSpeed * (_scrapCount * _storageMalus) / 100f);
 
-        _speed = speedMalus < 0.5f * _maxSpeed ? 0.5f * _maxSpeed : speedMalus;
+        _speed = speedMalus < 0.4f * _maxSpeed ? 0.4f * _maxSpeed : speedMalus;
 
         _playerUI.SetScrap(_scrapCount);
 
