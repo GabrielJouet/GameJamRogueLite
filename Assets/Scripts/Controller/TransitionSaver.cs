@@ -18,7 +18,6 @@ public class TransitionSaver : MonoBehaviour
     [Header("Player prefabs")]
     [SerializeField]
     private PlayerMovement _player;
-    private PlayerUI _playerUI;
 
 
     private bool _forestKeyGained = false;
@@ -29,9 +28,9 @@ public class TransitionSaver : MonoBehaviour
 
     private int _scrapCount;
     private int _firecampLevel;
-    private int _storageLevel;
+    private int _backpackLevel;
     private int _armorLevel;
-    private int _bootsLevel;
+    private int _shoesLevel;
 
 
     private void Awake()
@@ -73,46 +72,24 @@ public class TransitionSaver : MonoBehaviour
     }
 
 
-    public List<Upgrade> RecoverUpgrades(string type)
+    public Upgrade RecoverUpgrade(string type)
     {
         switch (type)
         {
             case "Fire":
-                return _fireCampUpgrades;
+                return _firecampLevel < _fireCampUpgrades.Count ? _fireCampUpgrades[_firecampLevel] : null;
                 
             case "Shoes":
-                return _shoesUpgrades;
+                return _shoesLevel < _shoesUpgrades.Count ? _shoesUpgrades[_shoesLevel] : null;
 
             case "Storage":
-                return _backpackUpgrades;
+                return _backpackLevel < _backpackUpgrades.Count ? _backpackUpgrades[_backpackLevel] : null;
 
             case "Armor":
-                return _armorUpgrades;
+                return _armorLevel < _armorUpgrades.Count ? _armorUpgrades[_armorLevel] : null;
 
             default:
                 return null;
-        };
-    }
-
-
-    public int RecoverUpgradesNumber(string type)
-    {
-        switch (type)
-        {
-            case "Fire":
-                return _firecampLevel;
-
-            case "Shoes":
-                return _bootsLevel;
-
-            case "Storage":
-                return _storageLevel;
-
-            case "Armor":
-                return _armorLevel;
-
-            default:
-                return 0;
         };
     }
 
@@ -123,14 +100,14 @@ public class TransitionSaver : MonoBehaviour
         {
             case "Fire":
                 _firecampLevel++;
-                UpdatePlayerMaxHealth(_fireCampUpgrades[_firecampLevel].GetBoost());
-                UpdatePlayerHealth(_fireCampUpgrades[_firecampLevel].GetBoost());
+                FindObjectOfType<PlayerMovement>().SetMaxHealth(_fireCampUpgrades[_firecampLevel].GetBoost());
+                FindObjectOfType<PlayerMovement>().SetHealth(_fireCampUpgrades[_firecampLevel].GetBoost());
                 break;
             case "Shoes":
-                _bootsLevel++;
+                _shoesLevel++;
                 break;
             case "Storage":
-                _storageLevel++;
+                _backpackLevel++;
                 break;
             case "Armor":
                 _armorLevel++;
@@ -139,56 +116,30 @@ public class TransitionSaver : MonoBehaviour
     }
 
 
-    public void SetPlayerStats(PlayerMovement other)
+    public void SetPlayerStats(PlayerMovement other, bool home)
     {
         other.SetMaxHealth(_fireCampUpgrades[_firecampLevel].GetBoost());
         other.SetHealth(_fireCampUpgrades[_firecampLevel].GetBoost());
         other.SetArmor(_armorUpgrades[_armorLevel].GetBoost());
-        other.SetSpeed(_shoesUpgrades[_bootsLevel].GetBoost());
-        other.SetStorageMalus(_backpackUpgrades[_storageLevel].GetBoost());
+        other.SetSpeed(_shoesUpgrades[_shoesLevel].GetBoost());
+        other.SetStorageMalus(_backpackUpgrades[_backpackLevel].GetBoost());
 
-        UpdatePlayerHealth(_fireCampUpgrades[_firecampLevel].GetBoost());
-        UpdatePlayerMaxHealth(_fireCampUpgrades[_firecampLevel].GetBoost());
-        UpdateScrapCount(_scrapCount);
-    }
-
-
-    public void UpdatePlayerHealth(float health)
-    {
-        if (_playerUI == null)
-            _playerUI = FindObjectOfType<PlayerUI>();
-
-        _playerUI.SetHealth(health);
-    }
-
-
-    public void UpdatePlayerMaxHealth(float maxHealth)
-    {
-        if (_playerUI == null)
-            _playerUI = FindObjectOfType<PlayerUI>();
-
-        _playerUI.SetMaxHealth(maxHealth);
-    }
-
-
-    public void UpdateScrapCount(int scrapCount)
-    {
-        if (_playerUI == null)
-            _playerUI = FindObjectOfType<PlayerUI>();
-        _playerUI.SetScrap(scrapCount);
+        if (home)
+            other.SetScrap(_scrapCount);
     }
 
 
     public void RemoveScrap(int scrapCount) 
     {
         _scrapCount -= scrapCount;
-        UpdateScrapCount(_scrapCount); 
+        FindObjectOfType<PlayerMovement>().SetScrap(_scrapCount);
+
     }
 
     public void AddScrapCount (int scrapCount) 
     {
         _scrapCount += scrapCount;
-        UpdateScrapCount(_scrapCount);
+        FindObjectOfType<PlayerMovement>().SetScrap(_scrapCount);
     }
 
     public int GetScrapCount () { return _scrapCount; }

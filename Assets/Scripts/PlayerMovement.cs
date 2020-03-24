@@ -33,13 +33,15 @@ public class PlayerMovement : MonoBehaviour
 
 
     private TransitionSaver _transitionSaver;
+    private PlayerUI _playerUI;
 
 
-    public void Initialize(TransitionSaver newSaver)
+    public void Initialize(TransitionSaver newSaver, PlayerUI playerUI, bool inHome)
     {
         _transitionSaver = newSaver;
+        _playerUI = playerUI;
 
-        _transitionSaver.SetPlayerStats(this);
+        _transitionSaver.SetPlayerStats(this, inHome);
     }
 
 
@@ -64,26 +66,30 @@ public class PlayerMovement : MonoBehaviour
         else 
             _health -= damage;
 
-        _transitionSaver.UpdatePlayerHealth(_health);
+        _playerUI.SetHealth(_health);
     }
 
 
     private IEnumerator Die()
     {
-        FindObjectOfType<PlayerUI>().ShowDeathPanel(true, _scrapCount);
+        _playerUI.ShowDeathPanel(true, _scrapCount);
+
         yield return new WaitForSeconds(2.5f);
         _transitionSaver.AddScrapCount(_scrapCount);
         _transitionSaver.LoadBase();
     }
+
 
     public void Win()
     {
         StartCoroutine(DisplayWin());
     }
 
+
     private IEnumerator DisplayWin()
     {
-        FindObjectOfType<PlayerUI>().ShowDeathPanel(false, _scrapCount);
+        _playerUI.ShowDeathPanel(false, _scrapCount);
+
         yield return new WaitForSeconds(3.5f);
         _transitionSaver.AddScrapCount(_scrapCount);
         _transitionSaver.LoadEnd();
@@ -93,8 +99,11 @@ public class PlayerMovement : MonoBehaviour
     public void CollectScrap(int value)
     {
         _scrapCount += value;
-        _speed = _maxSpeed - (_maxSpeed * (_scrapCount * _storageMalus) / 100f);
-        _transitionSaver.UpdateScrapCount(_scrapCount);
+        float speedMalus = _maxSpeed - (_maxSpeed * (_scrapCount * _storageMalus) / 100f);
+
+        _speed = speedMalus < 0.5f * _maxSpeed ? 0.5f * _maxSpeed : speedMalus;
+
+        _playerUI.SetScrap(_scrapCount);
 
         _audioSource.clip = _collectScrapSound;
         _audioSource.Play();
@@ -105,11 +114,13 @@ public class PlayerMovement : MonoBehaviour
     public void SetMaxHealth(float health) 
     { 
         _maxHealth = health;
+        _playerUI.SetMaxHealth(_maxHealth);
     }
 
     public void SetHealth(float health)
     {
         _health = health;
+        _playerUI.SetHealth(_maxHealth);
     }
 
     public void SetStorageMalus(float storage) 
@@ -126,6 +137,13 @@ public class PlayerMovement : MonoBehaviour
     { 
         _speed = speed;
         _maxSpeed = _speed;
+    }
+
+
+    public void SetScrap(int scrap) 
+    { 
+        _scrapCount = scrap;
+        _playerUI.SetScrap(_scrapCount);
     }
 
     public void SetCanMove(bool other) { _canMove = other; }
