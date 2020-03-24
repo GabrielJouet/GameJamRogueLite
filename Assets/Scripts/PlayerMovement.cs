@@ -55,7 +55,7 @@ public class PlayerMovement : MonoBehaviour
     }
 
 
-    private void TakeDamage(int damage)
+    public void TakeDamage(int damage)
     {
         if(_health - damage <= 0)
         {

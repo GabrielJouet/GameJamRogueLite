@@ -13,4 +13,12 @@ public class ShootingTraps : MonoBehaviour
     protected Vector2 _shootingDirections;
     [SerializeField]
     protected Transform _shootingStartPoint;
+
+    protected ProjectilePool _pool;
+
+
+    protected void Start()
+    {
+        _pool = FindObjectOfType<ProjectilePool>();
+    }
 }

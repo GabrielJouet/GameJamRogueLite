@@ -1,4 +1,4 @@
-﻿using System.Collections;
+﻿    using System.Collections;
 using UnityEngine;
 
 public class ContinousDartTrap : ShootingTraps, IActivable, IHidable
@@ -52,7 +52,9 @@ public class ContinousDartTrap : ShootingTraps, IActivable, IHidable
 
         while (_isActive)
         {
-            Instantiate(_projectile, _shootingStartPoint.position, Quaternion.Euler(new Vector3(0, 0, angle)));
+            Projectile newProjectile = _pool.RecoverProjectile(_projectile).GetComponent<Projectile>();
+            newProjectile.Initialize(_shootingStartPoint.position, Quaternion.Euler(new Vector3(0, 0, angle)));
+
             yield return new WaitForSeconds(_fireRate);
         }
     }

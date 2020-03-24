@@ -46,7 +46,8 @@ public class RotatingTurret : ShootingTraps, IActivable, IHidable
     {
         while (_isActive)
         {
-            Instantiate(_projectile, _shootingStartPoint.position, Quaternion.Euler(new Vector3(0,0, transform.localEulerAngles.z)));
+            Projectile newProjectile = _pool.RecoverProjectile(_projectile).GetComponent<Projectile>();
+            newProjectile.Initialize(_shootingStartPoint.position, Quaternion.Euler(new Vector3(0, 0, transform.localEulerAngles.z)));
             yield return new WaitForSeconds(_fireRate);
         }
     }
