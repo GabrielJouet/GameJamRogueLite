@@ -156,8 +156,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -150}
-  m_SizeDelta: {x: 850, y: 250}
+  m_AnchoredPosition: {x: 0, y: -200}
+  m_SizeDelta: {x: 850, y: 350}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &198796484
 MonoBehaviour:
@@ -192,7 +192,9 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: 'It was:
 
-    Needs title'
+    BTD
+
+    Better than dungeons'
 --- !u!222 &198796485
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -672,7 +674,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 5}
-  m_SizeDelta: {x: 850, y: 250}
+  m_SizeDelta: {x: 850, y: 350}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &992287971
 MonoBehaviour:
@@ -707,7 +709,9 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: 'It was:
 
-    Needs title'
+    BTD
+
+    Better than dungeons'
 --- !u!222 &992287972
 CanvasRenderer:
   m_ObjectHideFlags: 0
