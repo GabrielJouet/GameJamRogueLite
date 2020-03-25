@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: -8459982418918131782}
   - component: {fileID: 8224979895197767885}
   - component: {fileID: 8224979895197767884}
+  - component: {fileID: 8932264044246714448}
   - component: {fileID: 8224979895197767880}
   m_Layer: 0
   m_Name: Player
@@ -228,6 +229,25 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
+--- !u!95 &8932264044246714448
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8224979895197767881}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9ad62264427fde94eafd4787dad7e645, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &8224979895197767880
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -241,13 +261,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _maxHealth: 0
-  _maxStamina: 0
   _speed: 15000
   _armor: 0
   _storageMalus: 0
-  _dashCost: 5
-  _staminaRegenAmount: 2
-  _staminaRegenTime: 2
+  _timeBeforeReHit: 0.75
   _collectScrapSound: {fileID: 8300000, guid: ee46b5ca936e3a846ae1b7af033ab39e, type: 3}
   _rigidBody: {fileID: 8224979895197767884}
   _audioSource: {fileID: -8459982418918131782}
+  _animator: {fileID: 8932264044246714448}

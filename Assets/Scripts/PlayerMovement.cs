@@ -14,6 +14,8 @@ public class PlayerMovement : MonoBehaviour
     private float _armor;
     [SerializeField]
     private float _storageMalus;
+    [SerializeField]
+    private float _timeBeforeReHit;
 
 
     [Header("Audio Files")]
@@ -30,10 +32,14 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D _rigidBody;
     [SerializeField]
     private AudioSource _audioSource;
+    [SerializeField]
+    private Animator _animator;
 
 
     private TransitionSaver _transitionSaver;
     private PlayerUI _playerUI;
+
+    private bool _canBeHit = true;
 
 
     public void Initialize(TransitionSaver newSaver, PlayerUI playerUI, bool inHome)
@@ -49,24 +55,37 @@ public class PlayerMovement : MonoBehaviour
     {
         if(_canMove)
             _rigidBody.AddForce(Vector2.ClampMagnitude(new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")), 1) * _speed * Time.deltaTime);
-
-        if (Input.GetKeyDown(KeyCode.E))
-            TakeDamage(2);
     }
 
 
     public void TakeDamage(int damage)
     {
-        if(_health - damage <= 0)
+        if(_canBeHit)
         {
-            _health = 0;
-            _canMove = false;
-            StartCoroutine(Die());
-        }
-        else 
-            _health -= damage;
+            _canBeHit = false;
+            _animator.SetBool("takeDamage", true);
 
-        _playerUI.SetHealth(_health);
+            if (_health - Mathf.FloorToInt(damage - damage * _armor / 100f) <= 0)
+            {
+                _health = 0;
+                _canMove = false;
+                StartCoroutine(Die());
+            }
+            else
+                _health -= Mathf.FloorToInt(damage - damage * _armor / 100f);
+
+            _playerUI.SetHealth(_health);
+
+            StartCoroutine(ResetCanBeHit());
+        }
+    }
+
+
+    private IEnumerator ResetCanBeHit()
+    {
+        yield return new WaitForSeconds(_timeBeforeReHit);
+        _canBeHit = true;
+        _animator.SetBool("takeDamage", false);
     }
 
 
