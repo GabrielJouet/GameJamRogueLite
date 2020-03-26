@@ -262,6 +262,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _maxHealth: 0
   _speed: 15000
+  _dashSpeed: 90000
   _armor: 0
   _storageMalus: 0
   _timeBeforeReHit: 0.75

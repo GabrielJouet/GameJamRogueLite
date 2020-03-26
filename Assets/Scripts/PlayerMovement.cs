@@ -9,6 +9,10 @@ public class PlayerMovement : MonoBehaviour
     private float _health;
     [SerializeField]
     private float _speed = 15000;
+    [SerializeField]
+    private float _dashSpeed = 90000;
+    private float _dashImmunityTime = .2f;
+    private float _dashCooldown = 1f;
     private float _maxSpeed;
     [SerializeField]
     private float _armor;
@@ -25,6 +29,8 @@ public class PlayerMovement : MonoBehaviour
 
     private int _scrapCount = 0;
     private bool _canMove = true;
+    private bool _canDash = true;
+    private bool _isDashing = false;
 
 
     [Header("Components")]
@@ -51,16 +57,40 @@ public class PlayerMovement : MonoBehaviour
     }
 
 
-    private void Update()
+    private void FixedUpdate()
     {
-        if(_canMove)
-            _rigidBody.AddForce(Vector2.ClampMagnitude(new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")), 1) * _speed * Time.deltaTime);
+        Vector2 playerInputs = new Vector2( Input.GetAxis("Horizontal"), Input.GetAxis("Vertical") );
+
+        Vector2 mainDirection = Mathf.Abs(playerInputs.x) > Mathf.Abs(playerInputs.y) ?
+            new Vector2(Mathf.Sign(playerInputs.x), 0) :
+            new Vector2(0, Mathf.Sign(playerInputs.y));
+
+        if (_canMove)
+            _rigidBody.AddForce( Vector2.ClampMagnitude(playerInputs, 1) * _speed * Time.deltaTime );
+
+        if (Input.GetKeyDown(KeyCode.Space) && _canDash)
+            StartCoroutine( Dash(mainDirection) );
+    }
+
+
+    private IEnumerator Dash(Vector2 direction)
+    {
+        _canDash = false;
+        _isDashing = true;
+
+        _rigidBody.AddForce(direction * _dashSpeed * Time.deltaTime);
+
+        yield return new WaitForSeconds(_dashImmunityTime);
+        _isDashing = false;
+
+        yield return new WaitForSeconds(_dashCooldown - _dashImmunityTime);
+        _canDash = true;
     }
 
 
     public void TakeDamage(int damage)
     {
-        if(_canBeHit)
+        if(_canBeHit && !_isDashing)
         {
             _canBeHit = false;
             _animator.SetBool("takeDamage", true);
