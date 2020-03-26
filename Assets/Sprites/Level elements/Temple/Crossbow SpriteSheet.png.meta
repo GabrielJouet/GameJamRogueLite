@@ -1,28 +1,31 @@
 fileFormatVersion: 2
-guid: cfa9aacd07cb8d644804abbee385a650
+guid: fbc1ee91784863d489cbac94bd6f7cd2
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6179551331178719187
-    second: EXPLOSION_0
+      213: 6053626676978583653
+    second: Crossbow SpriteSheet_0
   - first:
-      213: -1475278220248146276
-    second: EXPLOSION_1
+      213: -6387806664738396031
+    second: Crossbow SpriteSheet_1
   - first:
-      213: 8725592175392420673
-    second: EXPLOSION_2
+      213: -5159012334311559548
+    second: Crossbow SpriteSheet_2
   - first:
-      213: 5503232645462916612
-    second: EXPLOSION_3
+      213: 5318336877524454814
+    second: Crossbow SpriteSheet_3
   - first:
-      213: -4995367633711683906
-    second: EXPLOSION_4
+      213: 2869871340208167549
+    second: Crossbow SpriteSheet_4
   - first:
-      213: 8592080414902019667
-    second: EXPLOSION_5
+      213: -6052030184977065442
+    second: Crossbow SpriteSheet_5
   - first:
-      213: -1447594821929575397
-    second: EXPLOSION_6
+      213: -6905909627084626741
+    second: Crossbow SpriteSheet_6
+  - first:
+      213: -7466155081772323579
+    second: Crossbow SpriteSheet_7
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -119,7 +122,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: EXPLOSION_0
+      name: Crossbow SpriteSheet_0
       rect:
         serializedVersion: 2
         x: 0
@@ -133,14 +136,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d28dcc11ec2dd3aa0800000000000000
-      internalID: -6179551331178719187
+      spriteID: 5680324a36dc20450800000000000000
+      internalID: 6053626676978583653
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: EXPLOSION_1
+      name: Crossbow SpriteSheet_1
       rect:
         serializedVersion: 2
         x: 32
@@ -154,14 +157,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c9e1d396642c68be0800000000000000
-      internalID: -1475278220248146276
+      spriteID: 1882566bea3f957a0800000000000000
+      internalID: -6387806664738396031
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: EXPLOSION_2
+      name: Crossbow SpriteSheet_2
       rect:
         serializedVersion: 2
         x: 64
@@ -175,14 +178,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 14371357ad7871970800000000000000
-      internalID: 8725592175392420673
+      spriteID: 48e20859d918768b0800000000000000
+      internalID: -5159012334311559548
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: EXPLOSION_3
+      name: Crossbow SpriteSheet_3
       rect:
         serializedVersion: 2
         x: 0
@@ -196,35 +199,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 40e76250fe86f5c40800000000000000
-      internalID: 5503232645462916612
+      spriteID: e9d84bc56378ec940800000000000000
+      internalID: 5318336877524454814
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: EXPLOSION_4
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 32
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: eb6a12e8a93ecaab0800000000000000
-      internalID: -4995367633711683906
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: EXPLOSION_5
+      name: Crossbow SpriteSheet_4
       rect:
         serializedVersion: 2
         x: 64
@@ -238,14 +220,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 35663d35d933d3770800000000000000
-      internalID: 8592080414902019667
+      spriteID: d7a9e2857c4d3d720800000000000000
+      internalID: 2869871340208167549
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: EXPLOSION_6
+      name: Crossbow SpriteSheet_5
       rect:
         serializedVersion: 2
         x: 0
@@ -259,8 +241,50 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b1c513cdd2c19ebe0800000000000000
-      internalID: -1447594821929575397
+      spriteID: e1a108e9c9ed20ca0800000000000000
+      internalID: -6052030184977065442
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crossbow SpriteSheet_6
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc4aba288c74920a0800000000000000
+      internalID: -6905909627084626741
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crossbow SpriteSheet_7
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50dabf0b283e26890800000000000000
+      internalID: -7466155081772323579
       vertices: []
       indices: 
       edges: []

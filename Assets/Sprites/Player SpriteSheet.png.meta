@@ -1,28 +1,22 @@
 fileFormatVersion: 2
-guid: cfa9aacd07cb8d644804abbee385a650
+guid: a03013969e08ab9498dff36e5238f8fb
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6179551331178719187
-    second: EXPLOSION_0
+      213: -8120907220967446323
+    second: Player SpriteSheet_0
   - first:
-      213: -1475278220248146276
-    second: EXPLOSION_1
+      213: 7172376209386918092
+    second: Player SpriteSheet_0
   - first:
-      213: 8725592175392420673
-    second: EXPLOSION_2
+      213: -2788742371319883320
+    second: Player SpriteSheet_1
   - first:
-      213: 5503232645462916612
-    second: EXPLOSION_3
+      213: -6529261530132957680
+    second: Player SpriteSheet_2
   - first:
-      213: -4995367633711683906
-    second: EXPLOSION_4
-  - first:
-      213: 8592080414902019667
-    second: EXPLOSION_5
-  - first:
-      213: -1447594821929575397
-    second: EXPLOSION_6
+      213: -5806569245197290595
+    second: Player SpriteSheet_3
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -119,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: EXPLOSION_0
+      name: Player SpriteSheet_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 64
-        width: 32
-        height: 32
+        y: 16
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -133,20 +127,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d28dcc11ec2dd3aa0800000000000000
-      internalID: -6179551331178719187
+      spriteID: cc058fb5926698360800000000000000
+      internalID: 7172376209386918092
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: EXPLOSION_1
+      name: Player SpriteSheet_1
       rect:
         serializedVersion: 2
-        x: 32
-        y: 64
-        width: 32
-        height: 32
+        x: 16
+        y: 16
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -154,104 +148,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c9e1d396642c68be0800000000000000
-      internalID: -1475278220248146276
+      spriteID: 8c9d563b6956c49d0800000000000000
+      internalID: -2788742371319883320
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: EXPLOSION_2
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 64
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 14371357ad7871970800000000000000
-      internalID: 8725592175392420673
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: EXPLOSION_3
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 32
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 40e76250fe86f5c40800000000000000
-      internalID: 5503232645462916612
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: EXPLOSION_4
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 32
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: eb6a12e8a93ecaab0800000000000000
-      internalID: -4995367633711683906
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: EXPLOSION_5
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 32
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 35663d35d933d3770800000000000000
-      internalID: 8592080414902019667
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: EXPLOSION_6
+      name: Player SpriteSheet_2
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 32
-        height: 32
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -259,8 +169,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b1c513cdd2c19ebe0800000000000000
-      internalID: -1447594821929575397
+      spriteID: 0163dca5b376365a0800000000000000
+      internalID: -6529261530132957680
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player SpriteSheet_3
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d93be48390cea6fa0800000000000000
+      internalID: -5806569245197290595
       vertices: []
       indices: 
       edges: []

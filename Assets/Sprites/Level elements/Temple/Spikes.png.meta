@@ -1,28 +1,31 @@
 fileFormatVersion: 2
-guid: cfa9aacd07cb8d644804abbee385a650
+guid: 23ca0877ddd89ba4cb8b653dcb334930
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6179551331178719187
-    second: EXPLOSION_0
+      213: 6723963429988506304
+    second: Spikes_0
   - first:
-      213: -1475278220248146276
-    second: EXPLOSION_1
+      213: -7010832575621253078
+    second: Spikes_1
   - first:
-      213: 8725592175392420673
-    second: EXPLOSION_2
+      213: 8562923692314260799
+    second: Spikes_2
   - first:
-      213: 5503232645462916612
-    second: EXPLOSION_3
+      213: -4810244237682102619
+    second: Spikes_3
   - first:
-      213: -4995367633711683906
-    second: EXPLOSION_4
+      213: -3644641957871353732
+    second: Spikes_4
   - first:
-      213: 8592080414902019667
-    second: EXPLOSION_5
+      213: 7573331673453511767
+    second: Spikes_5
   - first:
-      213: -1447594821929575397
-    second: EXPLOSION_6
+      213: -138403667897052782
+    second: Spikes_6
+  - first:
+      213: 3455471295796217898
+    second: Spikes_7
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -119,7 +122,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: EXPLOSION_0
+      name: Spikes_0
       rect:
         serializedVersion: 2
         x: 0
@@ -133,14 +136,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d28dcc11ec2dd3aa0800000000000000
-      internalID: -6179551331178719187
+      spriteID: 0ca9e2f4d11505d50800000000000000
+      internalID: 6723963429988506304
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: EXPLOSION_1
+      name: Spikes_1
       rect:
         serializedVersion: 2
         x: 32
@@ -154,14 +157,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c9e1d396642c68be0800000000000000
-      internalID: -1475278220248146276
+      spriteID: a28bb5edae484be90800000000000000
+      internalID: -7010832575621253078
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: EXPLOSION_2
+      name: Spikes_2
       rect:
         serializedVersion: 2
         x: 64
@@ -175,14 +178,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 14371357ad7871970800000000000000
-      internalID: 8725592175392420673
+      spriteID: f35fa27dabd95d670800000000000000
+      internalID: 8562923692314260799
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: EXPLOSION_3
+      name: Spikes_3
       rect:
         serializedVersion: 2
         x: 0
@@ -196,14 +199,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 40e76250fe86f5c40800000000000000
-      internalID: 5503232645462916612
+      spriteID: 5aea6120a549e3db0800000000000000
+      internalID: -4810244237682102619
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: EXPLOSION_4
+      name: Spikes_4
       rect:
         serializedVersion: 2
         x: 32
@@ -217,14 +220,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: eb6a12e8a93ecaab0800000000000000
-      internalID: -4995367633711683906
+      spriteID: c70089f0371ab6dc0800000000000000
+      internalID: -3644641957871353732
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: EXPLOSION_5
+      name: Spikes_5
       rect:
         serializedVersion: 2
         x: 64
@@ -238,14 +241,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 35663d35d933d3770800000000000000
-      internalID: 8592080414902019667
+      spriteID: 75449622801e91960800000000000000
+      internalID: 7573331673453511767
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: EXPLOSION_6
+      name: Spikes_6
       rect:
         serializedVersion: 2
         x: 0
@@ -259,8 +262,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b1c513cdd2c19ebe0800000000000000
-      internalID: -1447594821929575397
+      spriteID: 291926be89a441ef0800000000000000
+      internalID: -138403667897052782
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spikes_7
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a280e7de5dc44ff20800000000000000
+      internalID: 3455471295796217898
       vertices: []
       indices: 
       edges: []

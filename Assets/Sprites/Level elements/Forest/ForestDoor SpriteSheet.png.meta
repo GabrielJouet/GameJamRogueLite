@@ -1,28 +1,13 @@
 fileFormatVersion: 2
-guid: cfa9aacd07cb8d644804abbee385a650
+guid: a19e56288e36d064f92b3df7c2a75164
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6179551331178719187
-    second: EXPLOSION_0
+      213: 2640392602372860511
+    second: ForestDoor SpriteSheet_0
   - first:
-      213: -1475278220248146276
-    second: EXPLOSION_1
-  - first:
-      213: 8725592175392420673
-    second: EXPLOSION_2
-  - first:
-      213: 5503232645462916612
-    second: EXPLOSION_3
-  - first:
-      213: -4995367633711683906
-    second: EXPLOSION_4
-  - first:
-      213: 8592080414902019667
-    second: EXPLOSION_5
-  - first:
-      213: -1447594821929575397
-    second: EXPLOSION_6
+      213: 6379447858994977521
+    second: ForestDoor SpriteSheet_1
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -119,133 +104,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: EXPLOSION_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 64
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d28dcc11ec2dd3aa0800000000000000
-      internalID: -6179551331178719187
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: EXPLOSION_1
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 64
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c9e1d396642c68be0800000000000000
-      internalID: -1475278220248146276
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: EXPLOSION_2
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 64
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 14371357ad7871970800000000000000
-      internalID: 8725592175392420673
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: EXPLOSION_3
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 32
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 40e76250fe86f5c40800000000000000
-      internalID: 5503232645462916612
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: EXPLOSION_4
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 32
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: eb6a12e8a93ecaab0800000000000000
-      internalID: -4995367633711683906
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: EXPLOSION_5
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 32
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 35663d35d933d3770800000000000000
-      internalID: 8592080414902019667
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: EXPLOSION_6
+      name: ForestDoor SpriteSheet_0
       rect:
         serializedVersion: 2
         x: 0
@@ -259,8 +118,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b1c513cdd2c19ebe0800000000000000
-      internalID: -1447594821929575397
+      spriteID: f5ae00c151f84a420800000000000000
+      internalID: 2640392602372860511
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestDoor SpriteSheet_1
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1fa958a270a588850800000000000000
+      internalID: 6379447858994977521
       vertices: []
       indices: 
       edges: []
