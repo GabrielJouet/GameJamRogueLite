@@ -124,14 +124,21 @@ public class TileMapEditor : EditorWindow
     private void ExportData()
     {
         List<Tile> bufferList = new List<Tile>(_tileAvailables);
-        if (!_tileAvailables.Contains(_backgroundTile))
-        {
+
+        if(!_tileAvailables.Contains(_backgroundTile) && _backgroundTile != null)
             bufferList.Add(_backgroundTile);
-            bufferList.Add(_upSideTile);
-            bufferList.Add(_downSlideTile);
-            bufferList.Add(_leftSideTile);
-            bufferList.Add(_rightSideTile);
-        }
+
+        if (!_tileAvailables.Contains(_upSideTile) && _upSideTile != null)
+            bufferList.Add(_backgroundTile);
+
+        if (!_tileAvailables.Contains(_downSlideTile) && _downSlideTile != null)
+            bufferList.Add(_backgroundTile);
+
+        if (!_tileAvailables.Contains(_leftSideTile) && _leftSideTile != null)
+            bufferList.Add(_backgroundTile);
+
+        if (!_tileAvailables.Contains(_rightSideTile) && _rightSideTile != null)
+            bufferList.Add(_backgroundTile);
 
         foreach (GameObject current in Selection.gameObjects)
         {
