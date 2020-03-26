@@ -17,7 +17,7 @@ public class ShootingTraps : MonoBehaviour
     protected ProjectilePool _pool;
 
 
-    protected void Start()
+    protected void Awake()
     {
         _pool = FindObjectOfType<ProjectilePool>();
     }
