@@ -38,36 +38,6 @@ Transform:
   m_Father: {fileID: 4229403352063203242}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &3038257383707015852
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 3789103181122048599}
-  m_Layer: 0
-  m_Name: Enemies
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &3789103181122048599
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3038257383707015852}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 4229403352063203242}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7924053292403833464
 GameObject:
   m_ObjectHideFlags: 0
@@ -77,7 +47,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4229403352063203242}
-  - component: {fileID: 980700632584583380}
+  - component: {fileID: 2159978815352478298}
   - component: {fileID: 6442529447466029565}
   m_Layer: 0
   m_Name: BossRoom0
@@ -100,12 +70,11 @@ Transform:
   - {fileID: 7716672097746992855}
   - {fileID: 2463060874741413082}
   - {fileID: 6596814569811127348}
-  - {fileID: 3789103181122048599}
   - {fileID: 315852062172208810}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &980700632584583380
+--- !u!114 &2159978815352478298
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -114,23 +83,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 7924053292403833464}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 772b4e21f6eeb51499c5e90c6c511cf2, type: 3}
+  m_Script: {fileID: 11500000, guid: 4a807e9e4c26bd84b944aafded172540, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _cameraPosition: {fileID: 7716672097746992855}
-  _canBeChanged: 0
   _upDoor: {fileID: 1335119289021796731}
   _leftDoor: {fileID: 1904250173585931808}
   _downDoor: {fileID: 7454257157240358309}
   _rightDoor: {fileID: 815316274724589809}
-  _roomEnemies: []
+  _objectToDesactivate: []
   _miniMapActiveIcon: {fileID: 6799656171652999447, guid: 5009e8560cf93bf408a7511f96d20a8b,
     type: 3}
   _miniMapSeenIcon: {fileID: 4745338954421879685, guid: 5009e8560cf93bf408a7511f96d20a8b,
     type: 3}
   _miniMapUnseenIcon: {fileID: 174892291183518855, guid: 5009e8560cf93bf408a7511f96d20a8b,
     type: 3}
-  _key: {fileID: 0}
 --- !u!114 &6442529447466029565
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -253,7 +220,7 @@ PrefabInstance:
     - target: {fileID: 1672648435144591838, guid: ec0e6768a835a114a8261c80f88c8438,
         type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1672648435144591838, guid: ec0e6768a835a114a8261c80f88c8438,
         type: 3}
@@ -334,7 +301,7 @@ PrefabInstance:
         type: 3}
       propertyPath: _parentRoom
       value: 
-      objectReference: {fileID: 980700632584583380}
+      objectReference: {fileID: 2159978815352478298}
     - target: {fileID: 2772593592036699538, guid: cf91adb6bfe9665499bfeba32cfc7d2c,
         type: 3}
       propertyPath: _closedSprite
@@ -447,6 +414,12 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 9006064017958504857, guid: cf91adb6bfe9665499bfeba32cfc7d2c, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: cf91adb6bfe9665499bfeba32cfc7d2c, type: 3}
+--- !u!4 &7469652184581476450 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5369179082181438721, guid: cf91adb6bfe9665499bfeba32cfc7d2c,
+    type: 3}
+  m_PrefabInstance: {fileID: 3254606076360981859}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &815316274724589809 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2772593592036699538, guid: cf91adb6bfe9665499bfeba32cfc7d2c,
@@ -459,12 +432,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8ec9fa190271f840a0d96a4204dabe4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!4 &7469652184581476450 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 5369179082181438721, guid: cf91adb6bfe9665499bfeba32cfc7d2c,
-    type: 3}
-  m_PrefabInstance: {fileID: 3254606076360981859}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3734011513162705650
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -691,7 +658,7 @@ PrefabInstance:
         type: 3}
       propertyPath: _parentRoom
       value: 
-      objectReference: {fileID: 980700632584583380}
+      objectReference: {fileID: 2159978815352478298}
     - target: {fileID: 2772593592036699538, guid: cf91adb6bfe9665499bfeba32cfc7d2c,
         type: 3}
       propertyPath: _closedSprite
@@ -868,7 +835,7 @@ PrefabInstance:
         type: 3}
       propertyPath: _parentRoom
       value: 
-      objectReference: {fileID: 980700632584583380}
+      objectReference: {fileID: 2159978815352478298}
     - target: {fileID: 2772593592036699538, guid: cf91adb6bfe9665499bfeba32cfc7d2c,
         type: 3}
       propertyPath: _closedSprite
@@ -1250,7 +1217,7 @@ PrefabInstance:
         type: 3}
       propertyPath: _parentRoom
       value: 
-      objectReference: {fileID: 980700632584583380}
+      objectReference: {fileID: 2159978815352478298}
     - target: {fileID: 2772593592036699538, guid: cf91adb6bfe9665499bfeba32cfc7d2c,
         type: 3}
       propertyPath: _closedSprite

@@ -6,8 +6,6 @@ public class Room : MonoBehaviour
     [Header("Room Parameters")]
     [SerializeField]
     protected Transform _cameraPosition;
-    [SerializeField]
-    protected bool _canBeChanged;
 
 
     [Header("Doors")]
@@ -19,11 +17,6 @@ public class Room : MonoBehaviour
     protected Door _downDoor;
     [SerializeField]
     protected Door _rightDoor;
-
-
-    [Header("Enemies")]
-    [SerializeField]
-    protected List<GameObject> _roomEnemies;
 
 
     [Header("Desactivate Objects")]
@@ -157,15 +150,6 @@ public class Room : MonoBehaviour
     }
 
 
-
-    //-------------------------------Enemies Interaction Methods
-    public void EnemyKilled(GameObject other)
-    {
-        _roomEnemies.Remove(other);
-    }
-
-
-
     //-------------------------------Setters
     public void SetPosition(Vector2Int newPosition) { _position = newPosition; }
 
@@ -179,8 +163,6 @@ public class Room : MonoBehaviour
     public bool GetUp() { return _upDoor != null; }
 
     public bool GetDown() { return _downDoor != null; }
-
-    public bool GetCanBeChanged() { return _canBeChanged; }
 
     public Transform GetCameraPosition() { return _cameraPosition; }
 
