@@ -15,7 +15,11 @@ MonoBehaviour:
   _roomCount: 55
   _secretRoomCount: 0
   _baseRooms:
-  - {fileID: 2654299726172551349, guid: 88b38b82abd45804ebc39cee72fcfe25, type: 3}
+  - {fileID: 2654299726172551349, guid: 4a872cb338cef3242a5b0cb7296fe718, type: 3}
+  - {fileID: 2654299726172551349, guid: 3ee6afb3c141dc4418a9cbe80826ef1a, type: 3}
+  - {fileID: 2654299726172551349, guid: f2fafd47acac44e4eb4a1fe4304339d7, type: 3}
+  - {fileID: 2654299726172551349, guid: 0628085eda6706e4ca70f386b2a3c64a, type: 3}
+  - {fileID: 2654299726172551349, guid: 58fa4878e1e13394ebcd29c073e62ff4, type: 3}
   _bodyRooms:
   - {fileID: 2654299726172551349, guid: 4a872cb338cef3242a5b0cb7296fe718, type: 3}
   _bossRooms:
