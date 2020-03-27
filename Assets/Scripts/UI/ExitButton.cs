@@ -1,8 +1,9 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-public class ExitButton : MonoBehaviour, IChoosable
+public class ExitButton : Buttons, IChoosable
 {
+    [Header("Buttons-related")]
     [SerializeField]
     private Color _activateColor;
 
@@ -15,6 +16,8 @@ public class ExitButton : MonoBehaviour, IChoosable
 
     public void Activate()
     {
+        _audioSource.clip = _audioPlayed;
+        _audioSource.Play();
         _changedText.color = _activateColor;
     }
 

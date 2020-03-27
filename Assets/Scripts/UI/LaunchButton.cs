@@ -2,8 +2,9 @@
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class LaunchButton : MonoBehaviour, IChoosable
+public class LaunchButton : Buttons, IChoosable
 {
+    [Header("Buttons-related")]
     [SerializeField]
     private Color _activateColor;
 
@@ -16,6 +17,8 @@ public class LaunchButton : MonoBehaviour, IChoosable
 
     public void Activate()
     {
+        _audioSource.clip = _audioPlayed;
+        _audioSource.Play();
         _changedText.color = _activateColor;
     }
 

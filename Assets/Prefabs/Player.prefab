@@ -194,6 +194,13 @@ MonoBehaviour:
   _dashSpeed: 100000
   _timeBeforeReHit: 0.75
   _collectScrapSound: {fileID: 8300000, guid: ee46b5ca936e3a846ae1b7af033ab39e, type: 3}
+  _hitSounds:
+  - {fileID: 8300000, guid: 5f9819c8893ae0c4194c50733d09b6a5, type: 3}
+  _dieSounds:
+  - {fileID: 8300000, guid: 2d8f0952dc1886e4cbafd9ae2723c929, type: 3}
+  - {fileID: 8300000, guid: fcb6489961ba5814797d4d21e275eb39, type: 3}
+  _noDashSounds:
+  - {fileID: 8300000, guid: a47d9bc9c7fdfbb47b43d5363aa8a047, type: 3}
   _rigidBody: {fileID: 8224979895197767884}
   _audioSource: {fileID: -8459982418918131782}
   _spriteRenderer: {fileID: 6934156366142171164}

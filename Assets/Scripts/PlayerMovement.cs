@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
@@ -23,6 +24,12 @@ public class PlayerMovement : MonoBehaviour
     [Header("Audio Files")]
     [SerializeField]
     private AudioClip _collectScrapSound;
+    [SerializeField]
+    private List<AudioClip> _hitSounds;
+    [SerializeField]
+    private List<AudioClip> _dieSounds;
+    [SerializeField]
+    private List<AudioClip> _noDashSounds;
 
 
     private int _scrapCount = 0;
@@ -66,8 +73,17 @@ public class PlayerMovement : MonoBehaviour
         if (_canMove)
             _rigidBody.AddForce( Vector2.ClampMagnitude(playerInputs, 1) * _speed * Time.deltaTime );
 
-        if (Input.GetKeyDown(KeyCode.Space) && _canDash)
-            StartCoroutine( Dash(mainDirection) );
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            if(_canDash)
+                StartCoroutine(Dash(mainDirection));
+            else
+            {
+                _audioSource.Stop();
+                _audioSource.clip = _noDashSounds[Random.Range(0, _noDashSounds.Count)];
+                _audioSource.Play();
+            }
+        }
 
         _spriteRenderer.flipX = Input.GetAxis("Horizontal") > 0;
     }
@@ -92,21 +108,28 @@ public class PlayerMovement : MonoBehaviour
     {
         if(_canBeHit && !_isDashing)
         {
+            _audioSource.Stop();
+
             _canBeHit = false;
             StartCoroutine(Flicker());
 
             if (_health - Mathf.FloorToInt(damage - damage * _armor / 100f) <= 0)
             {
+                _audioSource.clip = _dieSounds[Random.Range(0, _dieSounds.Count)];
                 _health = 0;
                 _canMove = false;
                 StartCoroutine(Die());
             }
             else
+            {
                 _health -= Mathf.FloorToInt(damage - damage * _armor / 100f);
+                _audioSource.clip = _hitSounds[Random.Range(0, _hitSounds.Count)];
+            }
 
             _playerUI.SetHealth(_health);
 
             StartCoroutine(ResetCanBeHit());
+            _audioSource.Play();
         }
     }
 
