@@ -173,6 +173,22 @@ public class PlayerMovement : MonoBehaviour
     }
 
 
+    public void ModifySpeed(float ratio)
+    {
+        float speedMalus = _maxSpeed - (_maxSpeed * ratio / 100f);
+
+        _speed = speedMalus < 0.3f * _maxSpeed ? 0.3f * _maxSpeed : speedMalus;
+    }
+
+
+    public void ResetSpeed()
+    {
+        float speedMalus = _maxSpeed - (_maxSpeed * (_scrapCount * _storageMalus) / 100f);
+
+        _speed = speedMalus < 0.4f * _maxSpeed ? 0.4f * _maxSpeed : speedMalus;
+    }
+
+
     //--------------------------------Setter
     public void SetMaxHealth(float health) 
     { 
