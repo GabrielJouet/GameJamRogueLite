@@ -5,21 +5,19 @@ public class PlayerMovement : MonoBehaviour
 {
     [Header("Player Stats")]
     [SerializeField]
-    private float _maxHealth;
-    private float _health;
-    [SerializeField]
     private float _speed = 15000;
     [SerializeField]
     private float _dashSpeed = 90000;
+    [SerializeField]
+    private float _timeBeforeReHit;
+
     private float _dashImmunityTime = .2f;
     private float _dashCooldown = 1f;
     private float _maxSpeed;
-    [SerializeField]
     private float _armor;
-    [SerializeField]
     private float _storageMalus;
-    [SerializeField]
-    private float _timeBeforeReHit;
+    private float _maxHealth;
+    private float _health;
 
 
     [Header("Audio Files")]
@@ -39,7 +37,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     private AudioSource _audioSource;
     [SerializeField]
-    private Animator _animator;
+    private SpriteRenderer _spriteRenderer;
 
 
     private TransitionSaver _transitionSaver;
@@ -70,6 +68,8 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space) && _canDash)
             StartCoroutine( Dash(mainDirection) );
+
+        _spriteRenderer.flipX = Input.GetAxis("Horizontal") > 0;
     }
 
 
@@ -93,7 +93,7 @@ public class PlayerMovement : MonoBehaviour
         if(_canBeHit && !_isDashing)
         {
             _canBeHit = false;
-            _animator.SetBool("takeDamage", true);
+            StartCoroutine(Flicker());
 
             if (_health - Mathf.FloorToInt(damage - damage * _armor / 100f) <= 0)
             {
@@ -111,11 +111,25 @@ public class PlayerMovement : MonoBehaviour
     }
 
 
+    private IEnumerator Flicker()
+    {
+        bool transparent = false;
+
+        while(!_canBeHit)
+        {
+            _spriteRenderer.color = new Color(255, 255, 255, transparent ? 0 : 255);
+            transparent = !transparent;
+            yield return new WaitForSeconds(0.1f);
+        }
+    }
+
+
     private IEnumerator ResetCanBeHit()
     {
         yield return new WaitForSeconds(_timeBeforeReHit);
         _canBeHit = true;
-        _animator.SetBool("takeDamage", false);
+        StopCoroutine(Flicker());
+        _spriteRenderer.color = new Color(255, 255, 255, 255);
     }
 
 
