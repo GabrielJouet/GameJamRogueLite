@@ -1,82 +1,133 @@
 fileFormatVersion: 2
-guid: 237ecbbad349ca1408823a1f58fb51ee
+guid: 196d772d41e773142a745c39bd40e822
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2807701810495549495
-    second: Hole SpriteSHeet._0
+      213: -9083494193505099172
+    second: Hole SpriteSheet_0
   - first:
-      213: -4855013589718801938
-    second: Hole SpriteSHeet._1
+      213: -1341197663138452061
+    second: Hole SpriteSheet_1
   - first:
-      213: -246082688408181216
-    second: Hole SpriteSHeet._2
+      213: 6303953524889224450
+    second: Hole SpriteSheet_2
   - first:
-      213: 677337951612496170
-    second: Hole SpriteSHeet._3
+      213: -7625424345527596169
+    second: Hole SpriteSheet_3
   - first:
-      213: 5662290526924780235
-    second: Hole SpriteSHeet._4
+      213: -6714112502124458255
+    second: Hole SpriteSheet_4
   - first:
-      213: -6026317118895400982
-    second: Hole SpriteSHeet._5
+      213: 4635964202703113763
+    second: Hole SpriteSheet_5
   - first:
-      213: 3397073089984088585
-    second: Hole SpriteSHeet._6
+      213: 6450294912436507122
+    second: Hole SpriteSheet_6
   - first:
-      213: 6327105064133853539
-    second: Hole SpriteSHeet._7
+      213: -3692008084652183893
+    second: Hole SpriteSheet_7
   - first:
-      213: 7695733755770311014
-    second: Hole SpriteSHeet._8
+      213: 2374250660154911024
+    second: Hole SpriteSheet_8
   - first:
-      213: 7108208707169276813
-    second: Hole SpriteSHeet._9
+      213: 3967758390682886180
+    second: Hole SpriteSheet_9
   - first:
-      213: 6655586112587322366
-    second: Hole SpriteSHeet._10
+      213: 1761746873537032715
+    second: Hole SpriteSheet_10
   - first:
-      213: 1637633027881811076
-    second: Hole SpriteSHeet._11
+      213: 6316279285781050960
+    second: Hole SpriteSheet_11
   - first:
-      213: -3980823163147909205
-    second: Hole SpriteSHeet._12
+      213: -3237595084220298284
+    second: Hole SpriteSheet_12
   - first:
-      213: 4782702543002569755
-    second: Hole SpriteSHeet._13
+      213: -3358425237611564432
+    second: Hole SpriteSheet_13
   - first:
-      213: 6180308976966956503
-    second: Hole SpriteSHeet._14
+      213: 4400805535777117645
+    second: Hole SpriteSheet_14
   - first:
-      213: -2889319293304634394
-    second: Hole SpriteSHeet._15
+      213: 720858113587168549
+    second: Hole SpriteSheet_15
   - first:
-      213: -6847069686757013262
-    second: Hole SpriteSHeet._16
+      213: -7023456946318829024
+    second: Hole SpriteSheet_16
   - first:
-      213: 2663968272840917937
-    second: Hole SpriteSHeet._17
+      213: 7902664193744581695
+    second: Hole SpriteSheet_17
   - first:
-      213: -5657530639199618763
-    second: Hole SpriteSHeet._18
+      213: -1168746108896821932
+    second: Hole SpriteSheet_18
   - first:
-      213: 6952544465748998063
-    second: Hole SpriteSHeet._19
+      213: 1868362693585686472
+    second: Hole SpriteSheet_19
   - first:
-      213: 5477175945164392099
-    second: Hole SpriteSHeet._20
+      213: 3860679901865564547
+    second: Hole SpriteSheet_20
   - first:
-      213: -7046728029595250227
-    second: Hole SpriteSHeet._21
+      213: -8955489235855380970
+    second: CavernHole SpriteSheet_0
   - first:
-      213: -7700118467742824462
-    second: Hole SpriteSHeet._22
+      213: 4474357336802853583
+    second: CavernHole SpriteSheet_1
   - first:
-      213: -6134749927965855604
-    second: Hole SpriteSHeet._23
+      213: 7430557603356079609
+    second: CavernHole SpriteSheet_2
   - first:
-      213: 764288877160044891
-    second: Hole SpriteSHeet._24
+      213: -5456146137051485704
+    second: CavernHole SpriteSheet_3
+  - first:
+      213: 7284425327675102784
+    second: CavernHole SpriteSheet_4
+  - first:
+      213: 7743751535030600646
+    second: CavernHole SpriteSheet_5
+  - first:
+      213: -6063428977194367019
+    second: CavernHole SpriteSheet_6
+  - first:
+      213: 7621306732564607934
+    second: CavernHole SpriteSheet_7
+  - first:
+      213: 5631673391525343665
+    second: CavernHole SpriteSheet_8
+  - first:
+      213: -6291095803615664949
+    second: CavernHole SpriteSheet_9
+  - first:
+      213: 1413138629991286858
+    second: CavernHole SpriteSheet_10
+  - first:
+      213: -5285293645589155800
+    second: CavernHole SpriteSheet_11
+  - first:
+      213: 7717928167452271495
+    second: CavernHole SpriteSheet_12
+  - first:
+      213: -7537864479776024294
+    second: CavernHole SpriteSheet_13
+  - first:
+      213: 8065886737305101450
+    second: CavernHole SpriteSheet_14
+  - first:
+      213: 202527955462794714
+    second: CavernHole SpriteSheet_15
+  - first:
+      213: 6250785251540043768
+    second: CavernHole SpriteSheet_16
+  - first:
+      213: 253704486428085903
+    second: CavernHole SpriteSheet_17
+  - first:
+      213: 2202780590547638272
+    second: CavernHole SpriteSheet_18
+  - first:
+      213: 4383038332341785943
+    second: CavernHole SpriteSheet_19
+  - first:
+      213: 3068794083783283004
+    second: CavernHole SpriteSheet_20
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -173,10 +224,10 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Hole SpriteSHeet._0
+      name: CavernHole SpriteSheet_0
       rect:
         serializedVersion: 2
-        x: 160
+        x: 0
         y: 128
         width: 32
         height: 32
@@ -187,14 +238,56 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 730fec9bbe5f6f620800000000000000
-      internalID: 2807701810495549495
+      spriteID: 61e610bfcf5b7b380800000000000000
+      internalID: -8955489235855380970
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Hole SpriteSHeet._1
+      name: CavernHole SpriteSheet_1
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc20c4aaa4c181e30800000000000000
+      internalID: 4474357336802853583
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CavernHole SpriteSheet_2
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f5fd1f75c4ae1760800000000000000
+      internalID: 7430557603356079609
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CavernHole SpriteSheet_3
       rect:
         serializedVersion: 2
         x: 0
@@ -208,14 +301,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ee1ed15fcd68f9cb0800000000000000
-      internalID: -4855013589718801938
+      spriteID: 8f92d6a0fffd744b0800000000000000
+      internalID: -5456146137051485704
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Hole SpriteSHeet._2
+      name: CavernHole SpriteSheet_4
       rect:
         serializedVersion: 2
         x: 32
@@ -229,14 +322,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 026ae04491db59cf0800000000000000
-      internalID: -246082688408181216
+      spriteID: 046dee0bd3a771560800000000000000
+      internalID: 7284425327675102784
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Hole SpriteSHeet._3
+      name: CavernHole SpriteSheet_5
       rect:
         serializedVersion: 2
         x: 64
@@ -250,14 +343,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a29e0ce3743666900800000000000000
-      internalID: 677337951612496170
+      spriteID: 6c382623ef4577b60800000000000000
+      internalID: 7743751535030600646
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Hole SpriteSHeet._4
+      name: CavernHole SpriteSheet_6
       rect:
         serializedVersion: 2
         x: 96
@@ -271,14 +364,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bc23960fb3f749e40800000000000000
-      internalID: 5662290526924780235
+      spriteID: 5d7058d787f5adba0800000000000000
+      internalID: -6063428977194367019
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Hole SpriteSHeet._5
+      name: CavernHole SpriteSheet_7
       rect:
         serializedVersion: 2
         x: 128
@@ -292,56 +385,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ae7526852883e5ca0800000000000000
-      internalID: -6026317118895400982
+      spriteID: eb37ec6081254c960800000000000000
+      internalID: 7621306732564607934
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Hole SpriteSHeet._6
-      rect:
-        serializedVersion: 2
-        x: 160
-        y: 96
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 90a4a841af3d42f20800000000000000
-      internalID: 3397073089984088585
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Hole SpriteSHeet._7
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 64
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 361064c88846ec750800000000000000
-      internalID: 6327105064133853539
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Hole SpriteSHeet._8
+      name: CavernHole SpriteSheet_8
       rect:
         serializedVersion: 2
         x: 32
@@ -355,14 +406,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6611caeb31dbcca60800000000000000
-      internalID: 7695733755770311014
+      spriteID: 1b133e89c19b72e40800000000000000
+      internalID: 5631673391525343665
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Hole SpriteSHeet._9
+      name: CavernHole SpriteSheet_9
       rect:
         serializedVersion: 2
         x: 64
@@ -376,14 +427,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d83d924882e65a260800000000000000
-      internalID: 7108208707169276813
+      spriteID: bc4a981c2b981b8a0800000000000000
+      internalID: -6291095803615664949
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Hole SpriteSHeet._10
+      name: CavernHole SpriteSheet_10
       rect:
         serializedVersion: 2
         x: 96
@@ -397,56 +448,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ef35acc7e446d5c50800000000000000
-      internalID: 6655586112587322366
+      spriteID: a48430bc81a7c9310800000000000000
+      internalID: 1413138629991286858
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Hole SpriteSHeet._11
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 64
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 48cb753ff8a0ab610800000000000000
-      internalID: 1637633027881811076
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Hole SpriteSHeet._12
-      rect:
-        serializedVersion: 2
-        x: 160
-        y: 64
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ba70ce6ac6641c8c0800000000000000
-      internalID: -3980823163147909205
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Hole SpriteSHeet._13
+      name: CavernHole SpriteSheet_11
       rect:
         serializedVersion: 2
         x: 0
@@ -460,14 +469,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b1c860e7f929f5240800000000000000
-      internalID: 4782702543002569755
+      spriteID: 82077099e6dd6a6b0800000000000000
+      internalID: -5285293645589155800
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Hole SpriteSHeet._14
+      name: CavernHole SpriteSheet_12
       rect:
         serializedVersion: 2
         x: 32
@@ -481,14 +490,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7d5f546154ed4c550800000000000000
-      internalID: 6180308976966956503
+      spriteID: 78369f6e6c69b1b60800000000000000
+      internalID: 7717928167452271495
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Hole SpriteSHeet._15
+      name: CavernHole SpriteSheet_13
       rect:
         serializedVersion: 2
         x: 64
@@ -502,14 +511,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6e305e7396317e7d0800000000000000
-      internalID: -2889319293304634394
+      spriteID: a195ae56130246790800000000000000
+      internalID: -7537864479776024294
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Hole SpriteSHeet._16
+      name: CavernHole SpriteSheet_14
       rect:
         serializedVersion: 2
         x: 96
@@ -523,14 +532,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2f8c080b5625af0a0800000000000000
-      internalID: -6847069686757013262
+      spriteID: a84ea9fa049cfef60800000000000000
+      internalID: 8065886737305101450
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Hole SpriteSHeet._17
+      name: CavernHole SpriteSheet_15
       rect:
         serializedVersion: 2
         x: 128
@@ -544,35 +553,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1b30893a70158f420800000000000000
-      internalID: 2663968272840917937
+      spriteID: add227a3a168fc200800000000000000
+      internalID: 202527955462794714
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Hole SpriteSHeet._18
-      rect:
-        serializedVersion: 2
-        x: 160
-        y: 32
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5393e98cbd96c71b0800000000000000
-      internalID: -5657530639199618763
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Hole SpriteSHeet._19
+      name: CavernHole SpriteSheet_16
       rect:
         serializedVersion: 2
         x: 0
@@ -586,14 +574,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fa7b31efa566c7060800000000000000
-      internalID: 6952544465748998063
+      spriteID: 8f78b4571104fb650800000000000000
+      internalID: 6250785251540043768
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Hole SpriteSHeet._20
+      name: CavernHole SpriteSheet_17
       rect:
         serializedVersion: 2
         x: 32
@@ -607,14 +595,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3a686d7b086d20c40800000000000000
-      internalID: 5477175945164392099
+      spriteID: f8e087fd2e6558300800000000000000
+      internalID: 253704486428085903
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Hole SpriteSHeet._21
+      name: CavernHole SpriteSheet_18
       rect:
         serializedVersion: 2
         x: 64
@@ -628,14 +616,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dc1df27313ef43e90800000000000000
-      internalID: -7046728029595250227
+      spriteID: 00897b9b649d19e10800000000000000
+      internalID: 2202780590547638272
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Hole SpriteSHeet._22
+      name: CavernHole SpriteSheet_19
       rect:
         serializedVersion: 2
         x: 96
@@ -649,14 +637,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2f783c1fc0fa32590800000000000000
-      internalID: -7700118467742824462
+      spriteID: 7551724142ea3dc30800000000000000
+      internalID: 4383038332341785943
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Hole SpriteSHeet._23
+      name: CavernHole SpriteSheet_20
       rect:
         serializedVersion: 2
         x: 128
@@ -670,29 +658,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c80fdbd917dfcdaa0800000000000000
-      internalID: -6134749927965855604
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Hole SpriteSHeet._24
-      rect:
-        serializedVersion: 2
-        x: 160
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b5918e43fac4b9a00800000000000000
-      internalID: 764288877160044891
+      spriteID: c3119b4c5fb869a20800000000000000
+      internalID: 3068794083783283004
       vertices: []
       indices: 
       edges: []

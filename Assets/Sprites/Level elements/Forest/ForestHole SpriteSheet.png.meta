@@ -1,0 +1,1273 @@
+fileFormatVersion: 2
+guid: aa45f7ed2fb1b894e99d2cbe19464b8f
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -9083494193505099172
+    second: Hole SpriteSheet_0
+  - first:
+      213: -1341197663138452061
+    second: Hole SpriteSheet_1
+  - first:
+      213: 6303953524889224450
+    second: Hole SpriteSheet_2
+  - first:
+      213: -7625424345527596169
+    second: Hole SpriteSheet_3
+  - first:
+      213: -6714112502124458255
+    second: Hole SpriteSheet_4
+  - first:
+      213: 4635964202703113763
+    second: Hole SpriteSheet_5
+  - first:
+      213: 6450294912436507122
+    second: Hole SpriteSheet_6
+  - first:
+      213: -3692008084652183893
+    second: Hole SpriteSheet_7
+  - first:
+      213: 2374250660154911024
+    second: Hole SpriteSheet_8
+  - first:
+      213: 3967758390682886180
+    second: Hole SpriteSheet_9
+  - first:
+      213: 1761746873537032715
+    second: Hole SpriteSheet_10
+  - first:
+      213: 6316279285781050960
+    second: Hole SpriteSheet_11
+  - first:
+      213: -3237595084220298284
+    second: Hole SpriteSheet_12
+  - first:
+      213: -3358425237611564432
+    second: Hole SpriteSheet_13
+  - first:
+      213: 4400805535777117645
+    second: Hole SpriteSheet_14
+  - first:
+      213: 720858113587168549
+    second: Hole SpriteSheet_15
+  - first:
+      213: -7023456946318829024
+    second: Hole SpriteSheet_16
+  - first:
+      213: 7902664193744581695
+    second: Hole SpriteSheet_17
+  - first:
+      213: -1168746108896821932
+    second: Hole SpriteSheet_18
+  - first:
+      213: 1868362693585686472
+    second: Hole SpriteSheet_19
+  - first:
+      213: 3860679901865564547
+    second: Hole SpriteSheet_20
+  - first:
+      213: -3800091739106145666
+    second: Hole SpriteSheet_21
+  - first:
+      213: 151918742930132132
+    second: Hole SpriteSheet_22
+  - first:
+      213: 8630173365782727209
+    second: Hole SpriteSheet_23
+  - first:
+      213: -114635591969753131
+    second: Hole SpriteSheet_24
+  - first:
+      213: -5489668858171197126
+    second: Hole SpriteSheet_25
+  - first:
+      213: 2283109332434650950
+    second: Hole SpriteSheet_26
+  - first:
+      213: 6263112810124442137
+    second: Hole SpriteSheet_27
+  - first:
+      213: -2938003820159735884
+    second: Hole SpriteSheet_28
+  - first:
+      213: 7285269213985534298
+    second: Hole SpriteSheet_29
+  - first:
+      213: 2981923506162521495
+    second: Hole SpriteSheet_30
+  - first:
+      213: -4402327156375901918
+    second: Hole SpriteSheet_31
+  - first:
+      213: 6322565476450204511
+    second: Hole SpriteSheet_32
+  - first:
+      213: 5759528408362905281
+    second: Hole SpriteSheet_33
+  - first:
+      213: -2264808843708422570
+    second: Hole SpriteSheet_34
+  - first:
+      213: 7758994541267981719
+    second: Hole SpriteSheet_0
+  - first:
+      213: -1091608554148091869
+    second: Hole SpriteSheet_1
+  - first:
+      213: 320496425218175071
+    second: Hole SpriteSheet_2
+  - first:
+      213: 6387005528382198952
+    second: Hole SpriteSheet_3
+  - first:
+      213: 6347451305831522941
+    second: Hole SpriteSheet_4
+  - first:
+      213: -8491503392144902765
+    second: Hole SpriteSheet_5
+  - first:
+      213: 1719881695816382797
+    second: Hole SpriteSheet_6
+  - first:
+      213: 6902591373754862450
+    second: Hole SpriteSheet_7
+  - first:
+      213: 582379790129876913
+    second: Hole SpriteSheet_8
+  - first:
+      213: 7272735100163018697
+    second: Hole SpriteSheet_9
+  - first:
+      213: -7956922860775099978
+    second: Hole SpriteSheet_10
+  - first:
+      213: -8341128795320118760
+    second: Hole SpriteSheet_11
+  - first:
+      213: -4244256286604917718
+    second: Hole SpriteSheet_12
+  - first:
+      213: -7626227741714632523
+    second: Hole SpriteSheet_13
+  - first:
+      213: -7531208379250445438
+    second: Hole SpriteSheet_14
+  - first:
+      213: 7689252576760996511
+    second: Hole SpriteSheet_15
+  - first:
+      213: 4230142370963904899
+    second: Hole SpriteSheet_16
+  - first:
+      213: -5026326171105221542
+    second: Hole SpriteSheet_17
+  - first:
+      213: -1568199468689955296
+    second: Hole SpriteSheet_18
+  - first:
+      213: 1788391636235066057
+    second: Hole SpriteSheet_19
+  - first:
+      213: 1427730671024890731
+    second: Hole SpriteSheet_20
+  - first:
+      213: -7866083533293419490
+    second: Hole SpriteSheet_21
+  - first:
+      213: -281966817879938906
+    second: Hole SpriteSheet_22
+  - first:
+      213: -8565534182779097328
+    second: Hole SpriteSheet_23
+  - first:
+      213: 6910307603154097218
+    second: Hole SpriteSheet_24
+  - first:
+      213: -9001786255067946541
+    second: Hole SpriteSheet_25
+  - first:
+      213: -4406443855272242458
+    second: Hole SpriteSheet_26
+  - first:
+      213: 8911574126957491494
+    second: Hole SpriteSheet_27
+  - first:
+      213: 2309298390818425825
+    second: Hole SpriteSheet_28
+  - first:
+      213: -877047728156787379
+    second: Hole SpriteSheet_29
+  - first:
+      213: -3476985267500920348
+    second: Hole SpriteSheet_30
+  - first:
+      213: -5002184940155818769
+    second: Hole SpriteSheet_31
+  - first:
+      213: -6750861006398982568
+    second: Hole SpriteSheet_32
+  - first:
+      213: 2455869274031463284
+    second: Hole SpriteSheet_33
+  - first:
+      213: 4183025725650416425
+    second: Hole SpriteSheet_34
+  - first:
+      213: 7250677217513277742
+    second: Hole SpriteSheet_35
+  - first:
+      213: -1315597868966556705
+    second: Hole SpriteSheet_36
+  - first:
+      213: 1063701097329375694
+    second: Hole SpriteSheet_37
+  - first:
+      213: 2703217174914154980
+    second: Hole SpriteSheet_38
+  - first:
+      213: 4650385106725262679
+    second: ForestHole SpriteSheet_0
+  - first:
+      213: -69471825689811461
+    second: ForestHole SpriteSheet_1
+  - first:
+      213: 6152183136108915640
+    second: ForestHole SpriteSheet_2
+  - first:
+      213: -3843309819976726782
+    second: ForestHole SpriteSheet_3
+  - first:
+      213: 2612866650068287574
+    second: ForestHole SpriteSheet_4
+  - first:
+      213: -5530336723240693072
+    second: ForestHole SpriteSheet_5
+  - first:
+      213: -1212775541712196590
+    second: ForestHole SpriteSheet_6
+  - first:
+      213: 6163838873609009385
+    second: ForestHole SpriteSheet_7
+  - first:
+      213: 1915197013282186650
+    second: ForestHole SpriteSheet_8
+  - first:
+      213: -2196433937179613944
+    second: ForestHole SpriteSheet_9
+  - first:
+      213: 1784619456398982215
+    second: ForestHole SpriteSheet_10
+  - first:
+      213: -7465419289069162263
+    second: ForestHole SpriteSheet_11
+  - first:
+      213: 5565255731950034205
+    second: ForestHole SpriteSheet_12
+  - first:
+      213: -1626763359296702098
+    second: ForestHole SpriteSheet_13
+  - first:
+      213: 8412081538196840290
+    second: ForestHole SpriteSheet_14
+  - first:
+      213: 7368428488739680324
+    second: ForestHole SpriteSheet_15
+  - first:
+      213: -4582311045123928782
+    second: ForestHole SpriteSheet_16
+  - first:
+      213: 312733625579878679
+    second: ForestHole SpriteSheet_17
+  - first:
+      213: 2767488493636595637
+    second: ForestHole SpriteSheet_18
+  - first:
+      213: 3318074436120647796
+    second: ForestHole SpriteSheet_19
+  - first:
+      213: 220171672443396809
+    second: ForestHole SpriteSheet_20
+  - first:
+      213: 1349998416413685318
+    second: ForestHole SpriteSheet_21
+  - first:
+      213: 8280585961965803931
+    second: ForestHole SpriteSheet_22
+  - first:
+      213: 7231802352651162200
+    second: ForestHole SpriteSheet_23
+  - first:
+      213: -5539698120137939799
+    second: ForestHole SpriteSheet_24
+  - first:
+      213: -3908905858009479337
+    second: ForestHole SpriteSheet_25
+  - first:
+      213: 5628279141750578269
+    second: ForestHole SpriteSheet_26
+  - first:
+      213: 8248055064710020272
+    second: ForestHole SpriteSheet_27
+  - first:
+      213: -7780899388303486614
+    second: ForestHole SpriteSheet_28
+  - first:
+      213: -5427552754788563670
+    second: ForestHole SpriteSheet_29
+  - first:
+      213: -6696889304215129439
+    second: ForestHole SpriteSheet_30
+  - first:
+      213: -8451258587591990144
+    second: ForestHole SpriteSheet_31
+  - first:
+      213: -4254828998102410947
+    second: ForestHole SpriteSheet_32
+  - first:
+      213: -5295486701922689873
+    second: ForestHole SpriteSheet_33
+  - first:
+      213: 5831571898236444407
+    second: ForestHole SpriteSheet_34
+  - first:
+      213: 3522766187798848353
+    second: ForestHole SpriteSheet_35
+  - first:
+      213: 7561036630749415039
+    second: ForestHole SpriteSheet_36
+  - first:
+      213: -2438593751813756211
+    second: ForestHole SpriteSheet_37
+  - first:
+      213: -7476768690006020229
+    second: ForestHole SpriteSheet_38
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: ForestHole SpriteSheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7555023ad9c798040800000000000000
+      internalID: 4650385106725262679
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestHole SpriteSheet_1
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf56cdb1ebf290ff0800000000000000
+      internalID: -69471825689811461
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestHole SpriteSheet_2
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8bbabe477f1f06550800000000000000
+      internalID: 6152183136108915640
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestHole SpriteSheet_3
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 207448ad412d9aac0800000000000000
+      internalID: -3843309819976726782
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestHole SpriteSheet_4
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65009caef54c24420800000000000000
+      internalID: 2612866650068287574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestHole SpriteSheet_5
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b2d0fa1d0c4043b0800000000000000
+      internalID: -5530336723240693072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestHole SpriteSheet_6
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21c66f3021b5b2fe0800000000000000
+      internalID: -1212775541712196590
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestHole SpriteSheet_7
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e875325cca5a8550800000000000000
+      internalID: 6163838873609009385
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestHole SpriteSheet_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a95e2935985249a10800000000000000
+      internalID: 1915197013282186650
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestHole SpriteSheet_9
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 805ebc9a8f2b481e0800000000000000
+      internalID: -2196433937179613944
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestHole SpriteSheet_10
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74c79e5b0fd34c810800000000000000
+      internalID: 1784619456398982215
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestHole SpriteSheet_11
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e0fea7c5b0856890800000000000000
+      internalID: -7465419289069162263
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestHole SpriteSheet_12
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1d961b2a92cb3d40800000000000000
+      internalID: 5565255731950034205
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestHole SpriteSheet_13
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e69bf7bf7539c69e0800000000000000
+      internalID: -1626763359296702098
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestHole SpriteSheet_14
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26f18d10797bdb470800000000000000
+      internalID: 8412081538196840290
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestHole SpriteSheet_15
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4407230cbaae14660800000000000000
+      internalID: 7368428488739680324
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestHole SpriteSheet_16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23d0a01f16c5860c0800000000000000
+      internalID: -4582311045123928782
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestHole SpriteSheet_17
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7193206539d075400800000000000000
+      internalID: 312733625579878679
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestHole SpriteSheet_18
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5bfa0374f18186620800000000000000
+      internalID: 2767488493636595637
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestHole SpriteSheet_19
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4789647ae1b2c0e20800000000000000
+      internalID: 3318074436120647796
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestHole SpriteSheet_20
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c2a79538f43e0300800000000000000
+      internalID: 220171672443396809
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestHole SpriteSheet_21
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6467da938682cb210800000000000000
+      internalID: 1349998416413685318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestHole SpriteSheet_22
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b99de0b5f0d8ae270800000000000000
+      internalID: 8280585961965803931
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestHole SpriteSheet_23
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8525b9b8ce58c5460800000000000000
+      internalID: 7231802352651162200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestHole SpriteSheet_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a4674a09e90f13b0800000000000000
+      internalID: -5539698120137939799
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestHole SpriteSheet_25
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 757c6e815d6c0c9c0800000000000000
+      internalID: -3908905858009479337
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestHole SpriteSheet_26
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5c98cc3f0aab1e40800000000000000
+      internalID: 5628279141750578269
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestHole SpriteSheet_27
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0bcf6eb916af67270800000000000000
+      internalID: 8248055064710020272
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestHole SpriteSheet_28
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a61dd173b31b40490800000000000000
+      internalID: -7780899388303486614
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestHole SpriteSheet_29
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a258223a6857da4b0800000000000000
+      internalID: -5427552754788563670
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestHole SpriteSheet_30
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a2f422d8aedf03a0800000000000000
+      internalID: -6696889304215129439
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestHole SpriteSheet_31
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0842c9d571917ba80800000000000000
+      internalID: -8451258587591990144
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestHole SpriteSheet_32
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d39131cb19fc3f4c0800000000000000
+      internalID: -4254828998102410947
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestHole SpriteSheet_33
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: facd71bb6e6a286b0800000000000000
+      internalID: -5295486701922689873
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestHole SpriteSheet_34
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7fe98849eb7ede050800000000000000
+      internalID: 5831571898236444407
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestHole SpriteSheet_35
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 163e182fe2163e030800000000000000
+      internalID: 3522766187798848353
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestHole SpriteSheet_36
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f76098d61c23ee860800000000000000
+      internalID: 7561036630749415039
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestHole SpriteSheet_37
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dca67a727ef582ed0800000000000000
+      internalID: -2438593751813756211
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestHole SpriteSheet_38
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b7fad647d7e2d3890800000000000000
+      internalID: -7476768690006020229
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
