@@ -550,7 +550,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "A Game Jam Game made by: \nLucas Duleu\nFran\xE7ois Surma\nValentin Dremeaux\nGabriel
+  m_Text: "A Game Jam Game made by: \nLucas Duleu\nFran\xE7ois Surma\nValentin Dremaux\nGabriel
     Jouet"
 --- !u!222 &442921880
 CanvasRenderer:
