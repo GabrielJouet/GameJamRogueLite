@@ -2179,16 +2179,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2103884799722561538, guid: 81fd89ece85e5ce4a80286afe331885f,
         type: 3}
-      propertyPath: _fireCampUpgrades.Array.size
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 2103884799722561538, guid: 81fd89ece85e5ce4a80286afe331885f,
-        type: 3}
-      propertyPath: _shoesUpgrades.Array.size
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 2103884799722561538, guid: 81fd89ece85e5ce4a80286afe331885f,
-        type: 3}
       propertyPath: _storageStat.Array.data[0]
       value: 40
       objectReference: {fileID: 0}
@@ -2292,24 +2282,6 @@ PrefabInstance:
       propertyPath: _healthStat.Array.data[4]
       value: 60
       objectReference: {fileID: 0}
-    - target: {fileID: 2103884799722561538, guid: 81fd89ece85e5ce4a80286afe331885f,
-        type: 3}
-      propertyPath: _fireCampUpgrades.Array.data[5]
-      value: 
-      objectReference: {fileID: 11400000, guid: 551766d1ba61b4e488c79d87ff2f216e,
-        type: 2}
-    - target: {fileID: 2103884799722561538, guid: 81fd89ece85e5ce4a80286afe331885f,
-        type: 3}
-      propertyPath: _shoesUpgrades.Array.data[4]
-      value: 
-      objectReference: {fileID: 11400000, guid: aa3fb82d8e0564c4bb928a124e98886d,
-        type: 2}
-    - target: {fileID: 2103884799722561538, guid: 81fd89ece85e5ce4a80286afe331885f,
-        type: 3}
-      propertyPath: _shoesUpgrades.Array.data[5]
-      value: 
-      objectReference: {fileID: 11400000, guid: 3f81c6a11ebb3c24d9df18d41ff48899,
-        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 81fd89ece85e5ce4a80286afe331885f, type: 3}
 --- !u!1 &922750819
