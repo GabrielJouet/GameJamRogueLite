@@ -192,9 +192,7 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: 'It was:
 
-    BTD
-
-    Better than dungeons'
+    Four Dungeons'
 --- !u!222 &198796485
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -709,9 +707,7 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: 'It was:
 
-    BTD
-
-    Better than dungeons'
+    Four Dungeons'
 --- !u!222 &992287972
 CanvasRenderer:
   m_ObjectHideFlags: 0

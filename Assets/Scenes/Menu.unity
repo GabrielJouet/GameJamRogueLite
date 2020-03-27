@@ -267,9 +267,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'BTD
-
-    Better than dungeons'
+  m_Text: Four Dungeons
 --- !u!222 &870680108
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -718,9 +716,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'BTD
-
-    Better than dungeons'
+  m_Text: Four Dungeons
 --- !u!222 &1251332265
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -894,6 +890,10 @@ MonoBehaviour:
 
 
     E to interact
+
+
+    Space to dash while
+    moving
 
 
     Escape to open menu'
