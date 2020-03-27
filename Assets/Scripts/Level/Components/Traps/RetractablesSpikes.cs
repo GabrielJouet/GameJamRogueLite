@@ -31,14 +31,14 @@ public class RetractablesSpikes : MonoBehaviour, IHidable
         while(true)
         {
             _animator.SetTrigger("retract");
-            yield return new WaitForSeconds(_retractTime /2f);
+            yield return new WaitForSeconds(_retractTime /8f);
 
             _canHurtPlayer = false;
             yield return new WaitForSeconds(_retractTime);
 
             
             _animator.SetTrigger("extract");
-            yield return new WaitForSeconds(_extractTime / 2f);
+            yield return new WaitForSeconds(_extractTime / 8f);
 
             _canHurtPlayer = true;
             yield return new WaitForSeconds(_extractTime);
