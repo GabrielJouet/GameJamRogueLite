@@ -10,10 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1362867421c86d547a97be27f134c4cc, type: 3}
-  m_Name: ArmorLevel2
+  m_Name: BackPackLevel3
   m_EditorClassIdentifier: 
-  _cost: 100
-  _descriptionText: Well, this is starting to look like a real armor
-  _placeName: Armor
-  _iconSprite: {fileID: 21300000, guid: d812b5ec9f0b0814caee571d6f08ef56, type: 3}
-  _boost: 20
+  _cost: 75
+  _descriptionText: You upgraded the leather quality of the bag
+  _placeName: BackPack
+  _boost: 1

@@ -12,8 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1362867421c86d547a97be27f134c4cc, type: 3}
   m_Name: FireLevel3
   m_EditorClassIdentifier: 
-  _cost: 40
-  _descriptionText: The fire is well, making you feel warm
+  _cost: 35
+  _descriptionText: The fire is lit, making you feel warm
   _placeName: Fire
-  _iconSprite: {fileID: 21300000, guid: e93bc1169b18c7d42b36862dfde4aa02, type: 3}
-  _boost: 40
+  _boost: 32

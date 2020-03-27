@@ -10,10 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1362867421c86d547a97be27f134c4cc, type: 3}
-  m_Name: ShoesLevel2
+  m_Name: FireLevel5
   m_EditorClassIdentifier: 
-  _cost: 100
-  _descriptionText: You can now put on your shoes without pain
-  _placeName: Shoes
-  _iconSprite: {fileID: 21300000, guid: c40119bb4248e954daad7305c1489ffe, type: 3}
-  _boost: 19500
+  _cost: 72
+  _descriptionText: The fire is huge and raging!
+  _placeName: Fire
+  _boost: 50

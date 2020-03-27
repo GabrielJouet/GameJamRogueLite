@@ -49,18 +49,14 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 173b17ebcc98f4a4fa082b8c0b49b0f1, type: 2}
   - {fileID: 11400000, guid: cee204cd83e16fe4ab8bf999945f17c0, type: 2}
   - {fileID: 11400000, guid: 90b5e9e17b27ed342be2b549869c5d99, type: 2}
-  _wellUpgrades:
-  - {fileID: 11400000, guid: cfdd3548e0ba8a34f8a8cf6028870d46, type: 2}
-  - {fileID: 11400000, guid: 66ba7a9f2737601408134dbd19957328, type: 2}
-  - {fileID: 11400000, guid: baba7978e27a2d745a0dba94e35ac2d7, type: 2}
-  - {fileID: 11400000, guid: f6536494086742348994853661312851, type: 2}
-  - {fileID: 11400000, guid: 9165712f34698d340993a61d774e40c1, type: 2}
-  _spellsUpgrades: []
+  - {fileID: 11400000, guid: 551766d1ba61b4e488c79d87ff2f216e, type: 2}
   _shoesUpgrades:
   - {fileID: 11400000, guid: 0914e923b6f1e914ab15560b68ae452a, type: 2}
   - {fileID: 11400000, guid: 9d9234674d534e245bda89692fb24df0, type: 2}
   - {fileID: 11400000, guid: 75481e391ba0cbb42b3626770f08c3af, type: 2}
   - {fileID: 11400000, guid: f7bba08c8147afd49a5569d1fc1da1be, type: 2}
+  - {fileID: 11400000, guid: aa3fb82d8e0564c4bb928a124e98886d, type: 2}
+  - {fileID: 11400000, guid: 3f81c6a11ebb3c24d9df18d41ff48899, type: 2}
   _armorUpgrades:
   - {fileID: 11400000, guid: d3aad5ed41b35cd4f9c23447dade63b1, type: 2}
   - {fileID: 11400000, guid: eefc10a0f25319e41bd8682ff9687185, type: 2}
