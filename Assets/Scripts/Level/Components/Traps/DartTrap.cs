@@ -54,6 +54,9 @@ public class DartTrap : ShootingTraps, IActivable, IHidable
 
         if (_isActive)
         {
+            _audioSource.Stop();
+            _audioSource.clip = _shotSounds[Random.Range(0, _shotSounds.Count)];
+            _audioSource.Play();
             Projectile newProjectile = _pool.RecoverProjectile(_projectile).GetComponent<Projectile>();
             newProjectile.Initialize(_shootingStartPoint.position, Quaternion.Euler(new Vector3(0, 0, angle)));
         }

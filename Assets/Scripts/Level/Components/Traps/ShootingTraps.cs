@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
 public class ShootingTraps : MonoBehaviour
 {
@@ -17,6 +18,14 @@ public class ShootingTraps : MonoBehaviour
     protected float _yShootingDirection;
     [SerializeField]
     protected Transform _shootingStartPoint;
+
+
+    [Header("Sounds-related")]
+    [SerializeField]
+    protected AudioSource _audioSource;
+    [SerializeField]
+    protected List<AudioClip> _shotSounds;
+
 
     protected ProjectilePool _pool;
 
