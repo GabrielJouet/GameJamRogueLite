@@ -24,5 +24,7 @@ MonoBehaviour:
   - {fileID: 2654299726172551349, guid: 681f3e77c50a0be419479ddeab89ecf7, type: 3}
   _bossRooms:
   - {fileID: 3161429277498352034, guid: 2eb139ef5444b4e4187803130f79fe66, type: 3}
+  - {fileID: 3161429277498352034, guid: 7a92559039c781e4c8fe245b7ab7a11d, type: 3}
+  - {fileID: 3161429277498352034, guid: 2a67435f282b03e47a0f3d1c99e8d838, type: 3}
   _itemRooms: []
   _secretRooms: []
