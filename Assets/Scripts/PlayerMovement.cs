@@ -1,0 +1,252 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class PlayerMovement : MonoBehaviour
+{
+    [Header("Player Stats")]
+    [SerializeField]
+    private float _speed = 15000;
+    [SerializeField]
+    private float _dashSpeed = 90000;
+    [SerializeField]
+    private float _timeBeforeReHit;
+
+    private float _dashImmunityTime = .2f;
+    private float _dashCooldown = 1f;
+    private float _maxSpeed;
+    private float _armor;
+    private float _storageMalus;
+    private float _maxHealth;
+    private float _health;
+
+
+    [Header("Audio Files")]
+    [SerializeField]
+    private AudioClip _collectScrapSound;
+    [SerializeField]
+    private List<AudioClip> _hitSounds;
+    [SerializeField]
+    private List<AudioClip> _dieSounds;
+    [SerializeField]
+    private List<AudioClip> _noDashSounds;
+
+
+    private int _scrapCount = 0;
+    private bool _canMove = true;
+    private bool _canDash = true;
+    private bool _isDashing = false;
+
+
+    [Header("Components")]
+    [SerializeField]
+    private Rigidbody2D _rigidBody;
+    [SerializeField]
+    private AudioSource _audioSource;
+    [SerializeField]
+    private SpriteRenderer _spriteRenderer;
+
+
+    private TransitionSaver _transitionSaver;
+    private PlayerUI _playerUI;
+
+    private bool _canBeHit = true;
+
+
+    public void Initialize(TransitionSaver newSaver, PlayerUI playerUI, bool inHome)
+    {
+        _transitionSaver = newSaver;
+        _playerUI = playerUI;
+
+        _transitionSaver.SetPlayerStats(this, inHome);
+    }
+
+
+    private void FixedUpdate()
+    {
+        Vector2 playerInputs = new Vector2( Input.GetAxis("Horizontal"), Input.GetAxis("Vertical") );
+
+        Vector2 mainDirection = Mathf.Abs(playerInputs.x) > Mathf.Abs(playerInputs.y) ?
+            new Vector2(Mathf.Sign(playerInputs.x), 0) :
+            new Vector2(0, Mathf.Sign(playerInputs.y));
+
+        if (_canMove)
+            _rigidBody.AddForce( Vector2.ClampMagnitude(playerInputs, 1) * _speed * Time.deltaTime );
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            if(_canDash)
+                StartCoroutine(Dash(mainDirection));
+            else
+            {
+                _audioSource.Stop();
+                _audioSource.clip = _noDashSounds[Random.Range(0, _noDashSounds.Count)];
+                _audioSource.Play();
+            }
+        }
+
+        _spriteRenderer.flipX = Input.GetAxis("Horizontal") > 0;
+    }
+
+
+    private IEnumerator Dash(Vector2 direction)
+    {
+        _canDash = false;
+        _isDashing = true;
+
+        _rigidBody.AddForce(direction * _dashSpeed * Time.deltaTime);
+
+        yield return new WaitForSeconds(_dashImmunityTime);
+        _isDashing = false;
+
+        yield return new WaitForSeconds(_dashCooldown - _dashImmunityTime);
+        _canDash = true;
+    }
+
+
+    public void TakeDamage(int damage)
+    {
+        if(_canBeHit && !_isDashing)
+        {
+            _audioSource.Stop();
+
+            _canBeHit = false;
+            StartCoroutine(Flicker());
+
+            if (_health - Mathf.FloorToInt(damage - damage * _armor / 100f) <= 0)
+            {
+                _audioSource.clip = _dieSounds[Random.Range(0, _dieSounds.Count)];
+                _health = 0;
+                _canMove = false;
+                StartCoroutine(Die());
+            }
+            else
+            {
+                _health -= Mathf.FloorToInt(damage - damage * _armor / 100f);
+                _audioSource.clip = _hitSounds[Random.Range(0, _hitSounds.Count)];
+            }
+
+            _playerUI.SetHealth(_health);
+
+            StartCoroutine(ResetCanBeHit());
+            _audioSource.Play();
+        }
+    }
+
+
+    private IEnumerator Flicker()
+    {
+        bool transparent = false;
+
+        while(!_canBeHit)
+        {
+            _spriteRenderer.color = new Color(255, 255, 255, transparent ? 0 : 255);
+            transparent = !transparent;
+            yield return new WaitForSeconds(0.1f);
+        }
+    }
+
+
+    private IEnumerator ResetCanBeHit()
+    {
+        yield return new WaitForSeconds(_timeBeforeReHit);
+        _canBeHit = true;
+        StopCoroutine(Flicker());
+        _spriteRenderer.color = new Color(255, 255, 255, 255);
+    }
+
+
+    private IEnumerator Die()
+    {
+        _playerUI.ShowDeathPanel(true, _scrapCount);
+
+        yield return new WaitForSeconds(2.5f);
+        _transitionSaver.AddScrapCount(_scrapCount);
+        _transitionSaver.LoadBase();
+    }
+
+
+    public void Win()
+    {
+        StartCoroutine(DisplayWin());
+    }
+
+
+    private IEnumerator DisplayWin()
+    {
+        _playerUI.ShowDeathPanel(false, _scrapCount);
+
+        yield return new WaitForSeconds(3.5f);
+        _transitionSaver.AddScrapCount(_scrapCount);
+        _transitionSaver.LoadEnd();
+    }
+
+
+    public void CollectScrap(int value)
+    {
+        _scrapCount += value;
+        float speedMalus = _maxSpeed - (_maxSpeed * (_scrapCount * _storageMalus) / 100f);
+
+        _speed = speedMalus < 0.4f * _maxSpeed ? 0.4f * _maxSpeed : speedMalus;
+
+        _playerUI.SetScrap(_scrapCount);
+
+        _audioSource.clip = _collectScrapSound;
+        _audioSource.Play();
+    }
+
+
+    public void ModifySpeed(float ratio)
+    {
+        float speedMalus = _maxSpeed - (_maxSpeed * ratio / 100f);
+
+        _speed = speedMalus < 0.3f * _maxSpeed ? 0.3f * _maxSpeed : speedMalus;
+    }
+
+
+    public void ResetSpeed()
+    {
+        float speedMalus = _maxSpeed - (_maxSpeed * (_scrapCount * _storageMalus) / 100f);
+
+        _speed = speedMalus < 0.4f * _maxSpeed ? 0.4f * _maxSpeed : speedMalus;
+    }
+
+
+    //--------------------------------Setter
+    public void SetMaxHealth(float health) 
+    { 
+        _maxHealth = health;
+        _playerUI.SetMaxHealth(_maxHealth);
+    }
+
+    public void SetHealth(float health)
+    {
+        _health = health;
+        _playerUI.SetHealth(_maxHealth);
+    }
+
+    public void SetStorageMalus(float storage) 
+    {
+        _storageMalus = storage; 
+    }
+
+    public void SetArmor(float armor) 
+    { 
+        _armor = armor; 
+    }
+
+    public void SetSpeed(float speed) 
+    { 
+        _speed = speed;
+        _maxSpeed = _speed;
+    }
+
+
+    public void SetScrap(int scrap) 
+    { 
+        _scrapCount = scrap;
+        _playerUI.SetScrap(_scrapCount);
+    }
+
+    public void SetCanMove(bool other) { _canMove = other; }
+}

@@ -1,0 +1,790 @@
+fileFormatVersion: 2
+guid: 237ecbbad349ca1408823a1f58fb51ee
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 2807701810495549495
+    second: Hole SpriteSHeet._0
+  - first:
+      213: -4855013589718801938
+    second: Hole SpriteSHeet._1
+  - first:
+      213: -246082688408181216
+    second: Hole SpriteSHeet._2
+  - first:
+      213: 677337951612496170
+    second: Hole SpriteSHeet._3
+  - first:
+      213: 5662290526924780235
+    second: Hole SpriteSHeet._4
+  - first:
+      213: -6026317118895400982
+    second: Hole SpriteSHeet._5
+  - first:
+      213: 3397073089984088585
+    second: Hole SpriteSHeet._6
+  - first:
+      213: 6327105064133853539
+    second: Hole SpriteSHeet._7
+  - first:
+      213: 7695733755770311014
+    second: Hole SpriteSHeet._8
+  - first:
+      213: 7108208707169276813
+    second: Hole SpriteSHeet._9
+  - first:
+      213: 6655586112587322366
+    second: Hole SpriteSHeet._10
+  - first:
+      213: 1637633027881811076
+    second: Hole SpriteSHeet._11
+  - first:
+      213: -3980823163147909205
+    second: Hole SpriteSHeet._12
+  - first:
+      213: 4782702543002569755
+    second: Hole SpriteSHeet._13
+  - first:
+      213: 6180308976966956503
+    second: Hole SpriteSHeet._14
+  - first:
+      213: -2889319293304634394
+    second: Hole SpriteSHeet._15
+  - first:
+      213: -6847069686757013262
+    second: Hole SpriteSHeet._16
+  - first:
+      213: 2663968272840917937
+    second: Hole SpriteSHeet._17
+  - first:
+      213: -5657530639199618763
+    second: Hole SpriteSHeet._18
+  - first:
+      213: 6952544465748998063
+    second: Hole SpriteSHeet._19
+  - first:
+      213: 5477175945164392099
+    second: Hole SpriteSHeet._20
+  - first:
+      213: -7046728029595250227
+    second: Hole SpriteSHeet._21
+  - first:
+      213: -7700118467742824462
+    second: Hole SpriteSHeet._22
+  - first:
+      213: -6134749927965855604
+    second: Hole SpriteSHeet._23
+  - first:
+      213: 764288877160044891
+    second: Hole SpriteSHeet._24
+  - first:
+      213: -346471704797945214
+    second: TempleHole SpriteSHeet._0
+  - first:
+      213: 3938566069224875381
+    second: TempleHole SpriteSHeet._1
+  - first:
+      213: 1786698943968670922
+    second: TempleHole SpriteSHeet._2
+  - first:
+      213: -8916930034368769392
+    second: TempleHole SpriteSHeet._3
+  - first:
+      213: 2178965107808525294
+    second: TempleHole SpriteSHeet._4
+  - first:
+      213: 1288265565027038220
+    second: TempleHole SpriteSHeet._5
+  - first:
+      213: -6809341357286084517
+    second: TempleHole SpriteSHeet._6
+  - first:
+      213: -2979494420758632288
+    second: TempleHole SpriteSHeet._7
+  - first:
+      213: -8361042970482352560
+    second: TempleHole SpriteSHeet._8
+  - first:
+      213: 912100201805205264
+    second: TempleHole SpriteSHeet._9
+  - first:
+      213: 7166837955480153632
+    second: TempleHole SpriteSHeet._10
+  - first:
+      213: -5278742206386219367
+    second: TempleHole SpriteSHeet._11
+  - first:
+      213: 832739119995745630
+    second: TempleHole SpriteSHeet._12
+  - first:
+      213: 8690514860252067842
+    second: TempleHole SpriteSHeet._13
+  - first:
+      213: 1116363987861125374
+    second: TempleHole SpriteSHeet._14
+  - first:
+      213: -1071199726122637264
+    second: TempleHole SpriteSHeet._15
+  - first:
+      213: -1470840568975969072
+    second: TempleHole SpriteSHeet._16
+  - first:
+      213: -7863238475004331987
+    second: TempleHole SpriteSHeet._17
+  - first:
+      213: 5531442049682130812
+    second: TempleHole SpriteSHeet._18
+  - first:
+      213: 8924660290194863732
+    second: TempleHole SpriteSHeet._19
+  - first:
+      213: 6522452328505997527
+    second: TempleHole SpriteSHeet._20
+  - first:
+      213: 8350964483098582002
+    second: TempleHole SpriteSHeet._21
+  - first:
+      213: 1378329258193070373
+    second: TempleHole SpriteSHeet._22
+  - first:
+      213: -7347960305675191792
+    second: TempleHole SpriteSHeet._23
+  - first:
+      213: 6582408382825330001
+    second: TempleHole SpriteSHeet._24
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: TempleHole SpriteSHeet._0
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2826bc6f1d5113bf0800000000000000
+      internalID: -346471704797945214
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TempleHole SpriteSHeet._1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5752e88f8f898a630800000000000000
+      internalID: 3938566069224875381
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TempleHole SpriteSHeet._2
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac471d32931abc810800000000000000
+      internalID: 1786698943968670922
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TempleHole SpriteSHeet._3
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 092107ea063b04480800000000000000
+      internalID: -8916930034368769392
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TempleHole SpriteSHeet._4
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eebd5ec883d3d3e10800000000000000
+      internalID: 2178965107808525294
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TempleHole SpriteSHeet._5
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c04fdc3b4b6d0e110800000000000000
+      internalID: 1288265565027038220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TempleHole SpriteSHeet._6
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b50369cec1c5081a0800000000000000
+      internalID: -6809341357286084517
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TempleHole SpriteSHeet._7
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a86c604c95b6a6d0800000000000000
+      internalID: -2979494420758632288
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TempleHole SpriteSHeet._8
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05e5f9097bb97fb80800000000000000
+      internalID: -8361042970482352560
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TempleHole SpriteSHeet._9
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01f49201d4e68ac00800000000000000
+      internalID: 912100201805205264
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TempleHole SpriteSHeet._10
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02e6e232629b57360800000000000000
+      internalID: 7166837955480153632
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TempleHole SpriteSHeet._11
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 996dc776ee32eb6b0800000000000000
+      internalID: -5278742206386219367
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TempleHole SpriteSHeet._12
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e55faed41db7e8b00800000000000000
+      internalID: 832739119995745630
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TempleHole SpriteSHeet._13
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 208f3989839ea9870800000000000000
+      internalID: 8690514860252067842
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TempleHole SpriteSHeet._14
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef83088d12f1e7f00800000000000000
+      internalID: 1116363987861125374
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TempleHole SpriteSHeet._15
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 038e6f846855221f0800000000000000
+      internalID: -1071199726122637264
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TempleHole SpriteSHeet._16
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d434fc9b46869be0800000000000000
+      internalID: -1470840568975969072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TempleHole SpriteSHeet._17
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d28be29a44a20e290800000000000000
+      internalID: -7863238475004331987
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TempleHole SpriteSHeet._18
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7746f2cc31a3cc40800000000000000
+      internalID: 5531442049682130812
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TempleHole SpriteSHeet._19
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4767912cf33cadb70800000000000000
+      internalID: 8924660290194863732
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TempleHole SpriteSHeet._20
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d8f409d5d7648a50800000000000000
+      internalID: 6522452328505997527
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TempleHole SpriteSHeet._21
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2fb9efab3f594e370800000000000000
+      internalID: 8350964483098582002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TempleHole SpriteSHeet._22
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 529202a582fc02310800000000000000
+      internalID: 1378329258193070373
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TempleHole SpriteSHeet._23
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01a3f8c780dc60a90800000000000000
+      internalID: -7347960305675191792
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TempleHole SpriteSHeet._24
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1557bd09c89695b50800000000000000
+      internalID: 6582408382825330001
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

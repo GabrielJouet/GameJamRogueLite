@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4a25df56073a0940ab423a7f9007ece, type: 3}
+  m_Name: ForestRooms
+  m_EditorClassIdentifier: 
+  _roomCount: 55
+  _secretRoomCount: 0
+  _baseRooms:
+  - {fileID: 2654299726172551349, guid: 4a872cb338cef3242a5b0cb7296fe718, type: 3}
+  - {fileID: 2654299726172551349, guid: 3ee6afb3c141dc4418a9cbe80826ef1a, type: 3}
+  - {fileID: 2654299726172551349, guid: f2fafd47acac44e4eb4a1fe4304339d7, type: 3}
+  - {fileID: 2654299726172551349, guid: 0628085eda6706e4ca70f386b2a3c64a, type: 3}
+  - {fileID: 2654299726172551349, guid: 58fa4878e1e13394ebcd29c073e62ff4, type: 3}
+  _bodyRooms:
+  - {fileID: 2654299726172551349, guid: 88b38b82abd45804ebc39cee72fcfe25, type: 3}
+  - {fileID: 2654299726172551349, guid: e09b5bd1ac5ab9147a096da4f928c9bd, type: 3}
+  - {fileID: 2654299726172551349, guid: 3646534d4ca10184388840e553133919, type: 3}
+  - {fileID: 2654299726172551349, guid: f4ad6043ea45c1a40ab17c706173d96f, type: 3}
+  - {fileID: 2654299726172551349, guid: 8ccb32ae3413683438c18c5452febf3f, type: 3}
+  - {fileID: 2654299726172551349, guid: 50bc6396744b1fe46bdbe829c8b39889, type: 3}
+  - {fileID: 2654299726172551349, guid: 2273303730919324c9fe8facfb9694cd, type: 3}
+  - {fileID: 2654299726172551349, guid: b439202889fc2b949822b4801aecdd00, type: 3}
+  - {fileID: 2654299726172551349, guid: 9da37607d41bf164e8986e6e68a347b2, type: 3}
+  - {fileID: 2654299726172551349, guid: b3e8b2c59e723c445a6f4a42cb9fc6fe, type: 3}
+  - {fileID: 2654299726172551349, guid: dad7a583cf366824d973ff96e3e41166, type: 3}
+  - {fileID: 2654299726172551349, guid: 84c534a34a1a4d74e82dc1347042fd7e, type: 3}
+  - {fileID: 2654299726172551349, guid: 4b82b2c9683ea144c833c7cc02f9e725, type: 3}
+  - {fileID: 2654299726172551349, guid: 002e8250bcef7ba48a1a427cdf1c78e1, type: 3}
+  - {fileID: 2654299726172551349, guid: 2a17bacf9fdf7a44495b6846bb69924d, type: 3}
+  _bossRooms:
+  - {fileID: 3178076285312266501, guid: 331eda2259580694aad002553859721e, type: 3}
+  - {fileID: 3178076285312266501, guid: d36caa0c8096a7742a29c5af97a26211, type: 3}
+  - {fileID: 3178076285312266501, guid: e1c981153833d744386e3a65337cb767, type: 3}
+  _itemRooms: []
+  _secretRooms: []

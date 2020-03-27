@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4a25df56073a0940ab423a7f9007ece, type: 3}
+  m_Name: CavernRooms
+  m_EditorClassIdentifier: 
+  _roomCount: 85
+  _secretRoomCount: 0
+  _baseRooms:
+  - {fileID: 2654299726172551349, guid: 2708d56a86295ce42961a819517edf84, type: 3}
+  - {fileID: 2654299726172551349, guid: 453993c7540f18e4c9e860c2b54c9dbe, type: 3}
+  - {fileID: 2654299726172551349, guid: a66cb64e1bfa7614e90098a1a49560b3, type: 3}
+  - {fileID: 2654299726172551349, guid: 79ee9aec71814be4f98f267100aadb07, type: 3}
+  - {fileID: 2654299726172551349, guid: e060bc8239b485b4198550345f955092, type: 3}
+  _bodyRooms:
+  - {fileID: 2654299726172551349, guid: e054b650a4bc02f4881e147aa1c25148, type: 3}
+  _bossRooms:
+  - {fileID: 2159978815352478298, guid: 198782492623d9e4d8d596035dc9c55e, type: 3}
+  - {fileID: 2159978815352478298, guid: ac44768d026bea8489ff678680abf366, type: 3}
+  - {fileID: 2159978815352478298, guid: 4b3dc092687d87e419dde2125874ef04, type: 3}
+  _itemRooms: []
+  _secretRooms: []
