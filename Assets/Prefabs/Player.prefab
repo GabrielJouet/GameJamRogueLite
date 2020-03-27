@@ -191,12 +191,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 15000
-  _dashSpeed: 90000
+  _dashSpeed: 100000
   _timeBeforeReHit: 0.75
   _collectScrapSound: {fileID: 8300000, guid: ee46b5ca936e3a846ae1b7af033ab39e, type: 3}
   _rigidBody: {fileID: 8224979895197767884}
   _audioSource: {fileID: -8459982418918131782}
-  _animator: {fileID: 0}
   _spriteRenderer: {fileID: 6934156366142171164}
 --- !u!1 &8952940697527776089
 GameObject:
