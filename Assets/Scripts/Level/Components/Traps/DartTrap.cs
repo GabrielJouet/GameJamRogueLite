@@ -24,20 +24,38 @@ public class DartTrap : ShootingTraps, IActivable, IHidable
     {
         float angle = 0f;
 
-        if (_shootingDirections.x == -1)
-            angle = -90;
-        else if (_shootingDirections.x == 1)
-            angle = 90;
+        if (_xShootingDirection == -1)
+        {
+            if (_yShootingDirection == -1)
+                angle = -45;
+            else if (_yShootingDirection == 0)
+                angle = -90;
+            else if (_yShootingDirection == 1)
+                angle = -135;
+        }
+        else if (_xShootingDirection == 0)
+        {
+            if (_yShootingDirection == -1)
+                angle = 0;
+            else if (_yShootingDirection == 0)
+                angle = 0;
+            else if (_yShootingDirection == 1)
+                angle = 180;
+        }
+        else if (_xShootingDirection == 1)
+        {
+            if (_yShootingDirection == -1)
+                angle = 45;
+            else if (_yShootingDirection == 0)
+                angle = 90;
+            else if (_yShootingDirection == 1)
+                angle = -135;
+        }
 
-        if (_shootingDirections.y == -1)
-            angle = 0;
-        else if (_shootingDirections.y == 1)
-            angle = 180;
-
-        if(_isActive)
+        if (_isActive)
         {
             Projectile newProjectile = _pool.RecoverProjectile(_projectile).GetComponent<Projectile>();
-            newProjectile.Initialize(_shootingStartPoint.position, Quaternion.Euler(new Vector3(0, 0, transform.localEulerAngles.z)));
+            newProjectile.Initialize(_shootingStartPoint.position, Quaternion.Euler(new Vector3(0, 0, angle)));
         }
     }
 

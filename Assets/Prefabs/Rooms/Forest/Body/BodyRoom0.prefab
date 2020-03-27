@@ -1983,6 +1983,11 @@ PrefabInstance:
       propertyPath: _rotatingSpeed
       value: -35
       objectReference: {fileID: 0}
+    - target: {fileID: 8493929145273612882, guid: a03d31704dfaa2d4cbf959125cda896c,
+        type: 3}
+      propertyPath: _xShootingDirection
+      value: -1
+      objectReference: {fileID: 0}
     - target: {fileID: 8493929145273612909, guid: a03d31704dfaa2d4cbf959125cda896c,
         type: 3}
       propertyPath: m_Name
@@ -2073,6 +2078,11 @@ PrefabInstance:
         type: 3}
       propertyPath: _rotatingSpeed
       value: 35
+      objectReference: {fileID: 0}
+    - target: {fileID: 8493929145273612882, guid: a03d31704dfaa2d4cbf959125cda896c,
+        type: 3}
+      propertyPath: _xShootingDirection
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 8493929145273612909, guid: a03d31704dfaa2d4cbf959125cda896c,
         type: 3}

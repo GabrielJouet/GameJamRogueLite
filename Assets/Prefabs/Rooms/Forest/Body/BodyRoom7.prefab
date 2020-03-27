@@ -802,6 +802,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1174865193637727170, guid: 645bb5fa7199bc34195658e7e84c47ed,
         type: 3}
+    - target: {fileID: 8493929145273612882, guid: a03d31704dfaa2d4cbf959125cda896c,
+        type: 3}
+      propertyPath: _xShootingDirection
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8493929145273612909, guid: a03d31704dfaa2d4cbf959125cda896c,
         type: 3}
       propertyPath: m_Name

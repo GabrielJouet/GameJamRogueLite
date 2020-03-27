@@ -1680,6 +1680,11 @@ PrefabInstance:
       propertyPath: _activatedTime
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 4555405773679375395, guid: 8f78434240337ad43973d55497ea1d78,
+        type: 3}
+      propertyPath: _yShootingDirection
+      value: -1
+      objectReference: {fileID: 0}
     - target: {fileID: 4555405773679375398, guid: 8f78434240337ad43973d55497ea1d78,
         type: 3}
       propertyPath: m_Name
@@ -2095,6 +2100,11 @@ PrefabInstance:
         type: 3}
       propertyPath: _activatedTime
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4555405773679375395, guid: 8f78434240337ad43973d55497ea1d78,
+        type: 3}
+      propertyPath: _yShootingDirection
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4555405773679375398, guid: 8f78434240337ad43973d55497ea1d78,
         type: 3}

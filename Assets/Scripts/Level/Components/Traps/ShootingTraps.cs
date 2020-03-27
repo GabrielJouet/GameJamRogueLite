@@ -10,7 +10,11 @@ public class ShootingTraps : MonoBehaviour
     [SerializeField]
     protected float _fireRate;
     [SerializeField]
-    protected Vector2 _shootingDirections;
+    [Range(-1, 1)]
+    protected float _xShootingDirection;
+    [SerializeField]
+    [Range(-1, 1)]
+    protected float _yShootingDirection;
     [SerializeField]
     protected Transform _shootingStartPoint;
 

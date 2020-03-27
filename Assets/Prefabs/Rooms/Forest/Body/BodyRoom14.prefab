@@ -344,6 +344,16 @@ PrefabInstance:
       propertyPath: _shootingDirections.x
       value: -1
       objectReference: {fileID: 0}
+    - target: {fileID: 5053118533792465802, guid: c35020e1a1a49924bb4e72a6466b6989,
+        type: 3}
+      propertyPath: _yShootingDirection
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5053118533792465802, guid: c35020e1a1a49924bb4e72a6466b6989,
+        type: 3}
+      propertyPath: _xShootingDirection
+      value: -1
+      objectReference: {fileID: 0}
     - target: {fileID: 5053118533792465803, guid: c35020e1a1a49924bb4e72a6466b6989,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1961,6 +1971,16 @@ PrefabInstance:
     - target: {fileID: 5053118533792465802, guid: c35020e1a1a49924bb4e72a6466b6989,
         type: 3}
       propertyPath: _shootingDirections.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5053118533792465802, guid: c35020e1a1a49924bb4e72a6466b6989,
+        type: 3}
+      propertyPath: _xShootingDirection
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5053118533792465802, guid: c35020e1a1a49924bb4e72a6466b6989,
+        type: 3}
+      propertyPath: _yShootingDirection
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5053118533792465803, guid: c35020e1a1a49924bb4e72a6466b6989,
