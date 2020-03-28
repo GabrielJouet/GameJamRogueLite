@@ -3,6 +3,9 @@ using UnityEngine;
 
 public class ContinousDartTrap : ShootingTraps, IActivable, IHidable
 {
+    [SerializeField]
+    protected float _activatedTime;
+
     [Header("Activation Parameters")]
     [SerializeField]
     private bool _isAlwaysActive;
@@ -74,7 +77,11 @@ public class ContinousDartTrap : ShootingTraps, IActivable, IHidable
             _audioSource.clip = _shotSounds[Random.Range(0, _shotSounds.Count)];
             _audioSource.Play();
             Projectile newProjectile = _pool.RecoverProjectile(_projectile).GetComponent<Projectile>();
-            newProjectile.Initialize(_shootingStartPoint.position, Quaternion.Euler(new Vector3(0, 0, angle)));
+            newProjectile.Initialize(_shootingStartPoint.position,
+                                     Quaternion.Euler(new Vector3(0, 0, angle)),
+                                     _damage,
+                                     _dispersion,
+                                     _speed);
 
             yield return new WaitForSeconds(_fireRate);
         }

@@ -51,7 +51,11 @@ public class RotatingTurret : ShootingTraps, IActivable, IHidable
             _audioSource.Play();
 
             Projectile newProjectile = _pool.RecoverProjectile(_projectile).GetComponent<Projectile>();
-            newProjectile.Initialize(_shootingStartPoint.position, Quaternion.Euler(new Vector3(0, 0, transform.localEulerAngles.z)));
+            newProjectile.Initialize(_shootingStartPoint.position, 
+                                     Quaternion.Euler(new Vector3(0, 0, transform.localEulerAngles.z)), 
+                                     _damage, 
+                                     _dispersion, 
+                                     _speed);
             yield return new WaitForSeconds(_fireRate);
         }
     }

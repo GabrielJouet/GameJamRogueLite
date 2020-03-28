@@ -262,6 +262,26 @@ PrefabInstance:
       propertyPath: _xShootingDirection
       value: -1
       objectReference: {fileID: 0}
+    - target: {fileID: 4555405773679375395, guid: 67122d2b967bda74f9feda0c2dd6cfac,
+        type: 3}
+      propertyPath: _fireRate
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 4555405773679375395, guid: 67122d2b967bda74f9feda0c2dd6cfac,
+        type: 3}
+      propertyPath: _damage
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4555405773679375395, guid: 67122d2b967bda74f9feda0c2dd6cfac,
+        type: 3}
+      propertyPath: _dispersion
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4555405773679375395, guid: 67122d2b967bda74f9feda0c2dd6cfac,
+        type: 3}
+      propertyPath: _speed
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4555405773679375398, guid: 67122d2b967bda74f9feda0c2dd6cfac,
         type: 3}
       propertyPath: m_Name
@@ -1606,6 +1626,26 @@ PrefabInstance:
       propertyPath: _xShootingDirection
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4555405773679375395, guid: 67122d2b967bda74f9feda0c2dd6cfac,
+        type: 3}
+      propertyPath: _fireRate
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 4555405773679375395, guid: 67122d2b967bda74f9feda0c2dd6cfac,
+        type: 3}
+      propertyPath: _damage
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4555405773679375395, guid: 67122d2b967bda74f9feda0c2dd6cfac,
+        type: 3}
+      propertyPath: _dispersion
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4555405773679375395, guid: 67122d2b967bda74f9feda0c2dd6cfac,
+        type: 3}
+      propertyPath: _speed
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4555405773679375398, guid: 67122d2b967bda74f9feda0c2dd6cfac,
         type: 3}
       propertyPath: m_Name
@@ -1872,6 +1912,26 @@ PrefabInstance:
       propertyPath: _yShootingDirection
       value: -1
       objectReference: {fileID: 0}
+    - target: {fileID: 4555405773679375395, guid: 67122d2b967bda74f9feda0c2dd6cfac,
+        type: 3}
+      propertyPath: _fireRate
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 4555405773679375395, guid: 67122d2b967bda74f9feda0c2dd6cfac,
+        type: 3}
+      propertyPath: _damage
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4555405773679375395, guid: 67122d2b967bda74f9feda0c2dd6cfac,
+        type: 3}
+      propertyPath: _dispersion
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4555405773679375395, guid: 67122d2b967bda74f9feda0c2dd6cfac,
+        type: 3}
+      propertyPath: _speed
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4555405773679375398, guid: 67122d2b967bda74f9feda0c2dd6cfac,
         type: 3}
       propertyPath: m_Name
@@ -2067,6 +2127,26 @@ PrefabInstance:
         type: 3}
       propertyPath: _yShootingDirection
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4555405773679375395, guid: 67122d2b967bda74f9feda0c2dd6cfac,
+        type: 3}
+      propertyPath: _fireRate
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 4555405773679375395, guid: 67122d2b967bda74f9feda0c2dd6cfac,
+        type: 3}
+      propertyPath: _damage
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4555405773679375395, guid: 67122d2b967bda74f9feda0c2dd6cfac,
+        type: 3}
+      propertyPath: _dispersion
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4555405773679375395, guid: 67122d2b967bda74f9feda0c2dd6cfac,
+        type: 3}
+      propertyPath: _speed
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4555405773679375398, guid: 67122d2b967bda74f9feda0c2dd6cfac,
         type: 3}

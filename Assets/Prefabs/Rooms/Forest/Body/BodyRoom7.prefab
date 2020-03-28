@@ -789,7 +789,7 @@ PrefabInstance:
     - target: {fileID: 8493929145273612882, guid: a03d31704dfaa2d4cbf959125cda896c,
         type: 3}
       propertyPath: _fireRate
-      value: 0.7
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 8493929145273612882, guid: a03d31704dfaa2d4cbf959125cda896c,
         type: 3}
@@ -800,12 +800,27 @@ PrefabInstance:
         type: 3}
       propertyPath: _projectile
       value: 
-      objectReference: {fileID: 1174865193637727170, guid: 645bb5fa7199bc34195658e7e84c47ed,
+      objectReference: {fileID: 1174865193637727170, guid: d1ef79083e3f6fe45ad534c00b977c21,
         type: 3}
     - target: {fileID: 8493929145273612882, guid: a03d31704dfaa2d4cbf959125cda896c,
         type: 3}
       propertyPath: _xShootingDirection
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8493929145273612882, guid: a03d31704dfaa2d4cbf959125cda896c,
+        type: 3}
+      propertyPath: _damage
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8493929145273612882, guid: a03d31704dfaa2d4cbf959125cda896c,
+        type: 3}
+      propertyPath: _dispersion
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8493929145273612882, guid: a03d31704dfaa2d4cbf959125cda896c,
+        type: 3}
+      propertyPath: _speed
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8493929145273612909, guid: a03d31704dfaa2d4cbf959125cda896c,
         type: 3}
