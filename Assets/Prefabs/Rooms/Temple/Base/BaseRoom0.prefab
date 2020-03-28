@@ -250,8 +250,13 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 677337951612496170, guid: 237ecbbad349ca1408823a1f58fb51ee,
+      objectReference: {fileID: -8916930034368769392, guid: 237ecbbad349ca1408823a1f58fb51ee,
         type: 3}
+    - target: {fileID: 8388453380740244831, guid: 21e0e81a013891f4f9188b932ae166b2,
+        type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 21e0e81a013891f4f9188b932ae166b2, type: 3}
 --- !u!4 &2569263567940353932 stripped
@@ -331,8 +336,13 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: -4855013589718801938, guid: 237ecbbad349ca1408823a1f58fb51ee,
+      objectReference: {fileID: 3938566069224875381, guid: 237ecbbad349ca1408823a1f58fb51ee,
         type: 3}
+    - target: {fileID: 8388453380740244831, guid: 21e0e81a013891f4f9188b932ae166b2,
+        type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 21e0e81a013891f4f9188b932ae166b2, type: 3}
 --- !u!4 &2886665687734982631 stripped
@@ -1585,8 +1595,13 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 4782702543002569755, guid: 237ecbbad349ca1408823a1f58fb51ee,
+      objectReference: {fileID: 8690514860252067842, guid: 237ecbbad349ca1408823a1f58fb51ee,
         type: 3}
+    - target: {fileID: 8388453380740244831, guid: 21e0e81a013891f4f9188b932ae166b2,
+        type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 21e0e81a013891f4f9188b932ae166b2, type: 3}
 --- !u!4 &8632715557516349486 stripped
@@ -1896,8 +1911,13 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: -2889319293304634394, guid: 237ecbbad349ca1408823a1f58fb51ee,
+      objectReference: {fileID: -1071199726122637264, guid: 237ecbbad349ca1408823a1f58fb51ee,
         type: 3}
+    - target: {fileID: 8388453380740244831, guid: 21e0e81a013891f4f9188b932ae166b2,
+        type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 21e0e81a013891f4f9188b932ae166b2, type: 3}
 --- !u!4 &6473215717141854500 stripped
