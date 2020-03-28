@@ -95,7 +95,9 @@ MonoBehaviour:
   _leftDoor: {fileID: 1904250173585931808}
   _downDoor: {fileID: 7454257157240358309}
   _rightDoor: {fileID: 815316274724589809}
-  _objectToDesactivate: []
+  _objectToDesactivate:
+  - {fileID: 7499651116066354184}
+  - {fileID: 7955564417583940793}
   _miniMapActiveIcon: {fileID: -7577132549858897107, guid: 5009e8560cf93bf408a7511f96d20a8b,
     type: 3}
   _miniMapSeenIcon: {fileID: 8844351654396835677, guid: 5009e8560cf93bf408a7511f96d20a8b,
@@ -261,6 +263,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4229403352063203242}
     m_Modifications:
+    - target: {fileID: 5053118533792465802, guid: c35020e1a1a49924bb4e72a6466b6989,
+        type: 3}
+      propertyPath: _xShootingDirection
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5053118533792465802, guid: c35020e1a1a49924bb4e72a6466b6989,
+        type: 3}
+      propertyPath: _damage
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5053118533792465802, guid: c35020e1a1a49924bb4e72a6466b6989,
+        type: 3}
+      propertyPath: _dispersion
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5053118533792465802, guid: c35020e1a1a49924bb4e72a6466b6989,
+        type: 3}
+      propertyPath: _speed
+      value: 2.5
+      objectReference: {fileID: 0}
     - target: {fileID: 5053118533792465803, guid: c35020e1a1a49924bb4e72a6466b6989,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -530,6 +552,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4229403352063203242}
     m_Modifications:
+    - target: {fileID: 5053118533792465802, guid: c35020e1a1a49924bb4e72a6466b6989,
+        type: 3}
+      propertyPath: _xShootingDirection
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5053118533792465802, guid: c35020e1a1a49924bb4e72a6466b6989,
+        type: 3}
+      propertyPath: _damage
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5053118533792465802, guid: c35020e1a1a49924bb4e72a6466b6989,
+        type: 3}
+      propertyPath: _dispersion
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5053118533792465802, guid: c35020e1a1a49924bb4e72a6466b6989,
+        type: 3}
+      propertyPath: _speed
+      value: 2.5
+      objectReference: {fileID: 0}
     - target: {fileID: 5053118533792465803, guid: c35020e1a1a49924bb4e72a6466b6989,
         type: 3}
       propertyPath: m_LocalPosition.x
