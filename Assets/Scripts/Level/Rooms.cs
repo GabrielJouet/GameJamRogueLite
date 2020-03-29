@@ -21,10 +21,6 @@ public class Rooms : ScriptableObject
     private List<Room> _bodyRooms = new List<Room>();
     [SerializeField]
     private List<Room> _bossRooms = new List<Room>();
-    [SerializeField]
-    private List<Room> _itemRooms = new List<Room>();
-    [SerializeField]
-    private List<Room> _secretRooms = new List<Room>();
 
 
 
@@ -33,11 +29,7 @@ public class Rooms : ScriptableObject
 
     public Room GetBossRoom() { return _bossRooms[Random.Range(0, _bossRooms.Count)]; }
 
-    public Room GetItemRoom() { return _itemRooms[Random.Range(0, _itemRooms.Count)]; }
-
     public Room GetBodyRoom() { return _bodyRooms[Random.Range(0, _bodyRooms.Count)]; }
-
-    public Room GetSecretRoom() { return _secretRooms[Random.Range(0, _secretRooms.Count)]; }
 
     public int GetRoomCount() { return _roomCount; }
 
@@ -45,10 +37,8 @@ public class Rooms : ScriptableObject
 
     public bool FindRoomContains(Room other)
     {
-        return  _baseRooms.Contains(other) ||
+        return _baseRooms.Contains(other) ||
                 _bodyRooms.Contains(other) ||
-                _bossRooms.Contains(other) ||
-                _itemRooms.Contains(other) ||
-                _secretRooms.Contains(other);
+                _bossRooms.Contains(other);
     }
 }
