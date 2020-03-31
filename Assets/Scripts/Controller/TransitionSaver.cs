@@ -62,6 +62,10 @@ public class TransitionSaver : MonoBehaviour
         {
             SceneManager.LoadScene("Base");
             _dungeonLoaded = false;
+
+            _forestKeyGained = false;
+            _cavernKeyGained = false; 
+            _graveyardKeyGained = false;
         }
     }
 
