@@ -671,6 +671,21 @@ PrefabInstance:
       propertyPath: _yShootingDirection
       value: -1
       objectReference: {fileID: 0}
+    - target: {fileID: 8493929145273612882, guid: a03d31704dfaa2d4cbf959125cda896c,
+        type: 3}
+      propertyPath: _damage
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8493929145273612882, guid: a03d31704dfaa2d4cbf959125cda896c,
+        type: 3}
+      propertyPath: _dispersion
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 8493929145273612882, guid: a03d31704dfaa2d4cbf959125cda896c,
+        type: 3}
+      propertyPath: _speed
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 8493929145273612909, guid: a03d31704dfaa2d4cbf959125cda896c,
         type: 3}
       propertyPath: m_Name
@@ -1978,6 +1993,21 @@ PrefabInstance:
         type: 3}
       propertyPath: _yShootingDirection
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8493929145273612882, guid: a03d31704dfaa2d4cbf959125cda896c,
+        type: 3}
+      propertyPath: _damage
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8493929145273612882, guid: a03d31704dfaa2d4cbf959125cda896c,
+        type: 3}
+      propertyPath: _dispersion
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 8493929145273612882, guid: a03d31704dfaa2d4cbf959125cda896c,
+        type: 3}
+      propertyPath: _speed
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8493929145273612909, guid: a03d31704dfaa2d4cbf959125cda896c,
         type: 3}

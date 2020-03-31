@@ -1988,6 +1988,32 @@ PrefabInstance:
       propertyPath: _xShootingDirection
       value: -1
       objectReference: {fileID: 0}
+    - target: {fileID: 8493929145273612882, guid: a03d31704dfaa2d4cbf959125cda896c,
+        type: 3}
+      propertyPath: _projectile
+      value: 
+      objectReference: {fileID: 1174865193637727170, guid: d1ef79083e3f6fe45ad534c00b977c21,
+        type: 3}
+    - target: {fileID: 8493929145273612882, guid: a03d31704dfaa2d4cbf959125cda896c,
+        type: 3}
+      propertyPath: _fireRate
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8493929145273612882, guid: a03d31704dfaa2d4cbf959125cda896c,
+        type: 3}
+      propertyPath: _damage
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8493929145273612882, guid: a03d31704dfaa2d4cbf959125cda896c,
+        type: 3}
+      propertyPath: _dispersion
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8493929145273612882, guid: a03d31704dfaa2d4cbf959125cda896c,
+        type: 3}
+      propertyPath: _speed
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8493929145273612909, guid: a03d31704dfaa2d4cbf959125cda896c,
         type: 3}
       propertyPath: m_Name
@@ -2083,6 +2109,32 @@ PrefabInstance:
         type: 3}
       propertyPath: _xShootingDirection
       value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8493929145273612882, guid: a03d31704dfaa2d4cbf959125cda896c,
+        type: 3}
+      propertyPath: _projectile
+      value: 
+      objectReference: {fileID: 1174865193637727170, guid: d1ef79083e3f6fe45ad534c00b977c21,
+        type: 3}
+    - target: {fileID: 8493929145273612882, guid: a03d31704dfaa2d4cbf959125cda896c,
+        type: 3}
+      propertyPath: _dispersion
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8493929145273612882, guid: a03d31704dfaa2d4cbf959125cda896c,
+        type: 3}
+      propertyPath: _speed
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8493929145273612882, guid: a03d31704dfaa2d4cbf959125cda896c,
+        type: 3}
+      propertyPath: _damage
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8493929145273612882, guid: a03d31704dfaa2d4cbf959125cda896c,
+        type: 3}
+      propertyPath: _fireRate
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 8493929145273612909, guid: a03d31704dfaa2d4cbf959125cda896c,
         type: 3}

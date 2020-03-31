@@ -7,8 +7,6 @@ public class ShootingTraps : MonoBehaviour
     [SerializeField]
     protected GameObject _projectile;
     [SerializeField]
-    protected float _activatedTime;
-    [SerializeField]
     protected float _fireRate;
     [SerializeField]
     [Range(-1, 1)]
@@ -18,6 +16,14 @@ public class ShootingTraps : MonoBehaviour
     protected float _yShootingDirection;
     [SerializeField]
     protected Transform _shootingStartPoint;
+    [SerializeField]
+    protected int _damage;
+    [SerializeField]
+    [Range(0f, 100f)]
+    protected float _dispersion;
+    [SerializeField]
+    [Range(0.1f, 10)]
+    protected float _speed;
 
 
     [Header("Sounds-related")]

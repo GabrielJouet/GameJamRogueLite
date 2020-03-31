@@ -101,7 +101,9 @@ MonoBehaviour:
   _leftDoor: {fileID: 1904250173585931808}
   _downDoor: {fileID: 0}
   _rightDoor: {fileID: 815316274724589809}
-  _objectToDesactivate: []
+  _objectToDesactivate:
+  - {fileID: 7966342869475887438}
+  - {fileID: 260864768808403195}
   _miniMapActiveIcon: {fileID: 969035622748939135, guid: 5009e8560cf93bf408a7511f96d20a8b,
     type: 3}
   _miniMapSeenIcon: {fileID: -6372485282413835371, guid: 5009e8560cf93bf408a7511f96d20a8b,
@@ -1690,6 +1692,21 @@ PrefabInstance:
       propertyPath: _yShootingDirection
       value: -1
       objectReference: {fileID: 0}
+    - target: {fileID: 4555405773679375395, guid: 8f78434240337ad43973d55497ea1d78,
+        type: 3}
+      propertyPath: _damage
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4555405773679375395, guid: 8f78434240337ad43973d55497ea1d78,
+        type: 3}
+      propertyPath: _dispersion
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4555405773679375395, guid: 8f78434240337ad43973d55497ea1d78,
+        type: 3}
+      propertyPath: _speed
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4555405773679375398, guid: 8f78434240337ad43973d55497ea1d78,
         type: 3}
       propertyPath: m_Name
@@ -2110,6 +2127,21 @@ PrefabInstance:
         type: 3}
       propertyPath: _yShootingDirection
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4555405773679375395, guid: 8f78434240337ad43973d55497ea1d78,
+        type: 3}
+      propertyPath: _damage
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4555405773679375395, guid: 8f78434240337ad43973d55497ea1d78,
+        type: 3}
+      propertyPath: _dispersion
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4555405773679375395, guid: 8f78434240337ad43973d55497ea1d78,
+        type: 3}
+      propertyPath: _speed
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4555405773679375398, guid: 8f78434240337ad43973d55497ea1d78,
         type: 3}

@@ -249,13 +249,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a66ec4101e44234589952df615bae81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _projectile: {fileID: 1174865193637727170, guid: 01384653ef346354bac128b2da2f2aa0,
+  _projectile: {fileID: 1174865193637727170, guid: d1ef79083e3f6fe45ad534c00b977c21,
     type: 3}
-  _activatedTime: 0
   _fireRate: 1
   _xShootingDirection: 0
   _yShootingDirection: 0
   _shootingStartPoint: {fileID: 2653466077322517815}
+  _damage: 0
+  _dispersion: 0
+  _speed: 0
   _audioSource: {fileID: 804600434707804585}
   _shotSounds:
   - {fileID: 8300000, guid: c4c95ea1c245e3744906c56037f4c792, type: 3}

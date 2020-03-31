@@ -2,33 +2,24 @@
 
 public class Projectile : MonoBehaviour
 {
-    [SerializeField]
-    [Range(0.1f, 10)]
     private float _speed;
-
-    [SerializeField]
     private int _damage;
 
-    [SerializeField]
-    [Range(0f, 100f)]
-    private float _dispersion;
-
-    [SerializeField]
-    private Vector2 _directions;
-
     private ProjectilePool _pool;
-
     private Vector2 _startingPosition;
 
     private bool _isMoving = false;
 
 
-    public void Initialize(Vector2 newPosition, Quaternion newAngle)
+    public void Initialize(Vector2 newPosition, Quaternion newAngle, int newDamage, float newDispersion, float newSpeed)
     {
         _isMoving = true;
         transform.position = newPosition;
         transform.rotation = newAngle;
-        transform.rotation = Quaternion.Euler(new Vector3(0,0, transform.localEulerAngles.z + Random.Range(-_dispersion, _dispersion)));
+        transform.rotation = Quaternion.Euler(new Vector3(0,0, transform.localEulerAngles.z + Random.Range(-newDispersion, newDispersion)));
+
+        _speed = newSpeed;
+        _damage = newDamage;
 
         if(_pool == null)
             _pool = FindObjectOfType<ProjectilePool>();
@@ -41,7 +32,7 @@ public class Projectile : MonoBehaviour
     {
         if (_isMoving)
         {
-            transform.Translate(_directions * Time.deltaTime * _speed);
+            transform.Translate(new Vector2(0,-1) * Time.deltaTime * _speed);
 
             if (((Vector2)transform.position - _startingPosition).magnitude > 4)
                 _pool.RetrieveProjectile(gameObject);

@@ -1054,9 +1054,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _projectileAvailables:
-  - {fileID: 1174865193637727170, guid: 01384653ef346354bac128b2da2f2aa0, type: 3}
-  - {fileID: 1174865193637727170, guid: 645bb5fa7199bc34195658e7e84c47ed, type: 3}
-  - {fileID: 1174865193637727170, guid: 132b0daabee341c4b8377ef8d98b883d, type: 3}
   - {fileID: 1174865193637727170, guid: d1ef79083e3f6fe45ad534c00b977c21, type: 3}
 --- !u!1 &748891429
 GameObject:
